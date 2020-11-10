@@ -1,7 +1,9 @@
-export default function MostLiked() {
+import React from 'react';
+
+export default function YourViewed() {
     return (
-        <section>
+        <article>
             <h2>Items Viewed By You</h2>
-        </section>
+        </article>
     );
 }

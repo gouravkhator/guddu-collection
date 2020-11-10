@@ -1,7 +1,9 @@
+import React from 'react';
+
 export default function MostLiked() {
     return (
-        <section>
+        <article>
             <h2>Most Liked</h2>
-        </section>
+        </article>
     );
 }
