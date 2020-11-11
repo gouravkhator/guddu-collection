@@ -1,14 +1,29 @@
-import MostLiked from './MostLiked';
-import YourViewed from './YourViewed';
-import OtherItems from './OtherItems';
+import React, { lazy, Suspense } from 'react';
 import "./mainpage.css";
+
+const MostLiked = lazy(() => import('./MostLiked'));
+const HomePageItems = lazy(() => import('./HomePageItems'));
+
+const renderLoader = () => (
+    <p className="loading">Loading..</p>
+);
 
 export default function MainPage() {
     return (
         <section>
-            <MostLiked />
-            <YourViewed />
-            <OtherItems />
+            <article>
+                <h2>Most Liked</h2>
+                <Suspense fallback={renderLoader()}>
+                    <MostLiked />
+                </Suspense>
+            </article>
+
+            <article>
+                <h2>Products We Sell</h2>
+                <Suspense fallback={renderLoader()}>
+                    <HomePageItems />
+                </Suspense>
+            </article>
         </section>
     );
 }

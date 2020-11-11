@@ -22,40 +22,47 @@ const getAllItems = async (foldername) => {
                 //error in getting download url or metadata
                 if (imageDownloadURL == null) {
                     console.log('Image download url fetch error');
-                }
-
-                if (imageMetadata == null) {
+                } else if (imageMetadata == null) {
                     console.log('Image metadata fetch error');
                 }
             }
         }
     } catch {
-        console.log(`Error fetching files from folder ${foldername}`);
+        console.log(`Error fetching files from database folder ${foldername}`);
     }
 
     return downloadURLs;
 }
 
-export default function OtherItems() {
-    let [imgdownloadURLs, setImgdownloadURLs] = useState([]);
+export default function HomePageItems() {
+    let [folders, setFolders] = useState({});
 
     useEffect(() => {
         async function getFolders() {
-            setImgdownloadURLs(await getAllItems('leggings'));
+
+            //TODO : get all folders and then call getAllItems
+            const downloadURLs = await getAllItems('leggings');
+            setFolders({ 'leggings': downloadURLs });
         }
 
         getFolders();
     }, []);
 
     return (
-        <article>
-            <h2>Other Items</h2>
-            <ul>
+        <>
+            {Object.keys(folders).map(folder => (
+                <div>
+                    <h2>{folder}</h2>
 
-                {imgdownloadURLs.map((downloadurl, index) =>
-                    (<li key={index}><img src={downloadurl} alt="other items" width="500" height="500" /></li>)
-                )}
-            </ul>
-        </article>
+                    <ul>
+                        {folders[folder].map((downloadurl, index) => (
+                            <li key={index}>
+                                <img src={downloadurl} alt="Other Items Images that you might not have viewed or liked" width="500" height="500" />
+                            </li>
+                        ))}
+                    </ul>
+                </div>
+            ))}
+        </>
     );
 }

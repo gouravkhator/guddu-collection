@@ -42,7 +42,7 @@ export default function Login() {
 
                             <button disabled={loading} type="submit">
                                 Login
-                    </button>
+                            </button>
                         </form>
 
                         <div>
@@ -50,6 +50,7 @@ export default function Login() {
                         </div>
                     </article>
 
+                    {/* Outside of above card, we will show sign up button */}
                     <div>
                         Need an account? <Link to="/signup">Sign Up</Link>
                     </div>

@@ -1,15 +1,16 @@
 import React, { useState } from 'react';
-import { Router, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 import { createBrowserHistory } from 'history';
 
-import Navbar from './components/Navbar/Navbar';
-import MainPage from './components/MainPage/MainPage';
-import Footer from './components/Footer/Footer';
-import Signup from './components/SignIn/Signup';
-import Login from './components/SignIn/Login';
-import ForgotPassword from './components/SignIn/ForgotPassword';
+import Navbar from './Navbar/Navbar';
+import MainPage from './MainPage/MainPage';
+import Footer from './Footer/Footer';
+import Signup from './SignIn/Signup';
+import Login from './SignIn/Login';
+import YourViewed from './UserFeed/YourViewed';
+import ForgotPassword from './SignIn/ForgotPassword';
 
-import { AuthProvider } from './Auth';
+import { AuthProvider } from '../Auth';
 
 export default function App() {
   const browserHistory = createBrowserHistory();
@@ -17,12 +18,11 @@ export default function App() {
   //for errors from buttons in navbar
 
   return (
-    <Router history={browserHistory}>
+    <Router forceRefresh={true} history={browserHistory}>
       <AuthProvider>
         <div className="App">
           <header>
             <Navbar setError={setError} />
-
             {error && <p>{error}</p>}
           </header>
 
@@ -32,6 +32,7 @@ export default function App() {
           <Route exact path="/signup" component={Signup} />
           <Route exact path="/login" component={Login} />
           <Route exact path="/forgot-password" component={ForgotPassword} />
+          <Route exact path="/feed" component={YourViewed} />
 
           <Footer />
         </div>

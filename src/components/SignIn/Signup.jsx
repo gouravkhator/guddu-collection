@@ -60,7 +60,7 @@ export default function Signup() {
 
                             <button disabled={loading} type="submit">
                                 Sign Up
-                    </button>
+                            </button>
                         </form>
                     </article>
 

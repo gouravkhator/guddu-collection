@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router";
+import { Link } from 'react-router-dom';
 import { useAuth } from '../../Auth';
 
 export default function Navbar({ setError }) {
@@ -8,13 +9,14 @@ export default function Navbar({ setError }) {
     const history = useHistory();
     const [loading, setLoading] = useState(false);
     const { currentUser, logout } = useAuth();
+    const pathname = history.location.pathname;
 
     const handleLogout = async () => {
         try {
             setError('');
             setLoading(true);
             await logout();
-            history.push('/login');
+            history.push('login');
         } catch {
             setError('Failed to log out');
         }
@@ -25,9 +27,15 @@ export default function Navbar({ setError }) {
     return (
         <nav>
             <ul>
-                <li><a href="/">Home</a></li>
+                <li>
+                    <Link to="/">Home</Link>
+                </li>
 
-                {history.location.pathname === '/' && (
+                <li>
+                    <Link to="/feed">Feed</Link>
+                </li>
+
+                {(pathname === '/' || pathname === '/feed') && (
                     <div>
                         <li><a href="#about">About</a></li>
                         <li><a href="#contact">Contact Us</a></li>
@@ -36,16 +44,31 @@ export default function Navbar({ setError }) {
 
                 {!!currentUser ? (
                     <>
-                        <div className="profile">
-                            Profile
+                        {/* All functions like settings or logout etc. comes when we hover on profile arrow */}
+                        <li>
+                            <div className="profile">
+                                Profile
                         </div>
 
-                        <li><button disabled={loading} onClick={handleLogout}>Log Out</button></li>
+                            <ul>
+                                <li>
+                                    <Link to="/settings">Settings</Link>
+                                </li>
+
+                                <li>
+                                    <button disabled={loading} onClick={handleLogout}>Log Out</button>
+                                </li>
+                            </ul>
+                        </li>
                     </>
                 ) : (
                         <>
-                            <li><a href="/signup">Sign Up</a></li>
-                            <li><a href="/login">Log In</a></li>
+                            <li>
+                                <Link to="/signup">Sign Up</Link>
+                            </li>
+                            <li>
+                                <Link to="/login">Log In</Link>
+                            </li>
                         </>
                     )}
 

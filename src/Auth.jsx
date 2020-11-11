@@ -27,6 +27,10 @@ export const AuthProvider = ({ children }) => {
         return auth.signOut();
     }
 
+    function resetPassword(email) {
+        return auth.sendPasswordResetEmail(email);
+    }
+
     async function googleSignIn() {
         await app.auth().signInWithRedirect(googleProvider);
         return firebase.auth().getRedirectResult(); //get the user from result on using this googleSignIn
@@ -47,6 +51,7 @@ export const AuthProvider = ({ children }) => {
         signup,
         login,
         logout,
+        resetPassword,
         googleSignIn
     }
 
