@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import { createBrowserHistory } from 'history';
 
-import Navbar from './Navbar/Navbar';
+import Navbar from './Navbar/MyNavbar';
 import MainPage from './MainPage/MainPage';
 import Footer from './Footer/Footer';
 import Signup from './SignIn/Signup';
@@ -11,6 +11,9 @@ import YourViewed from './UserFeed/YourViewed';
 import ForgotPassword from './SignIn/ForgotPassword';
 
 import { AuthProvider } from '../Auth';
+import { Alert } from 'react-bootstrap';
+
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 export default function App() {
   const browserHistory = createBrowserHistory();
@@ -21,9 +24,9 @@ export default function App() {
     <Router forceRefresh={true} history={browserHistory}>
       <AuthProvider>
         <div className="App">
-          <header>
+          <header className="mb-2">
             <Navbar setError={setError} />
-            {error && <p>{error}</p>}
+            {error && <Alert className="text-center" variant="danger">{error}</Alert>}
           </header>
 
           {/* For profile and settings we can have private route of our own and then we can check there if its logged in or not

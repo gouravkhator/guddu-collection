@@ -49,7 +49,7 @@ export default function HomePageItems() {
     }, []);
 
     return (
-        <>
+        <div className="homepage">
             {Object.keys(folders).map(folder => (
                 <div>
                     <h2>{folder}</h2>
@@ -57,12 +57,13 @@ export default function HomePageItems() {
                     <ul>
                         {folders[folder].map((downloadurl, index) => (
                             <li key={index}>
-                                <img src={downloadurl} alt="Other Items Images that you might not have viewed or liked" width="500" height="500" />
+                                <img src={downloadurl} alt="Other Items Images that you might not have viewed or liked"
+                                    width="200" loading="lazy" />
                             </li>
                         ))}
                     </ul>
                 </div>
             ))}
-        </>
+        </div>
     );
 }

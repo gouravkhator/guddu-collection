@@ -1,4 +1,23 @@
-section{
-    max-width: 800px;
-    margin: 0 auto;
+.mainpage{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+}
+
+.mainpage article{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    width: 100%;
+}
+
+.mainpage .most-liked-items{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.mainpage .loading{
+    font-size: 20px;
 }
