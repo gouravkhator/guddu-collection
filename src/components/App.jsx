@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import { createBrowserHistory } from 'history';
 
-import Navbar from './Navbar/MyNavbar';
+import MyNavbar from './Navbar/MyNavbar';
 import MainPage from './MainPage/MainPage';
 import Footer from './Footer/Footer';
 import Signup from './SignIn/Signup';
@@ -24,8 +24,8 @@ export default function App() {
     <Router forceRefresh={true} history={browserHistory}>
       <AuthProvider>
         <div className="App">
-          <header className="mb-2">
-            <Navbar setError={setError} />
+          <header className="mb-2 sticky-top">
+            <MyNavbar setError={setError} />
             {error && <Alert className="text-center" variant="danger">{error}</Alert>}
           </header>
 

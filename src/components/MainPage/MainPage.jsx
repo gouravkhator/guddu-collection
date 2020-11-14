@@ -20,7 +20,7 @@ export default function MainPage() {
             </article>
 
             <article>
-                <h2>Products We Admire</h2>
+                <h2>Products We Sell</h2>
                 <Suspense fallback={renderLoader()}>
                     <HomePageItems />
                 </Suspense>
