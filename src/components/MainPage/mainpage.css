@@ -13,9 +13,20 @@
     width: 100%;
 }
 
-.mainpage .most-liked-items{
+.mainpage .most-liked-items,
+.mainpage .homepage-items {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 10px;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+}
+
+.homepage-items li{
+    width: 100%;
+    
+    /* to center list item's content we use flexbox */
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .mainpage .loading{

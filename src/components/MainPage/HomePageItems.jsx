@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { storageRef, otherConfig } from '../../firebase_api';
 
+import ItemImage from '../Item/ItemImage';
+
 const getAllItems = async () => {
     const folders = {};
     let tempDownloadURLs = [];
@@ -22,7 +24,8 @@ const getAllItems = async () => {
                     imageDownloadURL = await itemRef.getDownloadURL();
                     imageMetadata = await itemRef.getMetadata();
 
-                    tempDownloadURLs.push(imageDownloadURL);
+                    const tags = imageMetadata?.customMetadata?.tags;
+                    tempDownloadURLs.push({ imageDownloadURL, tags });
                 } catch {
                     //error in getting download url or metadata
                     if (imageDownloadURL == null) {
@@ -56,16 +59,15 @@ export default function HomePageItems() {
     }, []);
 
     return (
-        <div className="homepage">
+        <div>
             {Object.keys(folders).map(folder => (
                 <div>
                     <h2>{folder.charAt(0).toUpperCase() + folder.slice(1)}</h2>
 
-                    <ul>
-                        {folders[folder].map((downloadurl, index) => (
+                    <ul className="homepage-items">
+                        {folders[folder].map(({ imageDownloadURL, tags }, index) => (
                             <li key={index}>
-                                <img src={downloadurl} alt="Other Items Images that you might not have viewed or liked"
-                                    width="200" height="auto" />
+                                <ItemImage imgSrc={imageDownloadURL} tags={tags} />
                             </li>
                         ))}
                     </ul>
