@@ -1,78 +1,76 @@
-import React, { useEffect, useState } from "react";
-import { storageRef, otherConfig } from '../../firebase_api';
+import React, { lazy, Suspense, useEffect, useState } from "react";
+import { db } from '../../firebase_api';
 
-import ItemImage from '../Item/ItemImage';
+const ItemImage = lazy(() => import('../Item/ItemImage'));
+
+const renderLoader = () => (
+    <p className="loading">Loading...</p>
+);
 
 const getAllItems = async () => {
-    const folders = {};
-    let tempDownloadURLs = [];
-    const adminUserId = otherConfig.adminUID;
-
-    const listRef = storageRef.child(`${adminUserId}`);
-
+    /*
+        products is an object having arrays of objects each containing url and tags and other details for an image
+        All urls are for images in firebase storage
+    */
+    const products = {};
     try {
-        //Find all the prefixes and items.
-        const res = await listRef.listAll();
+        const querySnapshot = await db.collection("products").get();
 
-        for (const folderRef of res.prefixes) {
-            tempDownloadURLs = [];
-            const resFolder = await folderRef.listAll();
+        querySnapshot.forEach(function (doc) {
+            // doc.data() is never undefined for query doc snapshots
+            // console.log(doc.id, " => ", doc.data());
+            const imageData = doc.data();
 
-            for (const itemRef of resFolder.items) {
-                let imageDownloadURL = null, imageMetadata = null;
-                try {
-                    imageDownloadURL = await itemRef.getDownloadURL();
-                    imageMetadata = await itemRef.getMetadata();
+            const prevAddedProds = products[imageData.product_category] ?? [];
+            products[imageData.product_category] = [...prevAddedProds, {
+                url: imageData.url,
+                tags: imageData.tags
+            }];
+        });
 
-                    const tags = imageMetadata?.customMetadata?.tags;
-                    tempDownloadURLs.push({ imageDownloadURL, tags });
-                } catch {
-                    //error in getting download url or metadata
-                    if (imageDownloadURL == null) {
-                        console.log('Image download url fetch error');
-                    } else if (imageMetadata == null) {
-                        console.log('Image metadata fetch error');
-                    }
-                }
-            }
-
-            folders[folderRef.name] = [...tempDownloadURLs];
-        }
-
-    } catch {
-        console.log(`Error fetching files from database folders`);
+    } catch (error) {
+        console.log("Error getting products : ", error);
     }
 
-    return folders;
+    return products;
 }
 
 export default function HomePageItems() {
-    let [folders, setFolders] = useState({});
+    let [products, setProducts] = useState({});
+    let [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        async function getFolders() {
-            const folders = await getAllItems();
-            setFolders({ ...folders });
+        setLoading(true);
+
+        async function getProducts() {
+            const products = await getAllItems();
+            setProducts({ ...products });
         }
 
-        getFolders();
+        getProducts().then(() => {
+            setLoading(false);
+        });
+
     }, []);
 
     return (
         <div>
-            {Object.keys(folders).map(folder => (
-                <div>
-                    <h2>{folder.charAt(0).toUpperCase() + folder.slice(1)}</h2>
+            {loading ? renderLoader() :
+                Object.keys(products).map((product) => (
+                    <div>
+                        <h2>{product.charAt(0).toUpperCase() + product.slice(1)}</h2>
 
-                    <ul className="homepage-items">
-                        {folders[folder].map(({ imageDownloadURL, tags }, index) => (
-                            <li key={index}>
-                                <ItemImage imgSrc={imageDownloadURL} tags={tags} />
-                            </li>
-                        ))}
-                    </ul>
-                </div>
-            ))}
+                        <ul className="homepage-items">
+                            {products[product].map(({ url, tags }, index) => (
+                                <li key={index}>
+                                    <Suspense fallback={renderLoader()}>
+                                        <ItemImage imgSrc={url} tags={tags} />
+                                    </Suspense>
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
+                ))}
         </div>
     );
 }

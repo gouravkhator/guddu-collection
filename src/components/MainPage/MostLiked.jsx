@@ -7,14 +7,16 @@ export default function MostLiked() {
     return (
         <div>
             <ul className="most-liked-items">
-                <li><img src={image1} alt="most liked" width="200" height="auto" /></li>
-                <li><img src={image2} alt="most liked" width="200" height="auto" /></li>
-                <li><img src={image1} alt="most liked" width="200" height="auto" /></li>
-                <li><img src={image2} alt="most liked" width="200" height="auto" /></li>
-                <li><img src={image1} alt="most liked" width="200" height="auto" /></li>
-                <li><img src={image2} alt="most liked" width="200" height="auto" /></li>
-                <li><img src={image1} alt="most liked" width="200" height="auto" /></li>
-                <li><img src={image2} alt="most liked" width="200" height="auto" /></li>
+                <li><img src={image1} alt="most liked" width="200" height="250" /></li>
+                <li><img src={image2} alt="most liked" width="200" height="250" /></li>
+                <li><img src={image1} alt="most liked" width="200" height="250" /></li>
+                <li><img src={image2} alt="most liked" width="200" height="250" /></li>
+                <li><img src={image1} alt="most liked" width="200" height="250" /></li>
+                <li><img src={image2} alt="most liked" width="200" height="250" /></li>
+                <li><img src={image1} alt="most liked" width="200" height="250" /></li>
+                <li><img src={image2} alt="most liked" width="200" height="250" /></li>
+                <li><img src={image1} alt="most liked" width="200" height="250" /></li>
+                <li><img src={image2} alt="most liked" width="200" height="250" /></li>
             </ul>
         </div>
     );

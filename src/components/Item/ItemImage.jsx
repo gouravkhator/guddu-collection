@@ -39,12 +39,12 @@ export default function ItemImage({ imgSrc, tags }) {
         <>
             {/* set onClick={() => setModalShow(true)} */}
             <div className="item-card">
-                <img src={imgSrc} alt={tags}
-                    width="200" height="auto" />
+                <img loading="lazy" src={imgSrc} alt={tags}
+                    width="200" height="250" />
 
                 <ul className="item-tags-list">
                     {tags && tags.split(',').map(tag => (
-                        <li>
+                        <li key={tag}>
                             <Link to={'/search/' + tag} className="tag">
                                 {tag}
                             </Link>

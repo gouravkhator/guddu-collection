@@ -13,13 +13,13 @@ export default function MainPage() {
     return (
         <Container className="mainpage">
             <article className="most-liked-article">
-                <h2>Most Liked</h2>
+                <h2>Most Popular Products</h2>
                 <Suspense fallback={renderLoader()}>
                     <MostLiked />
                 </Suspense>
             </article>
 
-            <article>
+            <article className="homepage-items-article">
                 <h2>Products We Sell</h2>
                 <Suspense fallback={renderLoader()}>
                     <HomePageItems />

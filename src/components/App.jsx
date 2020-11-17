@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
-import { createBrowserHistory } from 'history';
 
 import MyNavbar from './Navbar/MyNavbar';
 import MainPage from './MainPage/MainPage';
@@ -16,12 +15,11 @@ import { Alert } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 export default function App() {
-  const browserHistory = createBrowserHistory();
   const [error, setError] = useState('');
   //for errors from buttons in navbar
 
   return (
-    <Router forceRefresh={true} history={browserHistory}>
+    <Router>
       <AuthProvider>
         <div className="App">
           <header className="mb-2 sticky-top">
