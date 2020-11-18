@@ -4,7 +4,7 @@ import { db } from '../../firebase_api';
 const ItemImage = lazy(() => import('../Item/ItemImage'));
 
 const renderLoader = () => (
-    <p className="loading">Loading...</p>
+    <p className="spinner-grow text-muted"></p>
 );
 
 const getAllItems = async () => {

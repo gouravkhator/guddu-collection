@@ -7,15 +7,17 @@
 }
 
 .mainpage article{
-    background-color: #eee;
+     /*background-color: #eee;*/  /*EDITED background and font color*/
+    background: linear-gradient(to right, blue, rgb(238, 152, 152));
+    color: whitesmoke;
     display: flex;
     flex-direction: column;
     text-align: center;
     width: 100%;
     margin-bottom: 20px;
-    border-radius: 5px;
+    border-radius: 10px;
     border: 2px solid #eee;
-    padding: 5px;
+    padding: 5px 10px;
 }
 
 .mainpage .most-liked-items,
@@ -32,8 +34,4 @@
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-.mainpage .loading{
-    font-size: 20px;
 }

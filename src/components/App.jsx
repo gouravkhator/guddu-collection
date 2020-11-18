@@ -1,18 +1,22 @@
-import React, { useState } from 'react';
+import React, { lazy, Suspense, useState } from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
-
-import MyNavbar from './Navbar/MyNavbar';
-import MainPage from './MainPage/MainPage';
-import Footer from './Footer/Footer';
-import Signup from './SignIn/Signup';
-import Login from './SignIn/Login';
-import YourViewed from './UserFeed/YourViewed';
-import ForgotPassword from './SignIn/ForgotPassword';
-
 import { AuthProvider } from '../Auth';
 import { Alert } from 'react-bootstrap';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
+
+//lazy loading for code splitting in webpack bundles
+const MyNavbar = lazy(() => import('./Navbar/MyNavbar'));
+const MainPage = lazy(() => import('./MainPage/MainPage'));
+const Footer = lazy(() => import('./Footer/Footer'));
+const Signup = lazy(() => import('./SignIn/Signup'));
+const Login = lazy(() => import('./SignIn/Login'));
+const ForgotPassword = lazy(() => import('./SignIn/ForgotPassword'));
+const YourViewed = lazy(() => import('./UserFeed/YourViewed'));
+
+const renderLoader = () => (
+  <div><p className="spinner-grow text-muted"></p></div>
+);
 
 export default function App() {
   const [error, setError] = useState('');
@@ -20,24 +24,28 @@ export default function App() {
 
   return (
     <Router>
-      <AuthProvider>
-        <div className="App">
+      <Suspense fallback={renderLoader()}>
+        <AuthProvider>
           <header className="mb-2 sticky-top">
             <MyNavbar setError={setError} />
             {error && <Alert className="text-center" variant="danger">{error}</Alert>}
           </header>
 
-          {/* For profile and settings we can have private route of our own and then we can check there if its logged in or not
+          <section className="top-space bottom-space">
+            {/*Some bottom space left for fixed footer. Some top space for alerts and errors.
+            For profile and settings, we can have private route of our own and then we can check there if its logged in or not
           then render that else redirect to login*/}
-          <Route exact path="/" component={MainPage} />
-          <Route exact path="/signup" component={Signup} />
-          <Route exact path="/login" component={Login} />
-          <Route exact path="/forgot-password" component={ForgotPassword} />
-          <Route exact path="/feed" component={YourViewed} />
+            <Route exact path="/" component={MainPage} />
+            <Route exact path="/signup" component={Signup} />
+            <Route exact path="/login" component={Login} />
+            <Route exact path="/forgot-password" component={ForgotPassword} />
+            <Route exact path="/feed" component={YourViewed} />
+
+          </section>
 
           <Footer />
-        </div>
-      </AuthProvider>
+        </AuthProvider>
+      </Suspense>
     </Router>
   );
 }

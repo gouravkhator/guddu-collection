@@ -2,6 +2,7 @@ import React, { useRef, useState } from 'react';
 import { useAuth } from '../../Auth';
 import { Link, Redirect, useHistory } from 'react-router-dom';
 import { auth } from '../../firebase_api';
+import { Form, Button, Card, Alert } from "react-bootstrap";
 
 export default function Signup() {
     const emailRef = useRef();
@@ -45,31 +46,39 @@ export default function Signup() {
         <>
             {!!currentUser ? <Redirect to="/" /> : (
                 <>
-                    <article>
-                        <h2>Sign Up</h2>
-                        {error && <p>{error}</p>}
-                        <form onSubmit={handleSubmit}>
-                            <label>Email</label>
-                            <input type="email" ref={emailRef} required />
+                    {error && <Alert variant="danger">{error}</Alert>}
+                    <Card className="container-sm">
+                        <Card.Body>
+                            <h2 className="text-center mb-4">Sign Up</h2>
 
-                            <label>Display Name</label>
-                            <input type="text" ref={nameRef} minLength={4} maxLength={35} required />
+                            <Form onSubmit={handleSubmit}>
+                                <Form.Group id="email">
+                                    <Form.Label>Email</Form.Label>
+                                    <Form.Control type="email" ref={emailRef} required />
+                                </Form.Group>
 
-                            <label>Password</label>
-                            <input type="password" minLength={6} maxLength={20} ref={passwordRef} required />
+                                <Form.Group id="display-name">
+                                    <Form.Label>Display Name</Form.Label>
+                                    <Form.Control type="text" ref={nameRef} minLength={4} maxLength={35} required />
+                                </Form.Group>
 
-                            <button disabled={loading} type="submit">
-                                Sign Up
-                            </button>
-                        </form>
-                    </article>
+                                <Form.Group id="password">
+                                    <Form.Label>Password</Form.Label>
+                                    <Form.Control type="password" ref={passwordRef} minLength={6} maxLength={20} required />
+                                </Form.Group>
 
-                    <div>
-                        Already have an account?  <Link to="/login">Log In</Link>
+                                <Button variant="primary" disabled={loading} className="w-100" type="submit">
+                                    Sign Up
+                                </Button>
+                            </Form>
+                        </Card.Body>
+                    </Card>
+
+                    <div className="w-100 text-center mt-2">
+                        Already have an account? <Link to="/login">Log In</Link>
                     </div>
                 </>
             )}
-
         </>
     );
 }

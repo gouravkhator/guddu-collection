@@ -1,6 +1,7 @@
 import React, { useRef, useState } from 'react';
 import { useAuth } from '../../Auth';
 import { Link, Redirect, useHistory } from 'react-router-dom';
+import { Form, Button, Card, Alert } from "react-bootstrap";
 
 export default function Login() {
     const emailRef = useRef();
@@ -30,28 +31,34 @@ export default function Login() {
         <>
             {!!currentUser ? <Redirect to="/" /> : (
                 <>
-                    <article>
-                        <h2>Log In</h2>
-                        {error && <p>{error}</p>}
-                        <form onSubmit={handleSubmit}>
-                            <label>Email</label>
-                            <input type="email" ref={emailRef} required />
+                    {error && <Alert variant="danger">{error}</Alert>}
 
-                            <label>Password</label>
-                            <input type="password" minLength={6} maxLength={20} ref={passwordRef} required />
+                    <Card className="container-sm">
+                        <Card.Body>
+                            <h2 className="text-center mb-4">Log In</h2>
+                            <Form onSubmit={handleSubmit}>
+                                <Form.Group id="email">
+                                    <Form.Label>Email</Form.Label>
+                                    <Form.Control type="email" ref={emailRef} required />
+                                </Form.Group>
 
-                            <button disabled={loading} type="submit">
-                                Login
-                            </button>
-                        </form>
+                                <Form.Group id="password">
+                                    <Form.Label>Password</Form.Label>
+                                    <Form.Control type="password" ref={passwordRef} minLength={6} maxLength={20} required />
+                                </Form.Group>
 
-                        <div>
-                            <Link to="/forgot-password">Forgot Password?</Link>
-                        </div>
-                    </article>
+                                <Button variant="primary" disabled={loading} className="w-100" type="submit">
+                                    Log In
+                                </Button>
+                            </Form>
 
-                    {/* Outside of above card, we will show sign up button */}
-                    <div>
+                            <div className="w-100 text-center mt-3">
+                                <Link to="/forgot-password">Forgot Password?</Link>
+                            </div>
+                        </Card.Body>
+                    </Card>
+
+                    <div className="w-100 text-center mt-2">
                         Need an account? <Link to="/signup">Sign Up</Link>
                     </div>
                 </>

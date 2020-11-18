@@ -29,3 +29,17 @@ ul{
 a{
     text-decoration: none;
 }
+
+/* Extra reserved spaces to avoid layout shifts */
+/* Leave some space at top for alerts and errors in navbar or for signin */
+.top-space{
+    position: relative !important;
+    top: 50px !important;
+    /*its computed size, as alert takes that many pixels */
+}
+
+/* Leave some space at bottom of every page for fixed footer */
+.bottom-space{
+    margin-bottom: 64px !important;
+    /*for footer we need that many pixels, so gave margin of some space in bottom of section for every page*/
+}

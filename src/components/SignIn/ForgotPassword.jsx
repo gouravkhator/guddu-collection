@@ -1,6 +1,7 @@
 import React, { useRef, useState } from 'react';
 import { useAuth } from '../../Auth';
 import { Link, Redirect } from 'react-router-dom';
+import { Form, Button, Card, Alert } from "react-bootstrap";
 
 export default function ForgotPassword() {
     const emailRef = useRef();
@@ -29,27 +30,33 @@ export default function ForgotPassword() {
         <>
             {!!currentUser ? <Redirect to="/" /> : (
                 <>
-                    <article>
-                        <h2>Reset your Password</h2>
-                        {!!error && <p>{error}</p>}
-                        {!!message && <p>{message}</p>}
+                    {!!error && <Alert variant="danger">{error}</Alert>}
+                    {!!message && <Alert variant="success">{message}</Alert>}
+                    <Card className="container-sm">
+                        <Card.Body>
+                            <h2 className="text-center mb-4">Reset your Password</h2>
 
-                        <form onSubmit={handleSubmit}>
-                            <label>Email</label>
-                            <input type="email" ref={emailRef} required />
+                            <Form onSubmit={handleSubmit}>
+                                <Form.Group id="email">
+                                    <Form.Label>Email</Form.Label>
+                                    <Form.Control type="email" ref={emailRef} required />
+                                </Form.Group>
 
-                            <button disabled={loading} type="submit">
-                                Reset Password
-                            </button>
-                        </form>
+                                <Button disabled={loading} className="w-100" type="submit">
+                                    Reset Password
+                                </Button>
+                            </Form>
 
-                        <div>
-                            <Link to="/login">Login</Link>
-                        </div>
-                        <div>
-                            <Link to="/">Cancel</Link>
-                        </div>
-                    </article>
+                            <div className="w-100 text-center mt-3 df">
+                                <Link to="/login" className="mr-2">Login</Link>
+                                <Link to="/">Cancel</Link>
+                            </div>
+                        </Card.Body>
+                    </Card>
+
+                    <div className="w-100 text-center mt-2">
+                        Need an account? <Link to="/signup">Sign Up</Link>
+                    </div>
                 </>
             )}
         </>
