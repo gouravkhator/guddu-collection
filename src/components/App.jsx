@@ -45,7 +45,7 @@ export default function App() {
             <Route exact path="/forgot-password" component={ForgotPassword} />
             <Route exact path="/feed" component={YourViewed} />
             <Route exact path="/about" component={About} />
-            <Route exact path="/search/:searchParam" component={Search} />
+            <Route exact path="/search/:searchedParam" component={Search} />
 
           </section>
 

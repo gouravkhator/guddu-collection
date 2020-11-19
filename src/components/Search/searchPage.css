@@ -1,4 +1,24 @@
-.mainpage{
+:root{
+    --selection-font-color: #eee;
+    --selection-bg-color: #333;
+}
+
+::-moz-selection{ /* Code for Firefox */
+    color: var(--selection-font-color);
+    background: var(--selection-bg-color);
+}
+
+::selection{
+    color: var(--selection-font-color);
+    background: var(--selection-bg-color);
+}
+
+.searched-page{
+    /*top space*/
+    position: relative;
+    top: 50px;
+    /*bottom space*/
+    margin-bottom: 64px;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -6,7 +26,7 @@
     width: 100%;
 }
 
-.mainpage article{
+.searched-page article {
      /*background-color: #eee;*/  /*EDITED background and font color*/
     background: linear-gradient(to right, blue, rgb(238, 152, 152));
     color: whitesmoke;
@@ -20,15 +40,14 @@
     padding: 5px 10px;
 }
 
-.mainpage .most-popular-items,
-.mainpage .homepage-items {
+.searched-page .searched-items {
     padding: 0px;
     display: grid;
     gap: 10px;
     grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
 }
 
-.most-popular-items li, .homepage-items li{
+.searched-items li {
     width: 100%;
     
     /* to center list item's content we use flexbox */

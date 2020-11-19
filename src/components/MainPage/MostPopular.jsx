@@ -4,7 +4,7 @@ import { db } from '../../firebase_api';
 const ItemImage = lazy(() => import('../Item/ItemImage'));
 
 const renderLoader = () => (
-    <p className="spinner-grow text-muted"></p>
+    <div><p className="spinner-grow text-muted"></p></div>
 );
 
 const getMostPopularItems = async () => {
@@ -56,17 +56,22 @@ export default function MostPopular() {
     /* Show first 10 images in a section and add view all button */
     return (
         <div>
-            {loading ? renderLoader() : (
-                <ul className="most-popular-items">
-                    {products.map(({ url, tags }, index) => (
-                        <li key={index}>
-                            <Suspense fallback={renderLoader()}>
-                                <ItemImage imgSrc={url} tags={tags} />
-                            </Suspense>
-                        </li>
-                    ))}
-                </ul>
-            )}
+            {loading ? renderLoader() :
+                (products.length === 0) ? (
+                    <h4>
+                        Oops! It's empty
+                    </h4>
+                ) : (
+                        <ul className="most-popular-items">
+                            {products.map(({ url, tags }, index) => (
+                                <li key={index}>
+                                    <Suspense fallback={renderLoader()}>
+                                        <ItemImage imgSrc={url} tags={tags} />
+                                    </Suspense>
+                                </li>
+                            ))}
+                        </ul>
+                    )}
         </div>
     );
 }

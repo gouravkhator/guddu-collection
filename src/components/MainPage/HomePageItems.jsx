@@ -56,21 +56,26 @@ export default function HomePageItems() {
     return (
         <div>
             {loading ? renderLoader() :
-                Object.keys(products).map((product) => (
-                    <div>
-                        <h2>{product.charAt(0).toUpperCase() + product.slice(1)}</h2>
+                (products.length === 0) ? (
+                    <h4>
+                        Oops! It's empty
+                    </h4>
+                ) :
+                    Object.keys(products).map((product) => (
+                        <div>
+                            <h2>{product.charAt(0).toUpperCase() + product.slice(1)}</h2>
 
-                        <ul className="homepage-items">
-                            {products[product].map(({ url, tags }, index) => (
-                                <li key={index}>
-                                    <Suspense fallback={renderLoader()}>
-                                        <ItemImage imgSrc={url} tags={tags} />
-                                    </Suspense>
-                                </li>
-                            ))}
-                        </ul>
-                    </div>
-                ))}
+                            <ul className="homepage-items">
+                                {products[product].map(({ url, tags }, index) => (
+                                    <li key={index}>
+                                        <Suspense fallback={renderLoader()}>
+                                            <ItemImage imgSrc={url} tags={tags} />
+                                        </Suspense>
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+                    ))}
         </div>
     );
 }

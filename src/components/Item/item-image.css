@@ -8,6 +8,7 @@
 }
 
 .item-tags-list{
+    padding: 0px;
     background-color: #eee;
     width: 100%;
     display: grid;

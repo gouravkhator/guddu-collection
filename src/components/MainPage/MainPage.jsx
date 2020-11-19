@@ -1,5 +1,5 @@
 import React, { lazy, Suspense } from 'react';
-import { Container } from 'react-bootstrap';
+import Container from 'react-bootstrap/Container';
 import "./mainpage.css";
 
 const MostPopular = lazy(() => import('./MostPopular'));

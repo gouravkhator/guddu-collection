@@ -12,6 +12,15 @@ export default function MyNavbar({ setError }) {
     const { currentUser, logout } = useAuth();
     const pathname = history.location.pathname;
 
+    const handleSearch = (e) => {
+        e.preventDefault();
+
+        const searchedParam = e.target.searchedParam.value;
+        if (searchedParam) {
+            history.push('/search/' + searchedParam);
+        }
+    }
+
     const handleLogout = async () => {
         try {
             setError('');
@@ -64,13 +73,13 @@ export default function MyNavbar({ setError }) {
                 </Nav>
 
                 {/* TODO : Add on submit functionality */}
-                <Form inline>
+                <Form inline onSubmit={handleSearch}>
                     <Row>
                         <Col>
-                            <FormControl type="text" placeholder="Search" className="mr-sm-2" />
+                            <FormControl type="text" name="searchedParam" placeholder="Search" className="mr-sm-2" required />
                         </Col>
                         <Col>
-                            <Button variant="outline-light">Search</Button>
+                            <Button type="submit" variant="outline-light">Search</Button>
                         </Col>
                     </Row>
                 </Form>

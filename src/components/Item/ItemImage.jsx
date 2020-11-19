@@ -35,6 +35,8 @@ import './item-image.css';
 export default function ItemImage({ imgSrc, tags }) {
     // const [modalShow, setModalShow] = useState(false);
 
+    const tagsArr = tags.split(',');
+
     return (
         <>
             {/* set onClick={() => setModalShow(true)} */}
@@ -43,7 +45,7 @@ export default function ItemImage({ imgSrc, tags }) {
                     width="200" height="250" />
 
                 <ul className="item-tags-list">
-                    {tags && tags.split(',').map(tag => (
+                    {tags && tagsArr.map(tag => (
                         <li key={tag}>
                             <Link to={'/search/' + tag} className="tag">
                                 {tag}
