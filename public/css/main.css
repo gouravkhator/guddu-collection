@@ -5,6 +5,8 @@
     --button-font-color: #fff;
     --link-bg-color: rgb(2, 2, 179);
     --link-font-color: rgb(247, 225, 197);
+    --selection-font-color: #eee;
+    --selection-bg-color: #333;
 }
 
 /* global styles */
@@ -20,6 +22,16 @@ body{
     width: 100%;
     height: 100%;
     background-color: var(--primary-bg-color);
+}
+
+::-moz-selection{ /* Code for Firefox */
+    color: var(--selection-font-color);
+    background: var(--selection-bg-color);
+  }
+
+::selection{
+    color: var(--selection-font-color);
+    background: var(--selection-bg-color);
 }
 
 ul{

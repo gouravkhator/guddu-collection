@@ -20,14 +20,14 @@
     padding: 5px 10px;
 }
 
-.mainpage .most-liked-items,
+.mainpage .most-popular-items,
 .mainpage .homepage-items {
     display: grid;
     gap: 10px;
     grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
 }
 
-.most-liked-items li, .homepage-items li{
+.most-popular-items li, .homepage-items li{
     width: 100%;
     
     /* to center list item's content we use flexbox */

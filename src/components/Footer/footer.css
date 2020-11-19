@@ -3,3 +3,21 @@ footer{
     bottom: 0;
     width: 100%;
 }
+
+.address-display{
+    display: inline;
+    pointer-events: all;
+}
+
+@media(max-height: 640px){
+    footer a{
+        font-size: 16px !important;
+    }
+}
+
+@media(max-width: 640px){
+    .address-display{
+        display: none;
+        pointer-events: none;
+    }
+}

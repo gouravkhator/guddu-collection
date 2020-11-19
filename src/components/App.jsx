@@ -13,12 +13,16 @@ const Signup = lazy(() => import('./SignIn/Signup'));
 const Login = lazy(() => import('./SignIn/Login'));
 const ForgotPassword = lazy(() => import('./SignIn/ForgotPassword'));
 const YourViewed = lazy(() => import('./UserFeed/YourViewed'));
+const Search = lazy(() => import('./Search/Search'));
+const About = lazy(() => import('./About/About'));
 
 const renderLoader = () => (
-  <div><p className="spinner-grow text-muted"></p></div>
+  <div className="mt-3 text-center"><p className="spinner-grow text-muted"></p></div>
 );
 
 export default function App() {
+  //with Router we have to use history else with BrowserRouter we can skip history
+
   const [error, setError] = useState('');
   //for errors from buttons in navbar
 
@@ -40,6 +44,8 @@ export default function App() {
             <Route exact path="/login" component={Login} />
             <Route exact path="/forgot-password" component={ForgotPassword} />
             <Route exact path="/feed" component={YourViewed} />
+            <Route exact path="/about" component={About} />
+            <Route exact path="/search/:searchParam" component={Search} />
 
           </section>
 

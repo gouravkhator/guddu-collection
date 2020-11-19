@@ -39,16 +39,16 @@ export default function Login() {
                             <Form onSubmit={handleSubmit}>
                                 <Form.Group id="email">
                                     <Form.Label>Email</Form.Label>
-                                    <Form.Control type="email" ref={emailRef} required />
+                                    <Form.Control type="email" ref={emailRef} placeholder="Example@gmail.com" required />
                                 </Form.Group>
 
                                 <Form.Group id="password">
                                     <Form.Label>Password</Form.Label>
-                                    <Form.Control type="password" ref={passwordRef} minLength={6} maxLength={20} required />
+                                    <Form.Control type="password" ref={passwordRef} placeholder="Enter the password" minLength={6} maxLength={20} required />
                                 </Form.Group>
 
                                 <Button variant="primary" disabled={loading} className="w-100" type="submit">
-                                    Log In
+                                    <b>Log In</b>
                                 </Button>
                             </Form>
 

@@ -33,18 +33,21 @@ export default function MyNavbar({ setError }) {
             <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="ml-auto">
                     <Nav.Link href="/" active={pathname === "/"}>Home</Nav.Link>
-                    <Nav.Link href="/feed" active={pathname === "/feed"}>Feed</Nav.Link>
                     {!!currentUser ? (
-                        <NavDropdown title="Profile" id="basic-nav-dropdown">
-                            <NavDropdown.Item href="/settings" active={pathname === "/settings"}>
-                                Settings
-                            </NavDropdown.Item>
-                            <NavDropdown.Divider />
+                        <>
+                            <Nav.Link href="/feed" active={pathname === "/feed"}>Feed</Nav.Link>
 
-                            <NavDropdown.Item href="/logout" active={pathname === "/logout"}>
-                                <Button disabled={loading} onClick={handleLogout}>Log Out</Button>
-                            </NavDropdown.Item>
-                        </NavDropdown>
+                            <NavDropdown title="Profile" id="basic-nav-dropdown">
+                                <NavDropdown.Item href="/settings" active={pathname === "/settings"}>
+                                    Settings
+                                </NavDropdown.Item>
+                                <NavDropdown.Divider />
+
+                                <NavDropdown.Item href="/logout" active={pathname === "/logout"}>
+                                    <Button disabled={loading} onClick={handleLogout}>Log Out</Button>
+                                </NavDropdown.Item>
+                            </NavDropdown>
+                        </>
                     ) : (
                             <NavDropdown title="Sign In" id="basic-nav-dropdown">
                                 <NavDropdown.Item href="/signup" active={pathname === "/signup"}>
@@ -57,21 +60,17 @@ export default function MyNavbar({ setError }) {
                             </NavDropdown>
                         )}
 
-                    {(pathname === '/' || pathname === '/feed') && (
-                        <>
-                            <Nav.Link href="#about" active={pathname === "#about"}>About</Nav.Link>
-                            <Nav.Link href="#contact" active={pathname === "#contact"}>Contact Us</Nav.Link>
-                        </>
-                    )}
+                    <Nav.Link href="/about" active={pathname === "/about"}>About</Nav.Link>
                 </Nav>
 
+                {/* TODO : Add on submit functionality */}
                 <Form inline>
                     <Row>
                         <Col>
-                            <FormControl type="text" placeholder="Search" className="mr-sm-2 " />
+                            <FormControl type="text" placeholder="Search" className="mr-sm-2" />
                         </Col>
                         <Col>
-                            <Button variant="outline-secondary">Search</Button>
+                            <Button variant="outline-light">Search</Button>
                         </Col>
                     </Row>
                 </Form>

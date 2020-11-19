@@ -54,21 +54,21 @@ export default function Signup() {
                             <Form onSubmit={handleSubmit}>
                                 <Form.Group id="email">
                                     <Form.Label>Email</Form.Label>
-                                    <Form.Control type="email" ref={emailRef} required />
+                                    <Form.Control type="email" ref={emailRef} placeholder="Example@gmail.com" required />
                                 </Form.Group>
 
                                 <Form.Group id="display-name">
                                     <Form.Label>Display Name</Form.Label>
-                                    <Form.Control type="text" ref={nameRef} minLength={4} maxLength={35} required />
+                                    <Form.Control type="text" ref={nameRef} placeholder="Username goes here" minLength={4} maxLength={15} required />
                                 </Form.Group>
 
                                 <Form.Group id="password">
                                     <Form.Label>Password</Form.Label>
-                                    <Form.Control type="password" ref={passwordRef} minLength={6} maxLength={20} required />
+                                    <Form.Control type="password" ref={passwordRef} placeholder="Enter the password" minLength={6} maxLength={20} required />
                                 </Form.Group>
 
                                 <Button variant="primary" disabled={loading} className="w-100" type="submit">
-                                    Sign Up
+                                    <b>Sign Up</b>
                                 </Button>
                             </Form>
                         </Card.Body>

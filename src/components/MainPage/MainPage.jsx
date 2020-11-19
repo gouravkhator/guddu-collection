@@ -2,7 +2,7 @@ import React, { lazy, Suspense } from 'react';
 import { Container } from 'react-bootstrap';
 import "./mainpage.css";
 
-const MostLiked = lazy(() => import('./MostLiked'));
+const MostPopular = lazy(() => import('./MostPopular'));
 const HomePageItems = lazy(() => import('./HomePageItems'));
 
 const renderLoader = () => (
@@ -12,10 +12,10 @@ const renderLoader = () => (
 export default function MainPage() {
     return (
         <Container className="mainpage">
-            <article className="most-liked-article">
+            <article className="most-popular-article">
                 <h2 className="mb-3">Most Popular Products</h2>
                 <Suspense fallback={renderLoader()}>
-                    <MostLiked />
+                    <MostPopular />
                 </Suspense>
             </article>
 
