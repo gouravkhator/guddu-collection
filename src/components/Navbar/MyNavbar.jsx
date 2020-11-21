@@ -48,7 +48,7 @@ export default function MyNavbar({ setError }) {
         <Navbar id="navbar" bg="dark" variant="dark" expand="md" sticky="top">
             <Navbar.Brand href="/">
                 Guddu Collection
-                <img src="gc-logo.webp" srcSet="gc-logo.png" alt="Guddu Collection Logo"
+                <img src="gc-logo.png" width="40" height="35" alt="Guddu Collection Logo"
                     id="navbar-logo" />
             </Navbar.Brand>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -66,7 +66,7 @@ export default function MyNavbar({ setError }) {
                                 </NavDropdown.Item>
                                 <NavDropdown.Divider />
 
-                                <NavDropdown.Item href="/logout" active={pathname === "/logout"}>
+                                <NavDropdown.Item href="/">
                                     <Button disabled={loading} onClick={handleLogout}>Log Out</Button>
                                 </NavDropdown.Item>
                             </NavDropdown>
