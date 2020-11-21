@@ -7,9 +7,9 @@
 }
 
 .mainpage article{
-     /*background-color: #eee;*/  /*EDITED background and font color*/
-    background: linear-gradient(to right, blue, rgb(238, 152, 152));
-    color: whitesmoke;
+    background-color: rgb(198, 226, 173);
+    /* background: linear-gradient(to right, blue, rgb(238, 152, 152)); */
+    /* color: whitesmoke; */
     display: flex;
     flex-direction: column;
     text-align: center;

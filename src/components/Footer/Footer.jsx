@@ -13,16 +13,20 @@ export default function Footer() {
             <Row>
                 <Col xs={8}>
                     <Button style={{ fontSize: '20px' }} variant="warning" className="w-100 p-3 font-weight-bold text-monospace" href={"tel:" + telephone_no}>
-                        Call Now!! <i className="fa fa-phone" aria-hidden="true"></i>
+                        Call Now!! <img src="phone.svg" alt="Phone Icon" width="25" height="30" />
                     </Button>
                 </Col>
                 <Col xs={4}>
                     <Button style={{ fontSize: '20px' }} variant="dark" className="w-100 p-3 font-weight-bold text-monospace" href="/about">
                         <strong className="address-display">Address </strong>
-                        <i className="fa fa-lg fa-map-marker" aria-hidden="true"></i>
+                        <img src="map-marker.svg" alt="Map Icon" width="25" height="30" />
                     </Button>
                 </Col>
             </Row>
-        </footer>
+        </footer >
     );
 }
+
+//font awesome was removed and svg was used
+//<i className=" fa fa-phone" aria-hidden="true"></i>
+//<i className="fa fa-lg fa-map-marker" aria-hidden="true"></i>

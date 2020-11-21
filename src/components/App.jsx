@@ -15,6 +15,7 @@ const ForgotPassword = lazy(() => import('./SignIn/ForgotPassword'));
 const YourViewed = lazy(() => import('./UserFeed/YourViewed'));
 const Search = lazy(() => import('./Search/Search'));
 const About = lazy(() => import('./About/About'));
+const Settings = lazy(() => import('./Settings/Settings'));
 
 const renderLoader = () => (
   <div className="mt-3 text-center"><p className="spinner-grow text-muted"></p></div>
@@ -46,6 +47,7 @@ export default function App() {
             <Route exact path="/feed" component={YourViewed} />
             <Route exact path="/about" component={About} />
             <Route exact path="/search/:searchedParam" component={Search} />
+            <Route exact path="/settings" component={Settings} />
 
           </section>
 

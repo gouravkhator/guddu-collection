@@ -1,9 +1,10 @@
 import React from 'react';
 
 import { Redirect } from 'react-router';
+import { useAuth } from '../../Auth';
+
 import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
-import { useAuth } from '../../Auth';
 
 export default function YourViewed() {
     const telephone_no = "9748044991";
@@ -14,7 +15,7 @@ export default function YourViewed() {
             {!currentUser ? <Redirect to="/" /> :
                 <Container className="text-center">
                     <article>
-                        <h2>Items Viewed By You</h2>
+                        <h2>Feed for You</h2>
 
                         <h4>Oops! Your Feed is empty..</h4>
                         <hr />

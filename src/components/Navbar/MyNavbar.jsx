@@ -1,7 +1,17 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router";
 import { useAuth } from '../../Auth';
-import { Navbar, Nav, NavDropdown, Form, FormControl, Button, Row, Col } from 'react-bootstrap';
+
+//react-bootstrap
+import Navbar from 'react-bootstrap/Navbar';
+import Nav from 'react-bootstrap/Nav';
+import NavDropdown from 'react-bootstrap/NavDropdown';
+import Form from 'react-bootstrap/Form';
+import FormControl from 'react-bootstrap/FormControl';
+import Button from 'react-bootstrap/Button';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+
 import "./navbar.css";
 
 export default function MyNavbar({ setError }) {
@@ -36,7 +46,11 @@ export default function MyNavbar({ setError }) {
 
     return (
         <Navbar id="navbar" bg="dark" variant="dark" expand="md" sticky="top">
-            <Navbar.Brand href="/">Guddu Collection</Navbar.Brand>
+            <Navbar.Brand href="/">
+                Guddu Collection
+                <img src="gc-logo.webp" srcSet="gc-logo.png" alt="Guddu Collection Logo"
+                    id="navbar-logo" />
+            </Navbar.Brand>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
 
             <Navbar.Collapse id="basic-navbar-nav">

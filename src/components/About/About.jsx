@@ -5,7 +5,7 @@ export default function About() {
     const telephone_no = "9748044991";
 
     return (
-        <article className="text-center">
+        <article className="text-center pl-4 pr-4">
             <h2 className="mb-3">About Us</h2>
             <p className="h5">
                 <strong>Guddu Collection</strong> is a brand for fashion and prestige. It evolved in 2017 and has become one of the finest fashion one-stop solution.<br />
@@ -16,7 +16,8 @@ export default function About() {
             <h5>
                 <p>Reach out to us at {"\t"}
                     <Button variant="info" href={"tel:" + telephone_no}>
-                        <i className="fa fa-phone" aria-hidden="true"></i>
+                        {/* <i className="fa fa-phone" aria-hidden="true"></i> */}
+                        <img src="phone-white.svg" alt="Phone Icon" width="15" height="20" />
                         {"  " + telephone_no}
                     </Button>
                 </p>
@@ -25,10 +26,13 @@ export default function About() {
                 <div>
                     <h3>Address</h3>
                     <p>
-                        <b>Address 1</b>
+                        <b>89/173, Bangur Park, Near Mother Dairy</b><br />
+                        <b>Rishra, Hooghly</b>
                     </p>
+                    <br />
                     <p>
-                        <b>Address 2</b>
+                        <b>Paul Complex, Mio Amore Market</b><br />
+                        <b>Rishra, Hooghly</b>
                     </p>
                 </div>
             </h5>

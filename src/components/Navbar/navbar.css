@@ -10,6 +10,12 @@
     background-color: var(--nav-bg-color) !important;
 }
 
+#navbar img#navbar-logo{
+    width: 45px;
+    height: auto;
+    margin-left: 10px;
+}
+
 /*
 nav ul{
     padding: 5px 0;
