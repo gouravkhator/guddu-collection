@@ -55,7 +55,7 @@ export default function HomePageItems() {
     }, []);
 
     return (
-        <div>
+        <div className="mt-4">
             {loading ? renderLoader() :
                 (products.length === 0) ? (
                     <h4>
@@ -64,7 +64,7 @@ export default function HomePageItems() {
                 ) :
                     Object.keys(products).map((product) => (
                         <div>
-                            <h2>{product.charAt(0).toUpperCase() + product.slice(1)}</h2>
+                            <h3><b>{product.charAt(0).toUpperCase() + product.slice(1)}</b></h3>
 
                             <ul className="homepage-items">
                                 {products[product].map(({ webp_url, jpeg_url, tags }, index) => (

@@ -1,38 +1,87 @@
-.mainpage{
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    width: 100%;
+.mainpage {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
 }
 
-.mainpage article{
-    background: linear-gradient(190deg, rgb(245, 212, 212), lightcoral);
-    /* background: linear-gradient(to right, blue, rgb(238, 152, 152)); */
-    /* color: whitesmoke; */
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    width: 100%;
-    margin-bottom: 20px;
-    border-radius: 10px;
-    border: 2px solid #eee;
-    padding: 5px 10px;
+.mainpage article {
+  background: linear-gradient(190deg, #f5d4d4, lightcoral);
+  /* background: linear-gradient(to right, blue, rgb(238, 152, 152)); */
+  /* color: whitesmoke; */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-align: center;
+  width: 100%;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  border: 2px solid #eee;
+  padding: 5px 10px;
 }
 
-.mainpage .most-popular-items,
-.mainpage .homepage-items {
-    padding: 0px;
-    display: grid;
-    gap: 10px;
-    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+.mainpage .most-popular-items, .mainpage .homepage-items {
+  padding: 0px;
+  display: -ms-grid;
+  display: grid;
+  gap: 10px;
+  -ms-grid-columns: (minmax(210px, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
 }
 
-.most-popular-items li, .homepage-items li{
-    width: 100%;
-    
-    /* to center list item's content we use flexbox */
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.mainpage .article-title {
+  position: relative;
 }
+
+.mainpage .article-title::before {
+  content: '';
+  width: 10%;
+  height: 8px;
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  background: #5a1707;
+}
+
+.mainpage .article-title::after {
+  content: '';
+  width: 40%;
+  height: 5px;
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  background: #460202;
+}
+
+.mainpage .most-popular-items li, .mainpage .homepage-items li {
+  width: 100%;
+  /* to center list item's content we use flexbox */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+/*# sourceMappingURL=mainpage.css.map */

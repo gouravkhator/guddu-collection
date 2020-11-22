@@ -1,0 +1,25 @@
+@mixin title-bottom-line{
+    position: relative;
+
+    &::before{
+        content: '';
+        width: 10%;
+        height:8px;
+        position: absolute;
+        bottom:-10px;
+        left:50%;
+        transform: translateX(-50%);
+        background: rgb(90, 23, 7);
+    }
+
+    &::after{
+        content: '';
+        width: 40%;
+        height:5px;
+        position: absolute;
+        bottom:-8px;
+        left:50%;
+        transform: translateX(-50%);
+        background: rgb(70, 2, 2);
+    }
+}

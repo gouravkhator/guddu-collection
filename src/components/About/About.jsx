@@ -32,7 +32,7 @@ export default function About() {
 
                 <p>We currently have <b>2</b> branches.</p>
                 <div>
-                    <h3>Address</h3>
+                    <h3><b>Address</b></h3>
                     <p id="address">
                         <b>89/173, Bangur Park, Near Mother Dairy</b><br />
                         <b>Rishra, Hooghly</b>

@@ -56,7 +56,7 @@ export default function MostPopular() {
 
     /* Show first 10 images in a section and add view all button */
     return (
-        <div>
+        <div className="mt-4">
             {loading ? renderLoader() :
                 (products.length === 0) ? (
                     <h4>

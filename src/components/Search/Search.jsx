@@ -87,9 +87,9 @@ export default function Search() {
     return (
         <Container className="searched-page">
             <article className="searched-article">
-                <h2 className="mb-3">Searched {capitalizedSearchedParam}</h2>
+                <h2 className="article-title">{capitalizedSearchedParam}</h2>
 
-                <div>
+                <div className="mt-4">
                     {loading ? renderLoader() :
                         (products.length === 0) ? (
                             <>

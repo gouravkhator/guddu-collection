@@ -1,0 +1,43 @@
+@import "../../../public/utility";
+
+.mainpage{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+
+    article{
+        background: linear-gradient(190deg, rgb(245, 212, 212), lightcoral);
+        /* background: linear-gradient(to right, blue, rgb(238, 152, 152)); */
+        /* color: whitesmoke; */
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        width: 100%;
+        margin-bottom: 20px;
+        border-radius: 10px;
+        border: 2px solid #eee;
+        padding: 5px 10px;
+    }
+
+    .most-popular-items, .homepage-items {
+        padding: 0px;
+        display: grid;
+        gap: 10px;
+        grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    }
+
+    .article-title{
+        @include title-bottom-line();
+    }
+
+    .most-popular-items li, .homepage-items li{
+        width: 100%;
+        
+        /* to center list item's content we use flexbox */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}

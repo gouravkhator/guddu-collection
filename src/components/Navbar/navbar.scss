@@ -1,17 +1,17 @@
-:root {
-  /* --nav-bg-color: rgb(233, 134, 134); lighter design */
-  --nav-bg-color:   rgb(97, 30, 30) !important;
-  --navlink-bg-hover-color:  rgb(190, 190, 252);
-  --navlink-font-hover-color:  rgb(97, 30, 30);
-  --navlink-bottom-animation-color: rgb(243, 158, 158);
+:root{
+    /* --nav-bg-color: rgb(233, 134, 134); lighter design */
+    --nav-bg-color:   rgb(97, 30, 30) !important;
+    --navlink-bg-hover-color:  rgb(190, 190, 252);
+    --navlink-font-hover-color:  rgb(97, 30, 30);
+    --navlink-bottom-animation-color: rgb(243, 158, 158);
 }
 
-#navbar {
-  background-color: var(--nav-bg-color) !important;
+#navbar{
+    background-color: var(--nav-bg-color) !important;
 }
 
-#navbar img#navbar-logo {
-  margin-left: 10px;
+#navbar img#navbar-logo{
+    margin-left: 10px;
 }
 
 /*
@@ -91,4 +91,3 @@ nav ul a:hover::after{
     }
 }
 */
-/*# sourceMappingURL=navbar.css.map */

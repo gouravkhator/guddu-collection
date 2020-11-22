@@ -1,57 +1,107 @@
-:root{
-    --selection-font-color: #eee;
-    --selection-bg-color: #333;
+:root {
+  --selection-font-color: #eee;
+  --selection-bg-color: #333;
 }
 
-::-moz-selection{ /* Code for Firefox */
-    color: var(--selection-font-color);
-    background: var(--selection-bg-color);
+::-moz-selection {
+  color: var(--selection-font-color);
+  background: var(--selection-bg-color);
 }
 
-::selection{
-    color: var(--selection-font-color);
-    background: var(--selection-bg-color);
+::selection {
+  color: var(--selection-font-color);
+  background: var(--selection-bg-color);
 }
 
-.searched-page{
-    /*top space*/
-    position: relative;
-    top: 50px;
-    /*bottom space*/
-    margin-bottom: 64px;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    width: 100%;
+.searched-page {
+  /*top space*/
+  position: relative;
+  top: 50px;
+  /*bottom space*/
+  margin-bottom: 64px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
 }
 
 .searched-page article {
-    background: linear-gradient(190deg, rgb(245, 212, 212), lightcoral);
-    /* background: linear-gradient(to right, blue, rgb(238, 152, 152)); */
-    /* color: whitesmoke; */
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    width: 100%;
-    margin-bottom: 20px;
-    border-radius: 10px;
-    border: 2px solid #eee;
-    padding: 5px 10px;
+  background: linear-gradient(190deg, #f5d4d4, lightcoral);
+  /* background: linear-gradient(to right, blue, rgb(238, 152, 152)); */
+  /* color: whitesmoke; */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-align: center;
+  width: 100%;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  border: 2px solid #eee;
+  padding: 5px 10px;
+}
+
+.searched-page .article-title {
+  position: relative;
+}
+
+.searched-page .article-title::before {
+  content: '';
+  width: 10%;
+  height: 8px;
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  background: #5a1707;
+}
+
+.searched-page .article-title::after {
+  content: '';
+  width: 40%;
+  height: 5px;
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  background: #460202;
 }
 
 .searched-page .searched-items {
-    padding: 0px;
-    display: grid;
-    gap: 10px;
-    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  padding: 0px;
+  display: -ms-grid;
+  display: grid;
+  gap: 10px;
+  -ms-grid-columns: (minmax(210px, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
 }
 
-.searched-items li {
-    width: 100%;
-    
-    /* to center list item's content we use flexbox */
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.searched-page li {
+  width: 100%;
+  /* to center list item's content we use flexbox */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
+/*# sourceMappingURL=searchPage.css.map */

@@ -87,15 +87,14 @@ export default function MyNavbar({ setError }) {
                     <Nav.Link href="/about" active={pathname === "/about"}>About</Nav.Link>
                 </Nav>
 
-                {/* TODO : Add on submit functionality */}
-                <Form inline onSubmit={handleSearch}>
+                <Form onSubmit={handleSearch}>
                     <Row>
                         <Col>
-                            <FormControl type="text" name="searchedParam" placeholder="Search" className="mr-sm-2" required />
+                            <FormControl type="text" name="searchedParam" placeholder="Search" className="mr-md-4" required />
                         </Col>
-                        <Col>
+                        {/* <Col>
                             <Button type="submit" variant="outline-light">Search</Button>
-                        </Col>
+                        </Col> */}
                     </Row>
                 </Form>
             </Navbar.Collapse>

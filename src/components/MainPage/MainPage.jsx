@@ -13,14 +13,14 @@ export default function MainPage() {
     return (
         <Container className="mainpage">
             <article className="most-popular-article">
-                <h2 className="mb-3">Most Popular Products</h2>
+                <h2 className="article-title">Featured Products</h2>
                 <Suspense fallback={renderLoader()}>
                     <MostPopular />
                 </Suspense>
             </article>
 
             <article className="homepage-items-article">
-                <h2 className="mb-3">Products We Sell</h2>
+                <h2 className="article-title">Categories To Bag</h2>
                 <Suspense fallback={renderLoader()}>
                     <HomePageItems />
                 </Suspense>
