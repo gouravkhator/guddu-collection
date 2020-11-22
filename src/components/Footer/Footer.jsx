@@ -12,8 +12,8 @@ export default function Footer() {
         <footer>
             <Row>
                 <Col xs={8}>
-                    <Button style={{ fontSize: '20px' }} variant="warning" className="w-100 p-3 font-weight-bold text-monospace" href={"tel:" + telephone_no}>
-                        Call Now!!
+                    <Button variant="success" className="call-btn w-100 p-3 font-weight-bold text-monospace" href={"tel:" + telephone_no}>
+                        <strong>Call Now!! </strong>
                         {/* <img src="phone.svg" alt="Phone Icon" width="25" height="30" /> */}
                         <svg width="25" height="30" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="phone-alt"
                             className="ml-2 svg-inline--fa fa-phone-alt fa-w-16"
@@ -24,13 +24,13 @@ export default function Footer() {
                     </Button>
                 </Col>
                 <Col xs={4}>
-                    <Button style={{ fontSize: '20px' }} variant="dark" className="w-100 p-3 font-weight-bold text-monospace" href="/about">
+                    <Button variant="info" className="address-btn w-100 p-3 font-weight-bold text-monospace" href="/about#address">
                         <strong className="address-display">Address </strong>
                         {/* <img src="map-marker.svg" alt="Map Icon" width="25" height="30" /> */}
                         <svg width="25" height="30" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="map-marker-alt"
                             className="svg-inline--fa fa-map-marker-alt fa-w-12"
                             role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
-                            <path fill="white" d="M172.268 501.67C26.97 291.031 0 269.413 0 192 0 85.961 85.961 0 192 0s192 85.961 192 192c0 77.413-26.97 99.031-172.268 309.67-9.535 13.774-29.93 13.773-39.464 0zM192 272c44.183 0 80-35.817 80-80s-35.817-80-80-80-80 35.817-80 80 35.817 80 80 80z">
+                            <path fill="currentColor" d="M172.268 501.67C26.97 291.031 0 269.413 0 192 0 85.961 85.961 0 192 0s192 85.961 192 192c0 77.413-26.97 99.031-172.268 309.67-9.535 13.774-29.93 13.773-39.464 0zM192 272c44.183 0 80-35.817 80-80s-35.817-80-80-80-80 35.817-80 80 35.817 80 80 80z">
                             </path>
                         </svg>
                     </Button>

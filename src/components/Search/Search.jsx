@@ -24,7 +24,8 @@ const filterFetch = (querySnapshot, searchedParamLocal, products) => {
 
             if (imageData.tags.includes(searchedParamLocal)) {
                 products.push({
-                    url: imageData.url,
+                    webp_url: imageData.webp_url,
+                    jpeg_url: imageData.jpeg_url,
                     tags: imageData.tags
                 });
             }
@@ -62,8 +63,10 @@ const getSearchedItems = async () => {
 export default function Search() {
     const { searchedParam } = useParams();
 
+    const lowercaseSearched = searchedParam.toLowerCase();
     const capitalizedSearchedParam = searchedParam.charAt(0).toUpperCase() + searchedParam.slice(1);
-    searchedParamLocal = searchedParam;
+
+    searchedParamLocal = lowercaseSearched;
     let [products, setProducts] = useState([]);
     let [loading, setLoading] = useState(true);
 
@@ -79,7 +82,7 @@ export default function Search() {
             setLoading(false);
         });
 
-    }, [searchedParam]);
+    }, [lowercaseSearched]);
 
     return (
         <Container className="searched-page">
@@ -97,10 +100,10 @@ export default function Search() {
                             </>
                         ) : (
                                 <ul className="searched-items">
-                                    {products.map(({ url, tags }, index) => (
+                                    {products.map(({ webp_url, jpeg_url, tags }, index) => (
                                         <li key={index}>
                                             <Suspense fallback={renderLoader()}>
-                                                <ItemImage imgSrc={url} tags={tags} />
+                                                <ItemImage imgSrc={{ webp_url, jpeg_url }} tags={tags} />
                                             </Suspense>
                                         </li>
                                     ))}

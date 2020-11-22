@@ -23,7 +23,8 @@ const getMostPopularItems = async () => {
             const imageData = doc.data();
 
             products.push({
-                url: imageData.url,
+                webp_url: imageData.webp_url,
+                jpeg_url: imageData.jpeg_url,
                 tags: imageData.tags
             });
         });
@@ -63,10 +64,10 @@ export default function MostPopular() {
                     </h4>
                 ) : (
                         <ul className="most-popular-items">
-                            {products.map(({ url, tags }, index) => (
+                            {products.map(({ webp_url, jpeg_url, tags }, index) => (
                                 <li key={index}>
                                     <Suspense fallback={renderLoader()}>
-                                        <ItemImage imgSrc={url} tags={tags} />
+                                        <ItemImage imgSrc={{ webp_url, jpeg_url }} tags={tags} />
                                     </Suspense>
                                 </li>
                             ))}

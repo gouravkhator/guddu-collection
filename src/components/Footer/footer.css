@@ -1,7 +1,39 @@
+:root{
+    --call-bg-color: rgb(59, 133, 10);
+    --call-hover-color: rgb(14, 68, 7);
+    --address-bg-color: darkcyan;
+    --address-hover-color: rgb(2, 66, 66);
+}
+
 footer{
     position: fixed;
     bottom: 0;
     width: 100%;
+}
+
+footer .call-btn{
+    background-color: var(--call-bg-color);
+    border-color: var(--call-bg-color);
+}
+
+footer .call-btn:hover{
+    background-color: var(--call-hover-color);
+    border-color: var(--call-hover-color);
+}
+
+footer .address-btn{
+    background-color:var(--address-bg-color);
+    border-color: var(--address-bg-color);
+}
+
+footer .address-btn:hover{
+    background-color:var(--address-hover-color);
+    border-color: var(--address-hover-color);
+}
+
+/*for strong text in button component*/
+footer strong{
+    font-size: 20px;
 }
 
 .address-display{
@@ -9,9 +41,23 @@ footer{
     pointer-events: all;
 }
 
-@media(max-height: 640px){
-    footer a{
-        font-size: 16px !important;
+/* for maximum height of 700px or max-width of 450px */
+@media screen and (max-height: 700px), screen and (max-width: 450px){
+    footer{
+        height: 50px;
+    }
+
+    footer .row, footer .col-8, footer .col-4 {
+        height: 100%;
+    }
+
+    footer strong{
+        font-size: 16px;
+    }
+
+    footer svg{
+        height: 20px;
+        width: 17px;
     }
 }
 

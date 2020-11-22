@@ -5,11 +5,18 @@ import './item-image.css';
 export default function ItemImage({ imgSrc, tags }) {
 
     const tagsArr = tags.split(',');
+    const { webp_url, jpeg_url } = imgSrc;
 
     return (
         <div className="item-card">
-            <img loading="lazy" src={imgSrc} alt={tags}
-                width="200" height="250" />
+            <picture>
+                <source width="200" height="250" type="image/webp" srcSet={webp_url} />
+                <source width="200" height="250" type="image/jpeg" srcSet={jpeg_url} />
+                <img src={jpeg_url} alt={tags} width="200" height="250" />
+            </picture>
+
+            {/* <img loading="lazy" src={imgSrc} alt={tags}
+                width="200" height="250" /> */}
 
             <ul className="item-tags-list">
                 {tags && tagsArr.map(tag => (

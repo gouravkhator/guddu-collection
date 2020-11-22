@@ -7,7 +7,7 @@
 }
 
 .mainpage article{
-    background-color: rgb(198, 226, 173);
+    background: linear-gradient(190deg, rgb(245, 212, 212), lightcoral);
     /* background: linear-gradient(to right, blue, rgb(238, 152, 152)); */
     /* color: whitesmoke; */
     display: flex;

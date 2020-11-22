@@ -49,7 +49,7 @@ export default function Login() {
 
                                 <Form.Group id="password">
                                     <Form.Label>Password</Form.Label>
-                                    <Form.Control type="password" ref={passwordRef} placeholder="Enter the password" minLength={6} maxLength={20} required />
+                                    <Form.Control type="password" ref={passwordRef} placeholder="Enter the password" minLength={6} maxLength={40} required />
                                 </Form.Group>
 
                                 <Button variant="primary" disabled={loading} className="w-100" type="submit">

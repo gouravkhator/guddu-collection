@@ -48,7 +48,8 @@ export default function MyNavbar({ setError }) {
         <Navbar id="navbar" bg="dark" variant="dark" expand="md" sticky="top">
             <Navbar.Brand href="/">
                 Guddu Collection
-                <img src="gc-logo.png" width="40" height="35" alt="Guddu Collection Logo"
+                {/* aspect ratio is 1.27 for logo so maintain that */}
+                <img src="gc-logo.png" width="40" height="31.5" alt="Guddu Collection Logo"
                     id="navbar-logo" />
             </Navbar.Brand>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />

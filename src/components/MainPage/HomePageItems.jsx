@@ -23,7 +23,8 @@ const getAllItems = async () => {
 
             const prevAddedProds = products[imageData.product_category] ?? [];
             products[imageData.product_category] = [...prevAddedProds, {
-                url: imageData.url,
+                webp_url: imageData.webp_url,
+                jpeg_url: imageData.jpeg_url,
                 tags: imageData.tags
             }];
         });
@@ -66,10 +67,10 @@ export default function HomePageItems() {
                             <h2>{product.charAt(0).toUpperCase() + product.slice(1)}</h2>
 
                             <ul className="homepage-items">
-                                {products[product].map(({ url, tags }, index) => (
+                                {products[product].map(({ webp_url, jpeg_url, tags }, index) => (
                                     <li key={index}>
                                         <Suspense fallback={renderLoader()}>
-                                            <ItemImage imgSrc={url} tags={tags} />
+                                            <ItemImage imgSrc={{ webp_url, jpeg_url }} tags={tags} />
                                         </Suspense>
                                     </li>
                                 ))}
