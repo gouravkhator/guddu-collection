@@ -12,7 +12,7 @@ export default function ItemImage({ imgSrc, tags }) {
             <picture>
                 <source width="200" height="250" type="image/webp" srcSet={webp_url} />
                 <source width="200" height="250" type="image/jpeg" srcSet={jpeg_url} />
-                <img src={jpeg_url} alt={tags} width="200" height="250" />
+                <img loading="lazy" src={jpeg_url} alt={tags} width="200" height="250" />
             </picture>
 
             {/* <img loading="lazy" src={imgSrc} alt={tags}
