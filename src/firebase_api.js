@@ -15,10 +15,6 @@ const firebaseConfig = {
 
 const app = firebase.initializeApp(firebaseConfig);
 
-export const otherConfig = {
-    adminUID: process.env.REACT_APP_FIREBASE_ADMIN_UID
-}
-
 export const auth = app.auth();
 export const db = app.firestore();
 export default app;
