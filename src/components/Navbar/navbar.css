@@ -1,6 +1,6 @@
 :root {
   /* --nav-bg-color: rgb(233, 134, 134); lighter design */
-  --nav-bg-color:   rgb(97, 30, 30) !important;
+  --nav-bg-color: #eee !important;
   --navlink-bg-hover-color:  rgb(190, 190, 252);
   --navlink-font-hover-color:  rgb(97, 30, 30);
   --navlink-bottom-animation-color: rgb(243, 158, 158);
@@ -8,6 +8,8 @@
 
 #navbar {
   background-color: var(--nav-bg-color) !important;
+  -webkit-box-shadow: 0px 5px 5px #333;
+          box-shadow: 0px 5px 5px #333;
 }
 
 #navbar img#navbar-logo {

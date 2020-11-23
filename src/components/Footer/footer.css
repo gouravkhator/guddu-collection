@@ -9,6 +9,7 @@ footer {
   position: fixed;
   bottom: 0;
   width: 100%;
+  /*for strong text in button component*/
 }
 
 footer .call-btn {
@@ -31,12 +32,11 @@ footer .address-btn:hover {
   border-color: var(--address-hover-color);
 }
 
-/*for strong text in button component*/
 footer strong {
   font-size: 20px;
 }
 
-.address-display {
+footer .address-display {
   display: inline;
   pointer-events: all;
 }
@@ -59,7 +59,7 @@ footer strong {
 }
 
 @media (max-width: 640px) {
-  .address-display {
+  footer .address-display {
     display: none;
     pointer-events: none;
   }

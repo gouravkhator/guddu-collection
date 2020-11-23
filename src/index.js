@@ -12,7 +12,7 @@ ReactDOM.render(
 
 function getConfirmationAndReload() {
   if (window.confirm('New Content is available!. Click Ok to refresh')) {
-    window.location.reload();
+    window.history.go(0);
   }
 }
 
