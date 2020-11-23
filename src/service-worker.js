@@ -55,9 +55,9 @@ registerRoute(
   new StaleWhileRevalidate({
     cacheName: 'images',
     plugins: [
-      // Ensure that once this runtime cache reaches a maximum size the
-      // least-recently used images are removed.
-      new ExpirationPlugin({ maxEntries: 50 }),
+      // Ensure that once this runtime cache reaches a maximum size or max age
+      // the least-recently used images are removed.
+      new ExpirationPlugin({ maxEntries: 50, maxAgeSeconds: 60 * 60 * 24 * 2 }),
     ],
   })
 );
@@ -66,7 +66,15 @@ registerRoute(
 // registration.waiting.postMessage({type: 'SKIP_WAITING'})
 self.addEventListener('message', (event) => {
   if (event.data && event.data.type === 'SKIP_WAITING') {
-    cleanupOutdatedCaches();
+    // This doesn't even load page so some bug is here while deleting cache
+    // event.waitUntil(
+    //   caches.keys().then(function (cacheNames) {
+    //     return Promise.all(
+    //       cacheNames.map(function (cacheName) {
+    //         return caches.delete(cacheName);
+    //       }));
+    //   }))
+
     self.skipWaiting();
   }
 });

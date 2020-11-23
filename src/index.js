@@ -17,9 +17,8 @@ serviceWorkerRegistration.register({
   onUpdate: registration => {
     //when we change anything in the code or files then it will trigger onUpdate 
     //and we would get new data from network instead of cache
-    // window.location = window.location.href;
-    //ISSUE : giving blank page after reloading then when we refresh manually, it shows new content
 
     registration.waiting.postMessage({ type: 'SKIP_WAITING' });
+    // window.location.reload();
   }
 });
