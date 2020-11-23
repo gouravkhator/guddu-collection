@@ -48,7 +48,6 @@ export default function App() {
             <Route exact path="/about" component={About} />
             <Route exact path="/search/:searchedParam" component={Search} />
             <Route exact path="/settings" component={Settings} />
-
           </section>
 
           <Footer />
