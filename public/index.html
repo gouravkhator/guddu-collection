@@ -76,7 +76,12 @@
       /*for footer we need that many pixels, so gave margin of some space in bottom of section for every page*/
     }
 
-    .internet-lost-message {
+    .hidden {
+      display: none;
+      pointer-events: none;
+    }
+
+    .notification {
       width: 100%;
       text-align: center;
       background-color: rgb(255, 119, 119);
@@ -95,7 +100,19 @@
     <b>You need to enable JavaScript to run this app.</b>
   </noscript>
 
+  <div id="message-global">
+    <div id="internet-lost-message" class="hidden notification">
+      <b>Offline!!</b>
+    </div>
+
+    <div id="new-content" class="hidden notification">
+      <b>New version available..</b><br />
+      <b>Close all tabs of this page for new content</b>
+    </div>
+  </div>
   <div id="root"></div>
+
+  <script src="%PUBLIC_URL%/script.js"></script>
 </body>
 
 </html>

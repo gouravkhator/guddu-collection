@@ -66,15 +66,6 @@ registerRoute(
 // registration.waiting.postMessage({type: 'SKIP_WAITING'})
 self.addEventListener('message', (event) => {
   if (event.data && event.data.type === 'SKIP_WAITING') {
-    // This doesn't even load page so some bug is here while deleting cache
-    // event.waitUntil(
-    //   caches.keys().then(function (cacheNames) {
-    //     return Promise.all(
-    //       cacheNames.map(function (cacheName) {
-    //         return caches.delete(cacheName);
-    //       }));
-    //   }))
-
     self.skipWaiting();
   }
 });
