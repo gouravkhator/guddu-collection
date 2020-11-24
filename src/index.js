@@ -1,7 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './components/App';
+import OfflineMessage from './components/OfflineMessage';
 import * as serviceWorkerRegistration from './serviceWorkerRegistration';
+
+//Render OfflineMessage component for showing the user when they are offline
+ReactDOM.render(
+  <React.StrictMode>
+    <OfflineMessage />
+  </React.StrictMode>,
+  document.getElementById('internet-lost-message')
+);
 
 ReactDOM.render(
   <React.StrictMode>
