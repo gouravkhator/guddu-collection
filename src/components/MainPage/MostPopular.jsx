@@ -7,6 +7,12 @@ const renderLoader = () => (
     <div><p className="spinner-grow text-muted"></p></div>
 );
 
+const removeTag = (tags, tagToRemove) => {
+    let index = tags.indexOf(tagToRemove);
+    if (index !== -1)
+        tags.splice(index, 1);
+}
+
 const getMostPopularItems = async () => {
     /*
         products is an array of objects each containing url and tags and other details for an image
@@ -22,10 +28,15 @@ const getMostPopularItems = async () => {
             // console.log(doc.id, " => ", doc.data());
             const imageData = doc.data();
 
+            const tags = imageData.tags.split(',');
+            removeTag(tags, 'women');
+            removeTag(tags, 'men');
+            removeTag(tags, 'girls');
+
             products.push({
                 webp_url: imageData.webp_url,
                 jpeg_url: imageData.jpeg_url,
-                tags: imageData.tags
+                tags: tags.join(',')
             });
         });
 
