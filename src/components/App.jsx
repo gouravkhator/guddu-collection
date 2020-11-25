@@ -3,8 +3,6 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 import { AuthProvider } from '../Auth';
 import { Alert } from 'react-bootstrap';
 
-import 'bootstrap/dist/css/bootstrap.min.css';
-
 //lazy loading for code splitting in webpack bundles
 const MyNavbar = lazy(() => import('./Navbar/MyNavbar'));
 const MainPage = lazy(() => import('./MainPage/MainPage'));

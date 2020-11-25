@@ -45,14 +45,17 @@ export default function MyNavbar({ setError }) {
     }
 
     return (
-        <Navbar id="navbar" bg="light" variant="light" expand="md" sticky="top">
-            <Navbar.Brand href="/">
-                Guddu Collection
-                {/* aspect ratio is 1.27 for logo so maintain that */}
-                <img src="/gc-logo.png" width="40" height="31.5" alt="Guddu Collection Logo"
-                    id="navbar-logo" />
-            </Navbar.Brand>
+        <Navbar id="navbar" variant="light" expand="md" sticky="top">
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
+
+            <Navbar.Brand id="navbar-brand" href="/">
+                Guddu Collection
+                <div id="navbar-logo">
+                </div>
+                {/* aspect ratio is 1.27 for logo so maintain that */}
+                {/* <img src="/gc-logo.png" width="40" height="31.5" alt="Guddu Collection Logo"
+                    id="navbar-logo" /> */}
+            </Navbar.Brand>
 
             <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="ml-auto">

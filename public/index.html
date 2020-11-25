@@ -13,83 +13,12 @@
   <link rel="apple-touch-icon" href="%PUBLIC_URL%/gc-logo.png" />
   <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
 
-  <style>
-    /* main.css */
-    :root {
-      --primary-bg-color: #eee;
-      --primary-font-color: #000;
-      --button-bg-color: #008CBA;
-      ;
-      --button-font-color: #fff;
-      --link-bg-color: rgb(2, 2, 179);
-      --link-font-color: rgb(247, 225, 197);
-      --selection-font-color: #eee;
-      --selection-bg-color: #333;
-    }
+  <!-- Fonts and bootstrap -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300&family=Overlock&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="%PUBLIC_URL%/css/bootstrap.min.css" />
 
-    /* global styles */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: Arial, Helvetica, sans-serif;
-      font-size: 16px;
-      width: 100%;
-      height: 100%;
-      background: var(--primary-bg-color);
-    }
-
-    ::-moz-selection {
-      /* Code for Firefox */
-      color: var(--selection-font-color);
-      background: var(--selection-bg-color);
-    }
-
-    ::selection {
-      color: var(--selection-font-color);
-      background: var(--selection-bg-color);
-    }
-
-    ul {
-      list-style: none;
-    }
-
-    a {
-      text-decoration: none;
-    }
-
-    /* Extra reserved spaces to avoid layout shifts */
-    /* Leave some space at top for alerts and errors in navbar or for signin */
-    .top-space {
-      position: relative !important;
-      top: 50px !important;
-      /*its computed size, as alert takes that many pixels */
-    }
-
-    /* Leave some space at bottom of every page for fixed footer */
-    .bottom-space {
-      margin-bottom: 64px !important;
-      /*for footer we need that many pixels, so gave margin of some space in bottom of section for every page*/
-    }
-
-    .hidden {
-      display: none;
-      pointer-events: none;
-    }
-
-    .notification {
-      width: 100%;
-      text-align: center;
-      background-color: rgb(231, 100, 100);
-      color: white;
-      font-size: 20px;
-      font-weight: bold;
-    }
-  </style>
-
+  <link rel="stylesheet" href="%PUBLIC_URL%/css/main.css" />
   <title>Guddu Collection</title>
 </head>
 
@@ -108,8 +37,22 @@
       <b>Close all tabs of this page for new content</b>
     </div>
   </div>
-  <div id="root"></div>
 
+  <div id="root"></div>
+  <script>
+    document.addEventListener('click', (e) => {
+      const navbarOpened = document.querySelector('.navbar-collapse')
+
+      //when navbar is opened and if user clicks in other areas 
+      //excluding navbar and navbar-collapse and any element is not inside navbarOpened
+      //then toggle that
+      if (navbarOpened.classList.contains('show') && !e.target.classList.contains("navbar-collapse")
+        && !e.target.classList.contains("navbar")
+        && !navbarOpened.contains(e.target)) {
+        document.querySelector('.navbar-toggler').click();
+      }
+    });
+  </script>
 </body>
 
 </html>

@@ -1,96 +1,76 @@
 :root {
   /* --nav-bg-color: rgb(233, 134, 134); lighter design */
-  --nav-bg-color: #eee !important;
+  --nav-bg-color: #eee;
   --navlink-bg-hover-color:  rgb(190, 190, 252);
   --navlink-font-hover-color:  rgb(97, 30, 30);
   --navlink-bottom-animation-color: rgb(243, 158, 158);
 }
 
 #navbar {
-  background-color: var(--nav-bg-color) !important;
+  background-color: var(--nav-bg-color);
   -webkit-box-shadow: 0px 5px 5px #333;
           box-shadow: 0px 5px 5px #333;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
-#navbar img#navbar-logo {
+#navbar #navbar-brand {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+#navbar #navbar-logo {
+  background-image: url("../../gc-logo.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 40px;
+  height: 31.5px;
   margin-left: 10px;
+  margin-right: 0;
 }
 
-/*
-nav ul{
-    padding: 5px 0;
+@media (max-width: 768px) {
+  #navbar {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-    align-items: center;
-}
-
-nav ul li{
-    margin: 0.2rem;
-    margin-left: 5px;
-}
-
-nav ul a{
-    color: var(--link-font-color);
-    display: block;
-    padding: 0.5rem;
-    font-weight: 600;
-    font-size: 19.2px;
-    transition: all ease 0.5s;
-    position: relative;
-    width: 100%;
-}
-
-nav ul a:hover::after{
-    width: 100%;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  #navbar #navbar-brand {
+    margin-left: 10px;
+    font-size: 25px;
+  }
+  #navbar #navbar-logo {
+    display: none;
+  }
+  .navbar-collapse {
     position: absolute;
-    content: '';
-    height: 5px;
-    top: -5px;
-    background: var(--navlink-bottom-animation-color);
+    top: 65px;
     left: 0;
-    animation: bottomLine 1s ease-in-out forwards;
+    padding: 0px 15px 15px;
+    width: 50%;
+    height: calc(100vh - 65px);
+    background-color: #eee;
+    z-index: 100;
+  }
+  .navbar-collapse.collapsing {
+    height: calc(100vh - 65px);
+    -webkit-transition: left 0.06s ease;
+    transition: left 0.06s ease;
+    left: -100%;
+  }
+  .navbar-collapse.show {
+    left: 0;
+    -webkit-transition: left 0.06s ease-in-out;
+    transition: left 0.06s ease-in-out;
+  }
 }
-
-@keyframes bottomLine{
-    0%{
-        width: 0%;
-    }
-    25%{
-        width: 25%;
-    }
-    50%{
-        width: 50%;
-    }
-    75%{
-        width: 75%;
-    }
-    100%{
-        width:100%;
-    }
-}
-
-@media(max-width: 600px){
-    nav ul{
-        width: 100%;
-        height: 100%;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
-
-    nav ul li{
-        display: flex;
-    
-        justify-content: center;
-        align-items: center;
-        width: 100%;
-    }
-
-    nav ul a{
-        text-align: center;
-        width: auto;
-    }
-}
-*/
 /*# sourceMappingURL=navbar.css.map */

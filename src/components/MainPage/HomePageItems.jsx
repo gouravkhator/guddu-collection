@@ -103,7 +103,7 @@ export default function HomePageItems() {
                         </h5>
 
                         <p></p>
-                        <h5>Come to our shop for bagging more products</h5>
+                        <h5>Come to our shop for bagging products</h5>
 
                         <h3><b>Address</b></h3>
                         <h5 id="address">

@@ -1,0 +1,76 @@
+:root {
+    --primary-bg-color: rgb(250, 250, 250);
+    --primary-font-color: #000;
+    --button-bg-color: #008CBA;
+    --button-font-color: #fff;
+    --link-bg-color: rgb(2, 2, 179);
+    --link-font-color: rgb(247, 225, 197);
+    --selection-font-color: #eee;
+    --selection-bg-color: #333;
+}
+
+/* global styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    // font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Overlock', cursive;
+    font-size: 18px;
+    color: black;
+    overflow-x: hidden;
+    width: 100%;
+    height: 100%;
+    background: var(--primary-bg-color);
+}
+
+::selection {
+    color: var(--selection-font-color);
+    background: var(--selection-bg-color);
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* Extra reserved spaces to avoid layout shifts */
+/* Leave some space at top for alerts and errors in navbar or for signin */
+.top-space {
+    position: relative;
+    top: 50px;
+    /*its computed size, as alert takes that many pixels */
+}
+
+/* Leave some space at bottom of every page for fixed footer */
+.bottom-space {
+    margin-bottom: 128px;
+    /*for footer we need that many pixels, so gave margin of some space in bottom of section for every page*/
+}
+
+.hidden {
+    display: none;
+    pointer-events: none;
+}
+
+.notification {
+    width: 100%;
+    text-align: center;
+    background-color: rgb(231, 100, 100);
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+@media screen and (max-height: 700px), screen and (max-width: 450px){
+    .bottom-space{
+        margin-bottom: 50px;
+    }
+}
+
