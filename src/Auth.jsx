@@ -15,8 +15,20 @@ export const AuthProvider = ({ children }) => {
     const [loading, setLoading] = useState(true);
     //by default it is loading to fetch user details from token
 
-    function signup(email, password) {
-        return auth.createUserWithEmailAndPassword(email, password);
+    function signup(email, password, displayName) {
+        return auth.createUserWithEmailAndPassword(email, password).then(user => {
+            if (user) {
+                user.updateProfile({
+                    displayName
+                });
+            }
+        }).catch(function (error) {
+            if (error.code === 'auth/weak-password') {
+                throw new Error('The password is too weak..');
+            } else {
+                throw new Error('Failed to create account..');
+            }
+        });
     }
 
     function login(email, password) {
@@ -25,6 +37,10 @@ export const AuthProvider = ({ children }) => {
 
     function logout() {
         return auth.signOut();
+    }
+
+    function deleteAccount() {
+        return currentUser.delete();
     }
 
     function resetPassword(email) {
@@ -51,6 +67,7 @@ export const AuthProvider = ({ children }) => {
         signup,
         login,
         logout,
+        deleteAccount,
         resetPassword,
         googleSignIn
     }

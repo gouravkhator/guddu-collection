@@ -96,22 +96,23 @@ export default function HomePageItems() {
         <div className="mt-4">
             {loading ? renderLoader() :
                 (Object.keys(products).length === 0 && products.constructor === Object) ? (
-                    <div>
-                        <h5>
-                            Oops! It's empty<br /> <br />
-                            You may be offline.. <br />Please connect to internet for exploring
-                        </h5>
+                    <div className="p-4">
+                        <h4 className="mb-3">
+                            <strong>Oops! It's empty</strong>
+                        </h4>
 
-                        <p></p>
-                        <h5>Come to our shop for bagging products</h5>
+                        <h4 className="mt-3 mb-3">
+                            <strong>You may be offline.. <br />Please connect to internet for exploring</strong>
+                        </h4>
 
-                        <h3><b>Address</b></h3>
-                        <h5 id="address">
+                        <h4>Come to our shop for bagging products</h4>
+
+                        <h3 className="text-left mt-4"><b>Address</b></h3>
+                        <h5 id="address" className="text-left mb-3">
                             <b>89/173, Bangur Park, Near Mother Dairy</b><br />
                             <b>Rishra, Hooghly</b>
                         </h5>
-                        <br />
-                        <h5>
+                        <h5 className="text-left">
                             <b>Paul Complex, Mio Amore Market</b><br />
                             <b>Rishra, Hooghly</b>
                         </h5>

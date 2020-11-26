@@ -64,24 +64,11 @@ export default function Search() {
     const { searchedParam } = useParams();
 
     const lowercaseSearched = searchedParam.toLowerCase();
-    // const [tempSearched, setTempSearched] = searchedParam.toLowerCase();
-    // const [mainSearched, setMainSearched] = searchedParam.toLowerCase();
-
     const capitalizedSearchedParam = searchedParam.charAt(0).toUpperCase() + searchedParam.slice(1);
 
     searchedParamLocal = lowercaseSearched;
     let [products, setProducts] = useState([]);
     let [loading, setLoading] = useState(true);
-
-    // const setSearchedFunc = (e) => {
-    //     setTempSearched(e.target.value);
-    // }
-
-    // const handleKeyDown = (e) => {
-    //     if (e.keyCode === 32 || e.keyCode === 13) {
-    //         setMainSearched(temp);
-    //     }
-    // }
 
     useEffect(() => {
         setLoading(true);
@@ -100,11 +87,6 @@ export default function Search() {
     return (
         <Container className="searched-page">
             <article className="searched-article">
-                {/* <input className="search-box" type="text" placeholder="Search any items"
-                    ref={searchRef} value={mainSearched}
-                    onKeyDown={(e) => handleKeyDown(e)} onChange={(e) => setSearchedFunc(e)} />
- */}
-
                 <h2 className="article-title">{capitalizedSearchedParam}</h2>
 
                 <div className="mt-4">

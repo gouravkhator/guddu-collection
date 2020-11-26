@@ -7,6 +7,7 @@ import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import Alert from "react-bootstrap/Alert";
+import Container from 'react-bootstrap/Container';
 
 export default function Login() {
     const emailRef = useRef();
@@ -35,7 +36,7 @@ export default function Login() {
     return (
         <>
             {!!currentUser ? <Redirect to="/" /> : (
-                <>
+                <Container>
                     {error && <Alert variant="danger">{error}</Alert>}
 
                     <Card className="container-sm">
@@ -53,7 +54,7 @@ export default function Login() {
                                 </Form.Group>
 
                                 <Button variant="primary" disabled={loading} className="w-100" type="submit">
-                                    <b>Log In</b>
+                                    {loading ? <b>Logging In</b> : <b>Log In</b>}
                                 </Button>
                             </Form>
 
@@ -66,7 +67,7 @@ export default function Login() {
                     <div className="w-100 text-center mt-2">
                         Need an account? <Link to="/signup">Sign Up</Link>
                     </div>
-                </>
+                </Container>
             )}
         </>
     );

@@ -1,4 +1,4 @@
-@import "../../../public/utility";
+@import "../../../public/css/utility";
 
 .searched-page{
     display: flex;
@@ -19,7 +19,7 @@
     }
 
     .article-title{
-        @include title-bottom-line();
+        @include title-bottom-line(10%, 40%);
     }
 
     li {

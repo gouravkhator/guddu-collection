@@ -1,0 +1,6 @@
+@import "../../../public/css/utility";
+
+.settings-title{
+    @include title-bottom-line(20%, 90%);
+    max-width: fit-content;
+}

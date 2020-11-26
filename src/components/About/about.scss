@@ -1,0 +1,12 @@
+@import "../../../public/css/utility";
+
+.about-titles{
+    @include title-bottom-line(20%, 90%);
+    max-width: fit-content;
+}
+
+@media(min-width: 728px){
+    .about-article {
+        font-size: 2rem;
+    }
+}

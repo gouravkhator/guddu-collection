@@ -1,9 +1,9 @@
-@mixin title-bottom-line{
+@mixin title-bottom-line($widthBefore, $widthAfter){
     position: relative;
 
     &::before{
         content: '';
-        width: 10%;
+        width: $widthBefore;
         height:8px;
         position: absolute;
         bottom:-10px;
@@ -14,7 +14,8 @@
 
     &::after{
         content: '';
-        width: 40%;
+        // width: 40%;
+        width: $widthAfter;
         height:5px;
         position: absolute;
         bottom:-8px;

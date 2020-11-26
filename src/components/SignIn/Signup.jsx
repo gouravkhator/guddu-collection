@@ -1,13 +1,13 @@
 import React, { useRef, useState } from 'react';
 import { useAuth } from '../../Auth';
 import { Link, Redirect, useHistory } from 'react-router-dom';
-import { auth } from '../../firebase_api';
 
 //react-bootstrap
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import Alert from "react-bootstrap/Alert";
+import Container from 'react-bootstrap/Container';
 
 export default function Signup() {
     const emailRef = useRef();
@@ -27,21 +27,12 @@ export default function Signup() {
 
             //loading so that user does not click signup again and we show loading screen
             setLoading(true);
-            await signup(emailRef.current.value, passwordRef.current.value);
-
-            await auth.currentUser.updateProfile({
-                displayName: nameRef.current.value
-            });
+            //the checking of errors is done in signup function and thrown from there
+            await signup(emailRef.current.value, passwordRef.current.value, nameRef.current.value);
 
             history.push('/');
-        } catch {
-            if (!currentUser)
-                setError('Failed to create an account');
-            else {
-                //error saving data in database
-                setError('Failed to save your name. Try updating afterwards..');
-                history.push('/');
-            }
+        } catch (error) {
+            setError(error.message);
         }
 
         setLoading(false);
@@ -50,8 +41,9 @@ export default function Signup() {
     return (
         <>
             {!!currentUser ? <Redirect to="/" /> : (
-                <>
+                <Container>
                     {error && <Alert variant="danger">{error}</Alert>}
+
                     <Card className="container-sm">
                         <Card.Body>
                             <h2 className="text-center mb-4">Sign Up</h2>
@@ -73,7 +65,7 @@ export default function Signup() {
                                 </Form.Group>
 
                                 <Button variant="primary" disabled={loading} className="w-100" type="submit">
-                                    <b>Sign Up</b>
+                                    {loading ? <b>Signing Up</b> : <b>Sign Up</b>}
                                 </Button>
                             </Form>
                         </Card.Body>
@@ -82,7 +74,7 @@ export default function Signup() {
                     <div className="w-100 text-center mt-2">
                         Already have an account? <Link to="/login">Log In</Link>
                     </div>
-                </>
+                </Container>
             )}
         </>
     );

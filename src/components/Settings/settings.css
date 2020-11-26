@@ -1,0 +1,31 @@
+.settings-title {
+  position: relative;
+  max-width: -webkit-fit-content;
+  max-width: -moz-fit-content;
+  max-width: fit-content;
+}
+
+.settings-title::before {
+  content: '';
+  width: 20%;
+  height: 8px;
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  background: #5a1707;
+}
+
+.settings-title::after {
+  content: '';
+  width: 90%;
+  height: 5px;
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  background: #460202;
+}
+/*# sourceMappingURL=settings.css.map */

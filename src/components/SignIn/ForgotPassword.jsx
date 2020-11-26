@@ -7,6 +7,7 @@ import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import Alert from "react-bootstrap/Alert";
+import Container from 'react-bootstrap/Container';
 
 export default function ForgotPassword() {
     const emailRef = useRef();
@@ -24,7 +25,8 @@ export default function ForgotPassword() {
             setError('');
             setLoading(true);
             await resetPassword(emailRef.current.value);
-            setMessage('Check your mail for resetting password')
+
+            setMessage('Check your mail for resetting password');
         } catch {
             setError('Failed to reset password');
         }
@@ -34,9 +36,10 @@ export default function ForgotPassword() {
     return (
         <>
             {!!currentUser ? <Redirect to="/" /> : (
-                <>
-                    {!!error && <Alert variant="danger">{error}</Alert>}
-                    {!!message && <Alert variant="success">{message}</Alert>}
+                <Container>
+                    {error && <Alert variant="danger">{error}</Alert>}
+                    {message && <Alert variant="success">{message}</Alert>}
+
                     <Card className="container-sm">
                         <Card.Body>
                             <h2 className="text-center mb-4">Reset your Password</h2>
@@ -48,7 +51,7 @@ export default function ForgotPassword() {
                                 </Form.Group>
 
                                 <Button disabled={loading} className="w-100" type="submit">
-                                    <b>Reset Password</b>
+                                    {loading ? <b>Resetting Password</b> : <b>Reset Password</b>}
                                 </Button>
                             </Form>
 
@@ -62,7 +65,7 @@ export default function ForgotPassword() {
                     <div className="w-100 text-center mt-2">
                         Need an account? <Link to="/signup">Sign Up</Link>
                     </div>
-                </>
+                </Container>
             )}
         </>
     );

@@ -36,7 +36,7 @@ export default function MyNavbar({ setError }) {
             setError('');
             setLoading(true);
             await logout();
-            history.push('login');
+            history.push('/');
         } catch {
             setError('Failed to log out');
         }
@@ -71,7 +71,9 @@ export default function MyNavbar({ setError }) {
                                 <NavDropdown.Divider />
 
                                 <NavDropdown.Item href="/">
-                                    <Button disabled={loading} onClick={handleLogout}>Log Out</Button>
+                                    <Button disabled={loading} onClick={handleLogout}>
+                                        {loading ? <>Logging Out</> : <>Log Out</>}
+                                    </Button>
                                 </NavDropdown.Item>
                             </NavDropdown>
                         </>
