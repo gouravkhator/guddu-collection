@@ -5,4 +5,9 @@
 .signin-card a, .signin-card button, .signin-card input {
   font-size: var(--article-text-font-size);
 }
+
+.signin-card .google-signin-btn {
+  width: 100%;
+  position: relative;
+}
 /*# sourceMappingURL=signin.css.map */

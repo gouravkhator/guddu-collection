@@ -86,7 +86,7 @@ export default function MyNavbar({ setError }) {
                                 </NavDropdown.Item>
                                 <NavDropdown.Divider />
 
-                                <NavDropdown.Item href="/">
+                                <NavDropdown.Item>
                                     <Button disabled={loading} onClick={handleLogout}>
                                         {loading ? <>Logging Out</> : <>Log Out</>}
                                     </Button>

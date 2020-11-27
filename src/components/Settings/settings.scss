@@ -1,10 +1,22 @@
 @import "../../../public/css/utility";
 
+.settings-article{
+    font-size: var(--article-text-font-size);
+
+    button, a{
+        font-size: var(--article-text-font-size);
+    }
+}
+
 .settings-title{
     @include title-bottom-line(20%, 90%);
     max-width: fit-content;
+}
 
-    button, a{
-        font-size:  var(--article-text-font-size);
+@media(max-width: 400px){
+    .settings-article{
+        h4{
+            font-size: 1.35rem;
+        }
     }
 }

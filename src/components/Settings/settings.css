@@ -1,3 +1,11 @@
+.settings-article {
+  font-size: var(--article-text-font-size);
+}
+
+.settings-article button, .settings-article a {
+  font-size: var(--article-text-font-size);
+}
+
 .settings-title {
   position: relative;
   max-width: -webkit-fit-content;
@@ -29,7 +37,9 @@
   background: #460202;
 }
 
-.settings-title button, .settings-title a {
-  font-size: var(--article-text-font-size);
+@media (max-width: 400px) {
+  .settings-article h4 {
+    font-size: 1.35rem;
+  }
 }
 /*# sourceMappingURL=settings.css.map */

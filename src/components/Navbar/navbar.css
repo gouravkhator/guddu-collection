@@ -37,6 +37,30 @@
   font-size: 1.08rem;
 }
 
+#navbar .dropdown-item button {
+  font-size: 1.08rem;
+}
+
+@media (max-width: 400px) {
+  #navbar .dropdown-menu {
+    min-width: -webkit-fit-content;
+    min-width: -moz-fit-content;
+    min-width: fit-content;
+    padding: 5px;
+  }
+  #navbar .dropdown-item {
+    max-width: -webkit-fit-content;
+    max-width: -moz-fit-content;
+    max-width: fit-content;
+    font-size: 1rem;
+  }
+  #navbar .dropdown-item button.btn {
+    width: 100%;
+    padding: 5px;
+    font-size: 1rem;
+  }
+}
+
 @media (max-width: 768px) {
   #navbar {
     display: -webkit-box;

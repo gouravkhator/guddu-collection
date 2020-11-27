@@ -16,7 +16,7 @@ export default function Signup() {
     const passwordRef = useRef();
     const nameRef = useRef();
 
-    const { signup, currentUser } = useAuth();
+    const { handleGoogleSignIn, signup, currentUser } = useAuth();
     const [error, setError] = useState('');
     const [loading, setLoading] = useState(false);
     const history = useHistory();
@@ -48,6 +48,18 @@ export default function Signup() {
 
                     <Card className="container-sm">
                         <Card.Body>
+                            <Button className="google-signin-btn" onClick={() => handleGoogleSignIn()}>
+                                <img width="25px" height="25px"
+                                    alt="Google logo" id="google-logo"
+                                    style={{
+                                        marginRight: '10px', marginBottom: '3px',
+                                        background: 'white', padding: '5px'
+                                    }}
+                                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/512px-Google_%22G%22_Logo.svg.png" />
+                                <b>Sign In with Google</b>
+                            </Button>
+
+                            <h3 className="text-center mt-3 mb-3">Or</h3>
                             <h2 className="text-center mb-4">Sign Up</h2>
 
                             <Form onSubmit={handleSubmit}>

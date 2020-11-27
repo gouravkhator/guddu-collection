@@ -4,4 +4,9 @@
     a, button, input{
         font-size:  var(--article-text-font-size);
     }
+
+    .google-signin-btn{
+        width: 100%;
+        position: relative;
+    }
 }

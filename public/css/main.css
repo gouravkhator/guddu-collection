@@ -78,5 +78,8 @@ a {
   .bottom-space {
     margin-bottom: 5rem;
   }
+  :root {
+    --article-text-font-size: 1.2rem;
+  }
 }
 /*# sourceMappingURL=main.css.map */

@@ -48,8 +48,17 @@ export const AuthProvider = ({ children }) => {
     }
 
     async function googleSignIn() {
-        await app.auth().signInWithRedirect(googleProvider);
+        await app.auth().signInWithPopup(googleProvider);
         return firebase.auth().getRedirectResult(); //get the user from result on using this googleSignIn
+    }
+
+    const handleGoogleSignIn = async () => {
+        try {
+            await googleSignIn();
+
+        } catch (error) {
+            console.log(error);
+        }
     }
 
     useEffect(() => {
@@ -69,7 +78,8 @@ export const AuthProvider = ({ children }) => {
         logout,
         deleteAccount,
         resetPassword,
-        googleSignIn
+        googleSignIn,
+        handleGoogleSignIn
     }
 
     return (
