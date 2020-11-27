@@ -28,10 +28,4 @@
           transform: translateX(-50%);
   background: #460202;
 }
-
-@media (min-width: 728px) {
-  .about-article {
-    font-size: 2rem;
-  }
-}
 /*# sourceMappingURL=about.css.map */

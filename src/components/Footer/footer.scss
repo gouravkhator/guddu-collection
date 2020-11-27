@@ -33,7 +33,7 @@ footer{
 
     /*for strong text in button component*/
     strong{
-        font-size: 20px;
+        font-size: 1.3rem; //REM
     }
     
     .address-display{
@@ -45,19 +45,22 @@ footer{
 /* for maximum height of 700px or max-width of 450px */
 @media screen and (max-height: 700px), screen and (max-width: 450px){
     footer{
-        height: 50px;
+        height: 3.5rem; //REM
 
         .row, .col-8, .col-4 {
             height: 100%;
         }
     
         strong{
-            font-size: 16px;
+            // font-size: 16px;
+            font-size: 1.05rem; //REM
         }
     
         svg{
-            height: 20px;
-            width: 17px;
+            // height: 20px;
+            // width: 17px;
+            height: 1.5rem; //REM
+            width: 1rem; //REM
         }
     }
 

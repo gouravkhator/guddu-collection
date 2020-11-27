@@ -19,8 +19,24 @@ export default function MyNavbar({ setError }) {
     //else login or profile according to loggedin or not
     const history = useHistory();
     const [loading, setLoading] = useState(false);
-    const { currentUser, logout } = useAuth();
+    const { currentUser, logout, googleSignIn } = useAuth();
     const pathname = history.location.pathname;
+
+    const handleGoogleSignIn = async () => {
+        try {
+            await googleSignIn();
+
+        } catch (error) {
+            console.log(error);
+            // let email = error.email;
+
+            // if (error.code === 'auth/account-exists-with-different-credential') {
+            // auth.fetchSignInMethodsForEmail(email).then(function(providers) {
+
+            // }
+            // }
+        }
+    }
 
     const handleSearch = (e) => {
         e.preventDefault();
@@ -78,15 +94,26 @@ export default function MyNavbar({ setError }) {
                             </NavDropdown>
                         </>
                     ) : (
-                            <NavDropdown title="Sign In" id="basic-nav-dropdown">
-                                <NavDropdown.Item href="/signup" active={pathname === "/signup"}>
-                                    Sign Up
-                                </NavDropdown.Item>
+                            <>
+                                <NavDropdown title="Sign In" id="basic-nav-dropdown">
+                                    <NavDropdown.Item onClick={() => handleGoogleSignIn()}>
+                                        <img width="17px" height="17px"
+                                            alt="Google logo" id="google-logo"
+                                            style={{ marginRight: '10px', marginBottom: '3px' }}
+                                            src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/512px-Google_%22G%22_Logo.svg.png" />
+                                        Sign In
+                                    </NavDropdown.Item>
+                                    <NavDropdown.Divider />
 
-                                <NavDropdown.Item href="/login" active={pathname === "/login"}>
-                                    Log In
-                                </NavDropdown.Item>
-                            </NavDropdown>
+                                    <NavDropdown.Item href="/signup" active={pathname === "/signup"}>
+                                        Sign Up
+                                    </NavDropdown.Item>
+
+                                    <NavDropdown.Item href="/login" active={pathname === "/login"}>
+                                        Log In
+                                    </NavDropdown.Item>
+                                </NavDropdown>
+                            </>
                         )}
 
                     <Nav.Link href="/about" active={pathname === "/about"}>About</Nav.Link>

@@ -46,7 +46,6 @@ export default function Settings() {
 
     const deleteConfirmed = async () => {
         try {
-            console.log(currentUser);
             setError('');
 
             setLoading(true);
@@ -55,7 +54,7 @@ export default function Settings() {
             history.push('/');
         } catch (error) {
             if (error.code === 'auth/requires-recent-login') {
-                setError('Please logout and login again to delete..');
+                setError("Deletion of this account requires recent signin. Please logout and login again to delete..");
             } else {
                 setError('Failed to delete account');
             }
@@ -74,10 +73,17 @@ export default function Settings() {
                     <article className="settings-article text-left pl-4 pr-4">
                         <h2 className="settings-title mb-3">Settings</h2>
                         <div className="text-left mt-4 mb-3">
-                            {/* display name is null here */}
+                            {/* display name is null here if signup happens via email*/}
                             <h4><b>Email</b></h4>
                             <h4 className="pl-4 mb-3">{currentUser.email}</h4>
-                            <h4 className="mb-3">{currentUser.displayName}</h4>
+                            {currentUser.displayName &&
+                                <>
+                                    <h4><b>Display Name</b></h4>
+                                    <h4 className="pl-4 mb-3">
+                                        {currentUser.displayName}
+                                    </h4>
+                                </>
+                            }
 
                             <Button variant="danger" disabled={loading} onClick={() => setModalShow(true)}>
                                 {loading ? <b>Deleting Account</b> : <b>Delete Account</b>}

@@ -1,3 +1,5 @@
+$cardBGColor: #eee;
+
 .item-card{
     display: flex;
     flex-direction: column;
@@ -5,32 +7,42 @@
     align-items: flex-start;
     border-radius: 6px;
     border: 5px #eee solid;
+    background-color: $cardBGColor;
 }
 
 .item-tags-list{
     padding: 0px;
-    background-color: #eee;
+    background-color: $cardBGColor;
     width: 100%;
     display: grid;
     gap: 10px;
     grid-template-columns: repeat(auto-fit, minmax(70px, 1fr));
+
+    li{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        min-width: fit-content;
+    }
+
+    .tag{
+        padding: 5px;
+        width: 100%;
+        color: #fff;
+        font-size: 1.2rem; //REM
+        font-weight: 600;
+        background-color: rgb(90, 90, 90);
+    
+        &:hover{
+            text-decoration: none;
+            opacity: 0.9;
+        }
+    }
 }
 
-.item-tags-list li{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-}
-
-.item-tags-list .tag{
-    padding: 5px;
-    width: 100%;
-    color: #fff;
-    background-color: rgb(90, 90, 90);
-
-    &:hover{
-        text-decoration: none;
-        opacity: 0.9;
+@media screen and (max-height: 700px), screen and (max-width: 450px){
+    .item-tags-list .tag{
+        font-size: 1rem; //REM
     }
 }

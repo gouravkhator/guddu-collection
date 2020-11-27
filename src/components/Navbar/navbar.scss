@@ -10,21 +10,28 @@
 #navbar{
     background-color: var(--nav-bg-color);
     box-shadow: 0px 5px 5px #333;
-    align-items: center;
     font-family: Arial, Helvetica, sans-serif;
 
-    #navbar-brand{
+    #navbar-brand {
         display: flex;
     }
 
-    #navbar-logo{
-        background-image: url('../../gc-logo.png');
+    #navbar-logo {
+        background-image: url('../../static_resources/gc-logo.png');
         background-repeat: no-repeat;
         background-size: contain;
         width: 40px;
         height: 31.5px;
         margin-left: 10px;
         margin-right: 0;
+    }
+
+    .nav-link {
+        font-size: 1.2rem; //REM
+    }
+
+    .dropdown-item{
+        font-size: 1.08rem; //REM
     }
 }
 

@@ -28,4 +28,8 @@
           transform: translateX(-50%);
   background: #460202;
 }
+
+.settings-title button, .settings-title a {
+  font-size: var(--article-text-font-size);
+}
 /*# sourceMappingURL=settings.css.map */

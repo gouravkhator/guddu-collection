@@ -6,6 +6,8 @@ import { useAuth } from '../../Auth';
 import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
 
+import './feed.css';
+
 export default function YourViewed() {
     const telephone_no = "9748044991";
     const { currentUser } = useAuth();
@@ -14,7 +16,7 @@ export default function YourViewed() {
         <>
             {!currentUser ? <Redirect to="/" /> :
                 <Container className="text-center">
-                    <article>
+                    <article className="feed-article">
                         <h2>Feed for You</h2>
 
                         <h4>Oops! Your Feed is empty..</h4>

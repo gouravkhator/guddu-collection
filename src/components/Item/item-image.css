@@ -14,6 +14,7 @@
           align-items: flex-start;
   border-radius: 6px;
   border: 5px #eee solid;
+  background-color: #eee;
 }
 
 .item-tags-list {
@@ -38,17 +39,28 @@
       -ms-flex-align: center;
           align-items: center;
   width: 100%;
+  min-width: -webkit-fit-content;
+  min-width: -moz-fit-content;
+  min-width: fit-content;
 }
 
 .item-tags-list .tag {
   padding: 5px;
   width: 100%;
   color: #fff;
+  font-size: 1.2rem;
+  font-weight: 600;
   background-color: #5a5a5a;
 }
 
 .item-tags-list .tag:hover {
   text-decoration: none;
   opacity: 0.9;
+}
+
+@media screen and (max-height: 700px), screen and (max-width: 450px) {
+  .item-tags-list .tag {
+    font-size: 1rem;
+  }
 }
 /*# sourceMappingURL=item-image.css.map */

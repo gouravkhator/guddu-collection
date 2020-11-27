@@ -36,7 +36,7 @@ export default function ForgotPassword() {
     return (
         <>
             {!!currentUser ? <Redirect to="/" /> : (
-                <Container>
+                <Container className="signin-card">
                     {error && <Alert variant="danger">{error}</Alert>}
                     {message && <Alert variant="success">{message}</Alert>}
 

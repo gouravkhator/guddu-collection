@@ -18,6 +18,7 @@ export default function ItemImage({ imgSrc, tags }) {
             {/* <img loading="lazy" src={imgSrc} alt={tags}
                 width="200" height="250" /> */}
 
+            <h4 className="m-2"><b>Tags</b></h4>
             <ul className="item-tags-list">
                 {tags && tagsArr.map(tag => (
                     <li key={tag}>

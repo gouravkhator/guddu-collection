@@ -3,4 +3,8 @@
 .settings-title{
     @include title-bottom-line(20%, 90%);
     max-width: fit-content;
+
+    button, a{
+        font-size:  var(--article-text-font-size);
+    }
 }

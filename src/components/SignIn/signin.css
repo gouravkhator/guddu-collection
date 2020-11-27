@@ -1,0 +1,8 @@
+.signin-card {
+  font-size: var(--article-text-font-size);
+}
+
+.signin-card a, .signin-card button, .signin-card input {
+  font-size: var(--article-text-font-size);
+}
+/*# sourceMappingURL=signin.css.map */

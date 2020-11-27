@@ -34,7 +34,7 @@ footer .address-btn:hover {
 }
 
 footer strong {
-  font-size: 20px;
+  font-size: 1.3rem;
 }
 
 footer .address-display {
@@ -45,17 +45,17 @@ footer .address-display {
 /* for maximum height of 700px or max-width of 450px */
 @media screen and (max-height: 700px), screen and (max-width: 450px) {
   footer {
-    height: 50px;
+    height: 3.5rem;
   }
   footer .row, footer .col-8, footer .col-4 {
     height: 100%;
   }
   footer strong {
-    font-size: 16px;
+    font-size: 1.05rem;
   }
   footer svg {
-    height: 20px;
-    width: 17px;
+    height: 1.5rem;
+    width: 1rem;
   }
 }
 

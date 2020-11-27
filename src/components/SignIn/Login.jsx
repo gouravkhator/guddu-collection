@@ -36,7 +36,7 @@ export default function Login() {
     return (
         <>
             {!!currentUser ? <Redirect to="/" /> : (
-                <Container>
+                <Container className="signin-card">
                     {error && <Alert variant="danger">{error}</Alert>}
 
                     <Card className="container-sm">

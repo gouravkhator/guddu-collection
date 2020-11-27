@@ -7,6 +7,8 @@
     --link-font-color: rgb(247, 225, 197);
     --selection-font-color: #eee;
     --selection-bg-color: #333;
+
+    --article-text-font-size: 1.3rem;
 }
 
 /* global styles */
@@ -19,7 +21,8 @@
 body {
     // font-family: Arial, Helvetica, sans-serif;
     font-family: 'Overlock', cursive;
-    font-size: 18px;
+    // font-size: 18px;
+    font-size: 62.5%; //for 10px
     color: black;
     overflow-x: hidden;
     width: 100%;
@@ -44,13 +47,14 @@ a {
 /* Leave some space at top for alerts and errors in navbar or for signin */
 .top-space {
     position: relative;
-    top: 50px;
+    top: 5rem; //REM
     /*its computed size, as alert takes that many pixels */
 }
 
 /* Leave some space at bottom of every page for fixed footer */
 .bottom-space {
-    margin-bottom: 128px;
+    // margin-bottom: 128px;
+    margin-bottom: 10rem; //REM
     /*for footer we need that many pixels, so gave margin of some space in bottom of section for every page*/
 }
 
@@ -64,13 +68,13 @@ a {
     text-align: center;
     background-color: rgb(231, 100, 100);
     color: white;
-    font-size: 20px;
-    font-weight: bold;
+    font-size: 1.5rem; //REM
+    font-weight: 600;
 }
 
 @media screen and (max-height: 700px), screen and (max-width: 450px){
     .bottom-space{
-        margin-bottom: 50px;
+        margin-bottom: 5rem; //REM
     }
 }
 

@@ -9,6 +9,8 @@ import Card from "react-bootstrap/Card";
 import Alert from "react-bootstrap/Alert";
 import Container from 'react-bootstrap/Container';
 
+import './signin.css';
+
 export default function Signup() {
     const emailRef = useRef();
     const passwordRef = useRef();
@@ -41,7 +43,7 @@ export default function Signup() {
     return (
         <>
             {!!currentUser ? <Redirect to="/" /> : (
-                <Container>
+                <Container className="signin-card">
                     {error && <Alert variant="danger">{error}</Alert>}
 
                     <Card className="container-sm">
@@ -56,7 +58,7 @@ export default function Signup() {
 
                                 <Form.Group id="display-name">
                                     <Form.Label>Display Name</Form.Label>
-                                    <Form.Control type="text" ref={nameRef} placeholder="Username goes here" minLength={4} maxLength={15} required />
+                                    <Form.Control type="text" ref={nameRef} placeholder="Your name goes here" minLength={4} maxLength={20} required />
                                 </Form.Group>
 
                                 <Form.Group id="password">
