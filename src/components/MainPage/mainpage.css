@@ -13,12 +13,11 @@
       -ms-flex-align: center;
           align-items: center;
   width: 100%;
+  font-size: 1.3rem;
 }
 
 .mainpage article {
-  background: linear-gradient(190deg, #f5d4d4, lightcoral);
-  /* background: linear-gradient(to right, blue, rgb(238, 152, 152)); */
-  /* color: whitesmoke; */
+  background: linear-gradient(150deg, #fde2e2, #ce4a4a);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -30,13 +29,13 @@
   width: 100%;
   margin-bottom: 20px;
   border-radius: 10px;
-  border: 2px solid #eee;
+  border: 2px solid #dbdbdb;
   padding: 5px 10px;
-  -webkit-box-shadow: 0px 10px 10px darkcyan;
-          box-shadow: 0px 10px 10px darkcyan;
+  -webkit-box-shadow: 0px 10px 10px #65666d, 10px 12px 5px #dfdfe9;
+          box-shadow: 0px 10px 10px #65666d, 10px 12px 5px #dfdfe9;
 }
 
-.mainpage .most-popular-items, .mainpage .homepage-items {
+.mainpage .most-popular-items, .mainpage .categories-list {
   padding: 0px;
   display: -ms-grid;
   display: grid;
@@ -73,7 +72,7 @@
   background: #460202;
 }
 
-.mainpage .most-popular-items li, .mainpage .homepage-items li {
+.mainpage .most-popular-items li, .mainpage .categories-list li {
   width: 100%;
   /* to center list item's content we use flexbox */
   display: -webkit-box;
@@ -85,5 +84,55 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+.mainpage .categories-list li {
+  margin: auto;
+  max-width: -webkit-max-content;
+  max-width: -moz-max-content;
+  max-width: max-content;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 1.5rem;
+  border: 5px solid #eee;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.mainpage .categories-list li .cover_image_wrapper {
+  padding: 10px;
+}
+
+.mainpage .categories-list li .category_name {
+  letter-spacing: 3px;
+  background-color: #eee;
+  width: 100%;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.mainpage .categories-list li:hover .cover_image, .mainpage .categories-list li:focus .cover_image, .mainpage .categories-list li:active .cover_image {
+  -webkit-transform: scale(1.2, 1.2);
+          transform: scale(1.2, 1.2);
+  border-radius: 5%;
+  -webkit-box-shadow: 0px 5px 5px #333;
+          box-shadow: 0px 5px 5px #333;
+}
+
+.mainpage .categories-list li .cover_image {
+  border-radius: 50%;
+  -webkit-transition: all 0.15s ease-in;
+  transition: all 0.15s ease-in;
 }
 /*# sourceMappingURL=mainpage.css.map */

@@ -9,6 +9,8 @@ import Card from "react-bootstrap/Card";
 import Alert from "react-bootstrap/Alert";
 import Container from 'react-bootstrap/Container';
 
+import './signin.css';
+
 export default function Login() {
     const emailRef = useRef();
     const passwordRef = useRef();
@@ -41,7 +43,7 @@ export default function Login() {
 
                     <Card className="container-sm">
                         <Card.Body>
-                            <Button className="google-signin-btn" onClick={() => handleGoogleSignIn()}>
+                            <Button variant="info" className="google-signin-btn" onClick={() => handleGoogleSignIn()}>
                                 <img width="25px" height="25px"
                                     alt="Google logo" id="google-logo"
                                     style={{

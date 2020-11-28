@@ -74,7 +74,7 @@ const getAllItems = async () => {
     return products;
 }
 
-export default function HomePageItems() {
+export default function CategoryProducts() {
     let [products, setProducts] = useState({});
     let [loading, setLoading] = useState(true);
 

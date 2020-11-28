@@ -48,7 +48,7 @@ export default function Signup() {
 
                     <Card className="container-sm">
                         <Card.Body>
-                            <Button className="google-signin-btn" onClick={() => handleGoogleSignIn()}>
+                            <Button variant="info" className="google-signin-btn" onClick={() => handleGoogleSignIn()}>
                                 <img width="25px" height="25px"
                                     alt="Google logo" id="google-logo"
                                     style={{

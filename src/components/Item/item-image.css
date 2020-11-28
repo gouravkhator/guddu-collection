@@ -17,6 +17,14 @@
   background-color: #eee;
 }
 
+.item-card:hover img, .item-card:focus img, .item-card:active img {
+  -webkit-transform: scale(1.1, 1.1);
+          transform: scale(1.1, 1.1);
+  border-radius: 5%;
+  -webkit-box-shadow: 0px 5px 5px #333;
+          box-shadow: 0px 5px 5px #333;
+}
+
 .item-tags-list {
   padding: 0px;
   background-color: #eee;

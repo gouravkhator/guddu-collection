@@ -1,5 +1,5 @@
 import React, { lazy, Suspense, useState } from 'react';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { AuthProvider } from '../Auth';
 import { Alert } from 'react-bootstrap';
 
@@ -18,6 +18,14 @@ const Settings = lazy(() => import('./Settings/Settings'));
 const renderLoader = () => (
   <div className="mt-3 text-center"><p className="spinner-grow text-muted"></p></div>
 );
+
+function PageNotFound() {
+  return (
+    <div className="text-center">
+      <h2>404 Page Not Found</h2>
+    </div>
+  );
+}
 
 export default function App() {
   //with Router we have to use history else with BrowserRouter we can skip history
@@ -38,14 +46,17 @@ export default function App() {
             {/*Some bottom space left for fixed footer. Some top space for alerts and errors.
             For profile and settings, we can have private route of our own and then we can check there if its logged in or not
           then render that else redirect to login*/}
-            <Route exact path="/" component={MainPage} />
-            <Route exact path="/signup" component={Signup} />
-            <Route exact path="/login" component={Login} />
-            <Route exact path="/forgot-password" component={ForgotPassword} />
-            <Route exact path="/feed" component={YourViewed} />
-            <Route exact path="/about" component={About} />
-            <Route exact path="/search/:searchedParam" component={Search} />
-            <Route exact path="/settings" component={Settings} />
+            <Switch>
+              <Route exact path="/" component={MainPage} />
+              <Route exact path="/signup" component={Signup} />
+              <Route exact path="/login" component={Login} />
+              <Route exact path="/forgot-password" component={ForgotPassword} />
+              <Route exact path="/feed" component={YourViewed} />
+              <Route exact path="/about" component={About} />
+              <Route exact path="/search/:searchedParam" component={Search} />
+              <Route exact path="/settings" component={Settings} />
+              <Route exact path="/:otherParams" component={PageNotFound} />
+            </Switch>
           </section>
 
           <Footer />

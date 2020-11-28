@@ -26,16 +26,15 @@
 }
 
 @mixin article-style{
-    background: linear-gradient(190deg, rgb(245, 212, 212), lightcoral);
-    /* background: linear-gradient(to right, blue, rgb(238, 152, 152)); */
-    /* color: whitesmoke; */
+    background: linear-gradient(150deg, rgb(253, 226, 226), rgb(206, 74, 74));
+    // background: linear-gradient(to top, #09B78F, #939197);
     display: flex;
     flex-direction: column;
     text-align: center;
     width: 100%;
     margin-bottom: 20px;
     border-radius: 10px;
-    border: 2px solid #eee;
+    border: 2px solid rgb(219, 219, 219);
     padding: 5px 10px;
-    box-shadow: 0px 10px 10px darkcyan;
+    box-shadow: 0px 10px 10px rgb(101, 102, 109), 10px 12px 5px rgb(223, 223, 233) ;
 }

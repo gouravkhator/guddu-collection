@@ -25,6 +25,7 @@ body {
     font-size: 62.5%; //for 10px
     color: black;
     overflow-x: hidden;
+    overflow-y: scroll;
     width: 100%;
     height: 100%;
     background: var(--primary-bg-color);
@@ -73,12 +74,12 @@ a {
 }
 
 @media screen and (max-height: 700px), screen and (max-width: 450px){
-    .bottom-space{
-        margin-bottom: 5rem; //REM
-    }
-
     :root{
         --article-text-font-size: 1.2rem; //REM
+    }
+
+    .bottom-space{
+        margin-bottom: 5rem; //REM
     }
 }
 

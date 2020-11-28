@@ -6,12 +6,13 @@
     justify-content: flex-start;
     align-items: center;
     width: 100%;
+    font-size: 1.3rem;
 
     article{
         @include article-style();
     }
 
-    .most-popular-items, .homepage-items {
+    .most-popular-items, .categories-list {
         padding: 0px;
         display: grid;
         gap: 10px;
@@ -22,12 +23,51 @@
         @include title-bottom-line(10%, 40%);
     }
 
-    .most-popular-items li, .homepage-items li{
+    .most-popular-items li, .categories-list li{
         width: 100%;
         
         /* to center list item's content we use flexbox */
         display: flex;
         justify-content: center;
         align-items: center;
+    }
+
+    .categories-list li{
+        margin: auto;
+        max-width: max-content;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        font-size: 1.5rem;
+        border: 5px solid #eee;
+        border-radius: 20px;
+        cursor: pointer;
+
+        .cover_image_wrapper{
+            padding: 10px;
+        }
+
+        .category_name{
+            letter-spacing: 3px;
+            background-color: #eee;
+            width: 100%;
+            padding-top: 5px;
+            padding-bottom: 5px;
+        }
+
+        &:hover, &:focus, &:active{
+            .cover_image{
+                transform: scale(1.2,1.2);
+                border-radius: 5%;
+                box-shadow: 0px 5px 5px #333;
+            }
+        }
+
+        .cover_image{
+            border-radius: 50%;
+            // margin-bottom: 10px;
+            transition: all 0.15s ease-in;
+        }
     }
 }
