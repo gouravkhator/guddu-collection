@@ -12,7 +12,7 @@
         @include article-style();
     }
 
-    .most-popular-items, .categories-list {
+    .featured-items, .categories-list {
         padding: 0px;
         display: grid;
         gap: 10px;
@@ -23,18 +23,24 @@
         @include title-bottom-line(10%, 40%);
     }
 
-    .most-popular-items li, .categories-list li{
+    .featured-items li.featured-item-card, .categories-list li{
         width: 100%;
-        
-        /* to center list item's content we use flexbox */
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        margin: auto;
+        max-width: max-content;
+    }
+
+    .featured-items {
+        li.featured-item-card{
+            box-shadow: 0px 3px 10px rgb(102, 102, 102);
+
+            /* to center list item's content we use flexbox */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
     }
 
     .categories-list li{
-        margin: auto;
-        max-width: max-content;
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
@@ -48,12 +54,18 @@
             padding: 10px;
         }
 
+        .cover_image{
+            border-radius: 50%;
+            transition: all 0.15s ease-in;
+        }
+
         .category_name{
             letter-spacing: 3px;
             background-color: #eee;
             width: 100%;
             padding-top: 5px;
             padding-bottom: 5px;
+            transition: all 0.15s ease-in;
         }
 
         &:hover, &:focus, &:active{
@@ -62,12 +74,18 @@
                 border-radius: 5%;
                 box-shadow: 0px 5px 5px #333;
             }
-        }
 
-        .cover_image{
-            border-radius: 50%;
-            // margin-bottom: 10px;
-            transition: all 0.15s ease-in;
+            .category_name{
+                padding-top: 8px;
+            }
         }
+    }
+}
+
+@media screen and (max-height: 700px), screen and (max-width: 450px){
+    .cover_image{
+        //aspect ratio : 200/200
+        width: 160px;
+        height: 160px;
     }
 }

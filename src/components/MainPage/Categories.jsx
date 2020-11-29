@@ -87,6 +87,7 @@ export default function Categories() {
                                     <li key={index} onClick={() => handleCategoryClick(category_name)}>
                                         <Suspense fallback={renderLoader()}>
                                             <div className="cover_image_wrapper">
+                                                {/* 200*200 for cover images */}
                                                 <picture>
                                                     <source className="cover_image" width="200" height="200" type="image/webp" srcSet={webp_url} />
                                                     <source className="cover_image" width="200" height="200" type="image/jpeg" srcSet={jpeg_url} />

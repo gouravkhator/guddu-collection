@@ -9,10 +9,12 @@ export default function ItemImage({ imgSrc, tags }) {
 
     return (
         <div className="item-card">
+            {/* 200*250 for item images */}
             <picture>
-                <source width="200" height="250" type="image/webp" srcSet={webp_url} />
-                <source width="200" height="250" type="image/jpeg" srcSet={jpeg_url} />
-                <img loading="lazy" src={jpeg_url} alt={tags} width="200" height="250" />
+                <source className="item-image" width="200" height="250" type="image/webp" srcSet={webp_url} />
+                <source className="item-image" width="200" height="250" type="image/jpeg" srcSet={jpeg_url} />
+                <img className="item-image" loading="lazy" src={jpeg_url} alt={tags}
+                    width="200" height="250" />
             </picture>
 
             {/* <img loading="lazy" src={imgSrc} alt={tags}

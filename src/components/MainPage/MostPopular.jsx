@@ -74,9 +74,9 @@ export default function MostPopular() {
                         <strong>Oops! It's empty</strong>
                     </h4>
                 ) : (
-                        <ul className="most-popular-items">
+                        <ul className="featured-items">
                             {products.map(({ webp_url, jpeg_url, tags }, index) => (
-                                <li key={index}>
+                                <li key={index} className="featured-item-card">
                                     <Suspense fallback={renderLoader()}>
                                         <ItemImage imgSrc={{ webp_url, jpeg_url }} tags={tags} />
                                     </Suspense>

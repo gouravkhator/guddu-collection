@@ -17,7 +17,12 @@
   background-color: #eee;
 }
 
-.item-card:hover img, .item-card:focus img, .item-card:active img {
+.item-card .item-image {
+  -webkit-transition: all 0.15s ease-in;
+  transition: all 0.15s ease-in;
+}
+
+.item-card:hover .item-image, .item-card:focus .item-image, .item-card:active .item-image {
   -webkit-transform: scale(1.1, 1.1);
           transform: scale(1.1, 1.1);
   border-radius: 5%;
@@ -67,6 +72,10 @@
 }
 
 @media screen and (max-height: 700px), screen and (max-width: 450px) {
+  .item-card .item-image {
+    width: 160px;
+    height: 200px;
+  }
   .item-tags-list .tag {
     font-size: 1rem;
   }

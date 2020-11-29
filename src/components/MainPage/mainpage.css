@@ -31,11 +31,11 @@
   border-radius: 10px;
   border: 2px solid #dbdbdb;
   padding: 5px 10px;
-  -webkit-box-shadow: 0px 10px 10px #65666d, 10px 12px 5px #dfdfe9;
-          box-shadow: 0px 10px 10px #65666d, 10px 12px 5px #dfdfe9;
+  -webkit-box-shadow: 0px 5px 10px #535458;
+          box-shadow: 0px 5px 10px #535458;
 }
 
-.mainpage .most-popular-items, .mainpage .categories-list {
+.mainpage .featured-items, .mainpage .categories-list {
   padding: 0px;
   display: -ms-grid;
   display: grid;
@@ -72,8 +72,17 @@
   background: #460202;
 }
 
-.mainpage .most-popular-items li, .mainpage .categories-list li {
+.mainpage .featured-items li.featured-item-card, .mainpage .categories-list li {
   width: 100%;
+  margin: auto;
+  max-width: -webkit-max-content;
+  max-width: -moz-max-content;
+  max-width: max-content;
+}
+
+.mainpage .featured-items li.featured-item-card {
+  -webkit-box-shadow: 0px 3px 10px #666666;
+          box-shadow: 0px 3px 10px #666666;
   /* to center list item's content we use flexbox */
   display: -webkit-box;
   display: -ms-flexbox;
@@ -87,10 +96,6 @@
 }
 
 .mainpage .categories-list li {
-  margin: auto;
-  max-width: -webkit-max-content;
-  max-width: -moz-max-content;
-  max-width: max-content;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -114,12 +119,20 @@
   padding: 10px;
 }
 
+.mainpage .categories-list li .cover_image {
+  border-radius: 50%;
+  -webkit-transition: all 0.15s ease-in;
+  transition: all 0.15s ease-in;
+}
+
 .mainpage .categories-list li .category_name {
   letter-spacing: 3px;
   background-color: #eee;
   width: 100%;
   padding-top: 5px;
   padding-bottom: 5px;
+  -webkit-transition: all 0.15s ease-in;
+  transition: all 0.15s ease-in;
 }
 
 .mainpage .categories-list li:hover .cover_image, .mainpage .categories-list li:focus .cover_image, .mainpage .categories-list li:active .cover_image {
@@ -130,9 +143,14 @@
           box-shadow: 0px 5px 5px #333;
 }
 
-.mainpage .categories-list li .cover_image {
-  border-radius: 50%;
-  -webkit-transition: all 0.15s ease-in;
-  transition: all 0.15s ease-in;
+.mainpage .categories-list li:hover .category_name, .mainpage .categories-list li:focus .category_name, .mainpage .categories-list li:active .category_name {
+  padding-top: 8px;
+}
+
+@media screen and (max-height: 700px), screen and (max-width: 450px) {
+  .cover_image {
+    width: 160px;
+    height: 160px;
+  }
 }
 /*# sourceMappingURL=mainpage.css.map */
