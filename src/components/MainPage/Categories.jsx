@@ -1,13 +1,10 @@
 import React, { Suspense, useEffect, useState } from "react";
 import { db } from '../../firebase_api';
+import { Link } from 'react-router-dom';
 
 const renderLoader = () => (
     <p className="spinner-grow text-muted"></p>
 );
-
-const handleCategoryClick = (category_name) => {
-    //TODO : make the click to search page
-}
 
 const fetchCategories = async () => {
     /*
@@ -84,20 +81,22 @@ export default function Categories() {
                         <div>
                             <ul className="categories-list">
                                 {categories.map(({ category_name, webp_url, jpeg_url }, index) => (
-                                    <li key={index} onClick={() => handleCategoryClick(category_name)}>
-                                        <Suspense fallback={renderLoader()}>
-                                            <div className="cover_image_wrapper">
-                                                {/* 200*200 for cover images */}
-                                                <picture>
-                                                    <source className="cover_image" width="200" height="200" type="image/webp" srcSet={webp_url} />
-                                                    <source className="cover_image" width="200" height="200" type="image/jpeg" srcSet={jpeg_url} />
-                                                    <img loading="lazy" src={jpeg_url} alt={category_name}
-                                                        width="200" height="200" className="cover_image" />
-                                                </picture>
-                                            </div>
-                                        </Suspense>
+                                    <li key={index}>
+                                        <Link to={"/search/" + category_name}>
+                                            <Suspense fallback={renderLoader()}>
+                                                <div className="cover_image_wrapper">
+                                                    {/* 200*200 for cover images */}
+                                                    <picture>
+                                                        <source className="cover_image" width="200" height="200" type="image/webp" srcSet={webp_url} />
+                                                        <source className="cover_image" width="200" height="200" type="image/jpeg" srcSet={jpeg_url} />
+                                                        <img loading="lazy" src={jpeg_url} alt={category_name}
+                                                            width="200" height="200" className="cover_image" />
+                                                    </picture>
+                                                </div>
+                                            </Suspense>
 
-                                        <b className="category_name">{category_name.charAt(0).toUpperCase() + category_name.slice(1)}</b>
+                                            <b className="category_name">{category_name.charAt(0).toUpperCase() + category_name.slice(1)}</b>
+                                        </Link>
                                     </li>
                                 ))}
                             </ul>

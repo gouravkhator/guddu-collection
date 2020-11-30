@@ -115,6 +115,10 @@
   cursor: pointer;
 }
 
+.mainpage .categories-list li a {
+  text-decoration: none;
+}
+
 .mainpage .categories-list li .cover_image_wrapper {
   padding: 10px;
 }
@@ -126,9 +130,12 @@
 }
 
 .mainpage .categories-list li .category_name {
+  display: block;
   letter-spacing: 3px;
   background-color: #eee;
+  color: #000;
   width: 100%;
+  min-width: 100%;
   padding-top: 5px;
   padding-bottom: 5px;
   -webkit-transition: all 0.15s ease-in;

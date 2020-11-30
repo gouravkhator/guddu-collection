@@ -1,0 +1,85 @@
+#gc-text-svg{
+    min-width: 180px;
+    min-height: 180px;
+    width: 25vh;
+    height: 25vh;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: fill 0.5s ease forwards 2s;
+}
+
+#gc-text-svg path{
+    stroke-dasharray: 580px;
+    stroke-dashoffset: 580px;
+    animation: svg-animate 2s ease forwards;
+}
+
+@keyframes svg-animate{
+    to{
+        stroke-dashoffset: 0px;
+    }
+}
+
+@keyframes fill{
+    from {
+        fill: transparent;
+    }
+    to{
+        fill: #fff;
+    }
+}
+
+.gc-svg-wrapper{
+    width: 100%;
+    min-height: 100vh;
+    z-index: 200;
+    background-color: rgb(32, 35, 48);
+    text-align: center;
+    animation: wrapper-hide 0.5s ease forwards 2.6s;
+}
+
+@keyframes wrapper-hide{
+    to{
+        transform: translateY(-100%);
+    }
+}
+
+/* display root with this class only when animation of svg text is there 
+else just don't use this class with delay */
+.root-display-delay{
+    width: 100%;
+    min-height: 100vh;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    visibility: hidden;
+    pointer-events: none;
+    animation: root-display 0.5s ease forwards 3.1s;
+}
+
+@keyframes root-display{
+    to{
+        visibility: visible;
+        pointer-events: all;
+    }
+}
+
+.gc-svg-wrapper h2{
+    color: white;
+    visibility: hidden;
+    position: absolute;
+    top: 65%;
+    left: 50%;
+    transform: translate(-50%, -65%);
+    animation: root-display 0.6s ease-in forwards 0.9s;
+}
+
+@media(max-height: 700px){
+    .gc-svg-wrapper h2{
+        top: 70%;
+        left: 50%;
+        transform: translate(-50%, -70%);
+    }
+}
