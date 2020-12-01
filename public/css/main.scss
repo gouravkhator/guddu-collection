@@ -21,7 +21,6 @@
 body {
     // font-family: Arial, Helvetica, sans-serif;
     font-family: 'Overlock', cursive;
-    // font-size: 18px;
     font-size: 62.5%; //for 10px
     color: black;
     overflow-x: hidden;
@@ -42,13 +41,6 @@ ul {
 
 a {
     text-decoration: none;
-}
-
-/* Leave some space at bottom of every page for fixed footer */
-.bottom-space {
-    // margin-bottom: 128px;
-    margin-bottom: 7rem; //REM
-    /*for footer we need that many pixels, so gave margin of some space in bottom of section for every page*/
 }
 
 .hidden {
@@ -72,10 +64,6 @@ a {
 @media screen and (max-height: 700px), screen and (max-width: 450px){
     :root{
         --article-text-font-size: 1.2rem; //REM
-    }
-
-    .bottom-space{
-        margin-bottom: 5rem; //REM
     }
 }
 

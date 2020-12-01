@@ -4,18 +4,15 @@
     // --call-hover-color: rgb(14, 68, 7);
     // --address-bg-color: darkcyan;
     // --address-hover-color: rgb(2, 66, 66);
-    --call-bg-color: #b3fff7;
-    --call-hover-color: #487c77;
+    --call-bg-color: #83fff3;
+    --call-hover-color: #076e64;
     --address-bg-color: rgb(1, 49, 49);
     --address-hover-color: rgb(1, 22, 22);
 }
 
 footer{
-    position: fixed;
-    left: 0;
-    bottom: 0;
     width: 100%;
-
+    
     .call-btn{
         color: #333;
         background-color: var(--call-bg-color);

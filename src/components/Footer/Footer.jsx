@@ -1,20 +1,15 @@
 import React from 'react';
 
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
-import Button from 'react-bootstrap/Button';
 import './footer.css';
 
 export default function Footer() {
-    const telephone_no = "9748044991";
 
     return (
         <footer>
-            <Row>
+            {/* <Row>
                 <Col xs={8}>
                     <Button variant="success" className="call-btn w-100 p-3 font-weight-bold text-monospace" href={"tel:" + telephone_no}>
                         <strong>Call Now!! </strong>
-                        {/* <img src="phone.svg" alt="Phone Icon" width="25" height="30" /> */}
                         <svg width="25" height="30" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="phone-alt"
                             className="ml-2 svg-inline--fa fa-phone-alt fa-w-16"
                             role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
@@ -26,7 +21,6 @@ export default function Footer() {
                 <Col xs={4}>
                     <Button variant="info" className="address-btn w-100 p-3 font-weight-bold text-monospace" href="/about#address">
                         <strong className="address-display">Address </strong>
-                        {/* <img src="map-marker.svg" alt="Map Icon" width="25" height="30" /> */}
                         <svg width="25" height="30" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="map-marker-alt"
                             className="svg-inline--fa fa-map-marker-alt fa-w-12"
                             role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
@@ -36,7 +30,8 @@ export default function Footer() {
                     </Button>
                 </Col>
             </Row>
-        </footer >
+         */}
+        </footer>
     );
 }
 

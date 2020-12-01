@@ -38,7 +38,7 @@ export default function App() {
             <MyNavbar />
           </header>
 
-          <section className="bottom-space">
+          <section id="dynamic-section">
             {/*Some bottom space left for fixed footer. Some top space for alerts and errors.
             For profile and settings, we can have private route of our own and then we can check there if its logged in or not
           then render that else redirect to login*/}

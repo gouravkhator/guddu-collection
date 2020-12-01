@@ -1,14 +1,11 @@
 :root {
-  --call-bg-color: #b3fff7;
-  --call-hover-color: #487c77;
+  --call-bg-color: #83fff3;
+  --call-hover-color: #076e64;
   --address-bg-color: rgb(1, 49, 49);
   --address-hover-color: rgb(1, 22, 22);
 }
 
 footer {
-  position: fixed;
-  left: 0;
-  bottom: 0;
   width: 100%;
   /*for strong text in button component*/
 }

@@ -13,8 +13,12 @@ export default function MainPage() {
     return (
         <>
             <article className="banner">
-                <h2>Live the way U Like</h2>
-                <div className="banner-img"></div>
+                <h2>Live the way<br />U Like</h2>
+
+                <section className="banner-actions">
+                    <a href="tel:9748044991">Contact Us</a>
+                    <a href="/about#address">Visit Us</a>
+                </section>
             </article>
             <Container className="mainpage">
 
