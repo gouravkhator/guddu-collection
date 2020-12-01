@@ -3,11 +3,12 @@ $cardBGColor: #eee;
 .item-card{
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: flex-start;
     border-radius: 6px;
     border: 5px #eee solid;
     background-color: $cardBGColor;
+    height: 100%;
 
     .item-image{
         transition: all 0.15s ease-in;
@@ -23,12 +24,13 @@ $cardBGColor: #eee;
 }
 
 .item-tags-list{
-    padding: 0px;
+    padding: 0px 2px;
     background-color: $cardBGColor;
     width: 100%;
     display: grid;
     gap: 10px;
     grid-template-columns: repeat(auto-fit, minmax(70px, 1fr));
+    grid-auto-rows: 1fr;
 
     li{
         display: flex;
@@ -61,6 +63,6 @@ $cardBGColor: #eee;
     }
 
     .item-tags-list .tag{
-        font-size: 1rem; //REM
+        font-size: 1.17rem; //REM
     }
 }

@@ -1,5 +1,4 @@
 import React, { lazy, Suspense } from 'react';
-import Container from 'react-bootstrap/Container';
 import "./mainpage.css";
 
 const MostPopular = lazy(() => import('./MostPopular'));
@@ -20,12 +19,16 @@ export default function MainPage() {
                     <a href="/about#address">Visit Us</a>
                 </section>
             </article>
-            <Container className="mainpage">
 
+            <div className="mainpage">
                 <article className="featured-article">
                     <h2 className="article-title">Featured Products</h2>
                     <Suspense fallback={renderLoader()}>
                         <MostPopular />
+
+                        <div className="circle1"></div>
+                        <div className="circle2"></div>
+                        <div className="circle3"></div>
                     </Suspense>
                 </article>
 
@@ -33,9 +36,10 @@ export default function MainPage() {
                     <h2 className="article-title">Categories To Bag</h2>
                     <Suspense fallback={renderLoader()}>
                         <Categories />
+                        <div className="circle4"></div>
                     </Suspense>
                 </article>
-            </Container>
+            </div>
         </>
     );
 }

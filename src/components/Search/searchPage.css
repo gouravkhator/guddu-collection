@@ -17,7 +17,6 @@
 }
 
 .searched-page article {
-  background: linear-gradient(150deg, #fde2e2, #ce4a4a);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -30,7 +29,7 @@
   margin-bottom: 20px;
   border-radius: 10px;
   border: 2px solid #dbdbdb;
-  padding: 5px 10px;
+  padding: 10px 10px;
   -webkit-box-shadow: 0px 5px 10px #535458;
           box-shadow: 0px 5px 10px #535458;
 }
@@ -70,6 +69,8 @@
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
   background: #460202;
+  -webkit-box-shadow: 0px 2px 5px #181A21;
+          box-shadow: 0px 2px 5px #181A21;
 }
 
 .searched-page li {

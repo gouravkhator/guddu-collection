@@ -35,6 +35,8 @@
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
   background: #460202;
+  -webkit-box-shadow: 0px 2px 5px #181A21;
+          box-shadow: 0px 2px 5px #181A21;
 }
 
 @media (max-width: 400px) {

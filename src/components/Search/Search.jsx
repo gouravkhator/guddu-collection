@@ -14,6 +14,12 @@ const renderLoader = () => (
     <div className="text-center"><p className="spinner-grow text-muted"></p></div>
 );
 
+const removeTag = (tags, tagToRemove) => {
+    let index = tags.indexOf(tagToRemove);
+    if (index !== -1)
+        tags.splice(index, 1);
+}
+
 //just used for reusing the code part
 const filterFetch = (querySnapshot, searchedParamLocal, products) => {
     if (searchedParamLocal) {
@@ -23,10 +29,15 @@ const filterFetch = (querySnapshot, searchedParamLocal, products) => {
             const imageData = doc.data();
 
             if (imageData.tags.includes(searchedParamLocal)) {
+                const tags = imageData.tags.split(',');
+                removeTag(tags, 'women');
+                removeTag(tags, 'men');
+                removeTag(tags, 'girls');
+
                 products.push({
                     webp_url: imageData.webp_url,
                     jpeg_url: imageData.jpeg_url,
-                    tags: imageData.tags
+                    tags: tags.join(',')
                 });
             }
         });
