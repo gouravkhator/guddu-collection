@@ -11,9 +11,6 @@ import FormControl from 'react-bootstrap/FormControl';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
-// import searchIcon from "../../static_resources/search-icon.svg";
-// import backArrow from "../../static_resources/back-arrow.svg";
-
 import "./navbar.css";
 import { Button } from "react-bootstrap";
 
