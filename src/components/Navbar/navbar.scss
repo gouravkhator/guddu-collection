@@ -69,7 +69,7 @@
             font-size: 25px;
         }
 
-        //not displaying logo in small devices
+        //to not display logo in small devices
         #navbar-logo{
             display: none;
         }
@@ -97,4 +97,3 @@
         transition: left 0.06s ease-in-out;
     }
 }
-

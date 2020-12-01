@@ -9,4 +9,19 @@
         width: 100%;
         position: relative;
     }
+
+    .logout-btns{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+        div{
+            margin-right: 5px;
+            width: 100%;
+
+            button, a{
+                width: 90%;
+            }
+        }
+    }
 }

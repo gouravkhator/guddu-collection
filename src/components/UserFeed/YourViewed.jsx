@@ -15,7 +15,7 @@ export default function YourViewed() {
     return (
         <>
             {!currentUser ? <Redirect to="/" /> :
-                <Container className="text-center">
+                <Container className="feed-page text-center">
                     <article className="feed-article">
                         <h2>Feed for You</h2>
 

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { useHistory } from "react-router";
 import { useAuth } from '../../Auth';
 
@@ -8,18 +8,20 @@ import Nav from 'react-bootstrap/Nav';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import Form from 'react-bootstrap/Form';
 import FormControl from 'react-bootstrap/FormControl';
-import Button from 'react-bootstrap/Button';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
-import "./navbar.css";
+// import searchIcon from "../../static_resources/search-icon.svg";
+// import backArrow from "../../static_resources/back-arrow.svg";
 
-export default function MyNavbar({ setError }) {
+import "./navbar.css";
+import { Button } from "react-bootstrap";
+
+export default function MyNavbar() {
     //here if the path is home then about and contact will also be rendered 
     //else login or profile according to loggedin or not
     const history = useHistory();
-    const [loading, setLoading] = useState(false);
-    const { currentUser, logout, googleSignIn } = useAuth();
+    const { currentUser, googleSignIn } = useAuth();
     const pathname = history.location.pathname;
 
     const handleGoogleSignIn = async () => {
@@ -45,19 +47,6 @@ export default function MyNavbar({ setError }) {
         if (searchedParam) {
             history.push('/search/' + searchedParam);
         }
-    }
-
-    const handleLogout = async () => {
-        try {
-            setError('');
-            setLoading(true);
-            await logout();
-            history.push('/');
-        } catch {
-            setError('Failed to log out');
-        }
-
-        setLoading(false);
     }
 
     return (
@@ -86,10 +75,8 @@ export default function MyNavbar({ setError }) {
                                 </NavDropdown.Item>
                                 <NavDropdown.Divider />
 
-                                <NavDropdown.Item>
-                                    <Button disabled={loading} onClick={handleLogout}>
-                                        {loading ? <>Logging Out</> : <>Log Out</>}
-                                    </Button>
+                                <NavDropdown.Item href="/logout" active={pathname === "/logout"}>
+                                    <Button>Log Out</Button>
                                 </NavDropdown.Item>
                             </NavDropdown>
                         </>
@@ -118,15 +105,11 @@ export default function MyNavbar({ setError }) {
 
                     <Nav.Link href="/about" active={pathname === "/about"}>About</Nav.Link>
                 </Nav>
-
                 <Form onSubmit={handleSearch}>
                     <Row>
                         <Col>
                             <FormControl type="text" name="searchedParam" placeholder="Search" className="mr-md-4" required />
                         </Col>
-                        {/* <Col>
-                            <Button type="submit" variant="outline-light">Search</Button>
-                        </Col> */}
                     </Row>
                 </Form>
             </Navbar.Collapse>

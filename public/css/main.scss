@@ -44,18 +44,10 @@ a {
     text-decoration: none;
 }
 
-/* Extra reserved spaces to avoid layout shifts */
-/* Leave some space at top for alerts and errors in navbar or for signin */
-.top-space {
-    position: relative;
-    top: 5rem; //REM
-    /*its computed size, as alert takes that many pixels */
-}
-
 /* Leave some space at bottom of every page for fixed footer */
 .bottom-space {
     // margin-bottom: 128px;
-    margin-bottom: 10rem; //REM
+    margin-bottom: 7rem; //REM
     /*for footer we need that many pixels, so gave margin of some space in bottom of section for every page*/
 }
 
@@ -71,6 +63,10 @@ a {
     color: white;
     font-size: 1.5rem; //REM
     font-weight: 600;
+}
+
+.about-page, .searched-page, .settings-page, .signin-card, .feed-page{
+    margin-top: 50px;
 }
 
 @media screen and (max-height: 700px), screen and (max-width: 450px){

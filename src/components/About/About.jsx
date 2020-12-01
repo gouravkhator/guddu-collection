@@ -8,7 +8,7 @@ export default function About() {
     const telephone_no = "9748044991";
 
     return (
-        <Container>
+        <Container className="about-page">
             <article className="about-article text-left pl-4 pr-4">
                 <h2 className="about-titles mb-3">About Us</h2>
                 <div className="mt-4 mb-3">

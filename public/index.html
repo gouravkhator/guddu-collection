@@ -59,29 +59,21 @@
       let svgWrapper = document.querySelector('.gc-svg-wrapper');
       let root = document.querySelector('#root');
 
-      const storage = window.localStorage;
-      const currTimestamp = Date.now();
-      const timestamp = JSON.parse(storage.getItem('timestamp') || '1000');
+      const storage = window.sessionStorage;
+      let animationDone = JSON.parse(storage.getItem('animationDone') || 'false');
 
-      const timeLimit = 15 * 60 * 1000; // 15 minutes
-
-      const hasTimePassed = (currTimestamp - timestamp) > timeLimit;
-
-      if (hasTimePassed) {
-        // if animation was done 15 minutes before then only do animation by not hiding svg wrapper
+      if (!animationDone) {
+        // if animation was done in different session before then only do animation by not hiding svg wrapper
         // and displaying root with delay
         svgWrapper.classList.remove('hidden');
         root.classList.add('root-display-delay');
+        animationDone = true;
       }
 
-      //set the new timestamp
-      hasTimePassed ?
-        storage.setItem('timestamp', currTimestamp.toString())
-        :
-        storage.setItem('timestamp', timestamp.toString());
+      storage.setItem('animationDone', animationDone);
     }
 
-    controlSvgAnimation(); //animation of svg with controlled timestamp
+    controlSvgAnimation(); //animation of svg with controlled session
 
     // Bootstrap fallback if CDN doesn't work
     let test = document.createElement("div");

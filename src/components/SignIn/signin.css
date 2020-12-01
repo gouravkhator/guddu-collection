@@ -10,4 +10,25 @@
   width: 100%;
   position: relative;
 }
+
+.signin-card .logout-btns {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.signin-card .logout-btns div {
+  margin-right: 5px;
+  width: 100%;
+}
+
+.signin-card .logout-btns div button, .signin-card .logout-btns div a {
+  width: 90%;
+}
 /*# sourceMappingURL=signin.css.map */

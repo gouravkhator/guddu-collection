@@ -11,20 +11,27 @@ const renderLoader = () => (
 
 export default function MainPage() {
     return (
-        <Container className="mainpage">
-            <article className="most-popular-article">
-                <h2 className="article-title">Featured Products</h2>
-                <Suspense fallback={renderLoader()}>
-                    <MostPopular />
-                </Suspense>
+        <>
+            <article className="banner">
+                <h2>Live the way U Like</h2>
+                <div className="banner-img"></div>
             </article>
+            <Container className="mainpage">
 
-            <article className="categories-article">
-                <h2 className="article-title">Categories To Bag</h2>
-                <Suspense fallback={renderLoader()}>
-                    <Categories />
-                </Suspense>
-            </article>
-        </Container>
+                <article className="featured-article">
+                    <h2 className="article-title">Featured Products</h2>
+                    <Suspense fallback={renderLoader()}>
+                        <MostPopular />
+                    </Suspense>
+                </article>
+
+                <article className="categories-article">
+                    <h2 className="article-title">Categories To Bag</h2>
+                    <Suspense fallback={renderLoader()}>
+                        <Categories />
+                    </Suspense>
+                </article>
+            </Container>
+        </>
     );
 }

@@ -1,7 +1,6 @@
-import React, { lazy, Suspense, useState } from 'react';
+import React, { lazy, Suspense } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { AuthProvider } from '../Auth';
-import { Alert } from 'react-bootstrap';
 
 //lazy loading for code splitting in webpack bundles
 const MyNavbar = lazy(() => import('./Navbar/MyNavbar'));
@@ -9,6 +8,7 @@ const MainPage = lazy(() => import('./MainPage/MainPage'));
 const Footer = lazy(() => import('./Footer/Footer'));
 const Signup = lazy(() => import('./SignIn/Signup'));
 const Login = lazy(() => import('./SignIn/Login'));
+const Logout = lazy(() => import('./SignIn/Logout'));
 const ForgotPassword = lazy(() => import('./SignIn/ForgotPassword'));
 const YourViewed = lazy(() => import('./UserFeed/YourViewed'));
 const Search = lazy(() => import('./Search/Search'));
@@ -30,19 +30,15 @@ function PageNotFound() {
 export default function App() {
   //with Router we have to use history else with BrowserRouter we can skip history
 
-  const [error, setError] = useState('');
-  //for errors from buttons in navbar
-
   return (
     <Router>
       <Suspense fallback={renderLoader()}>
         <AuthProvider>
-          <header className="mb-2 sticky-top">
-            <MyNavbar setError={setError} />
-            {error && <Alert className="text-center" variant="danger">{error}</Alert>}
+          <header className="sticky-top">
+            <MyNavbar />
           </header>
 
-          <section className="top-space bottom-space">
+          <section className="bottom-space">
             {/*Some bottom space left for fixed footer. Some top space for alerts and errors.
             For profile and settings, we can have private route of our own and then we can check there if its logged in or not
           then render that else redirect to login*/}
@@ -50,6 +46,7 @@ export default function App() {
               <Route exact path="/" component={MainPage} />
               <Route exact path="/signup" component={Signup} />
               <Route exact path="/login" component={Login} />
+              <Route exact path="/logout" component={Logout} />
               <Route exact path="/forgot-password" component={ForgotPassword} />
               <Route exact path="/feed" component={YourViewed} />
               <Route exact path="/about" component={About} />

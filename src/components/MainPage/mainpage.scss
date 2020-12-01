@@ -1,5 +1,32 @@
 @import "../../../public/css/utility";
 
+article.banner{
+    width: 100%;
+    height: 80vh;
+    padding: 5px 10px;
+    background: linear-gradient(to bottom, #00434A, #181B25);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 15px;
+    color: whitesmoke;
+
+    h2{
+        font-size: 3rem;
+        width: 50%;
+    }
+
+    .banner-img{
+        background-image: url('../../static_resources/banner-bg-image.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        width: 50%;
+        height: 100%;
+    }
+}
+
 .mainpage{
     display: flex;
     flex-direction: column;
@@ -8,7 +35,7 @@
     width: 100%;
     font-size: 1.3rem;
 
-    article{
+    article.featured-article, article.categories-article{
         @include article-style();
     }
 

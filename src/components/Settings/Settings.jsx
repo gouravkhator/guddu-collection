@@ -23,10 +23,10 @@ function MyVerticallyCenteredModal(props) {
                 </Modal.Title>
             </Modal.Header>
             <Modal.Body>
-                <h4>Are you sure you want to delete this account ? </h4>
-                <p>
+                <h3>Are you sure you want to delete this account ? </h3>
+                <h5>
                     This cannot be undone..
-                </p>
+                </h5>
             </Modal.Body>
             <Modal.Footer>
                 <Button variant="danger" onClick={props.deleteAccount}>Delete</Button>
@@ -67,7 +67,7 @@ export default function Settings() {
     return (
         <>
             {!currentUser ? <Redirect to="/" /> : (
-                <Container>
+                <Container className="settings-page">
                     {error && <Alert variant="danger">{error}</Alert>}
 
                     <article className="settings-article text-left pl-4 pr-4">

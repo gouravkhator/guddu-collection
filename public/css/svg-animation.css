@@ -7,13 +7,13 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    animation: fill 0.5s ease forwards 2s;
+    animation: fill 0.8s ease forwards 2.8s;
 }
 
 #gc-text-svg path{
     stroke-dasharray: 580px;
     stroke-dashoffset: 580px;
-    animation: svg-animate 2s ease forwards;
+    animation: svg-animate 2.5s ease forwards 0.6s;
 }
 
 @keyframes svg-animate{
@@ -37,7 +37,7 @@
     z-index: 200;
     background-color: rgb(32, 35, 48);
     text-align: center;
-    animation: wrapper-hide 0.5s ease forwards 2.6s;
+    animation: wrapper-hide 0.6s ease forwards 3.7s;
 }
 
 @keyframes wrapper-hide{
@@ -56,7 +56,7 @@ else just don't use this class with delay */
     left: 0px;
     visibility: hidden;
     pointer-events: none;
-    animation: root-display 0.5s ease forwards 3.1s;
+    animation: root-display 0.5s ease forwards 4.5s;
 }
 
 @keyframes root-display{

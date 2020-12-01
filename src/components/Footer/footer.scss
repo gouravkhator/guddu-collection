@@ -1,8 +1,13 @@
 :root{
-    --call-bg-color: rgb(59, 133, 10);
-    --call-hover-color: rgb(14, 68, 7);
-    --address-bg-color: darkcyan;
-    --address-hover-color: rgb(2, 66, 66);
+    //OLD : before making consistent
+    // --call-bg-color: rgb(59, 133, 10);
+    // --call-hover-color: rgb(14, 68, 7);
+    // --address-bg-color: darkcyan;
+    // --address-hover-color: rgb(2, 66, 66);
+    --call-bg-color: #b3fff7;
+    --call-hover-color: #487c77;
+    --address-bg-color: rgb(1, 49, 49);
+    --address-hover-color: rgb(1, 22, 22);
 }
 
 footer{
@@ -12,10 +17,12 @@ footer{
     width: 100%;
 
     .call-btn{
+        color: #333;
         background-color: var(--call-bg-color);
         border-color: var(--call-bg-color);
 
-        &:hover{
+        &:hover, &:focus, &:active{
+            color: #fff;
             background-color: var(--call-hover-color);
             border-color: var(--call-hover-color);
         }
@@ -25,7 +32,7 @@ footer{
         background-color:var(--address-bg-color);
         border-color: var(--address-bg-color);
 
-        &:hover{
+        &:hover, &:focus, &:active{
             background-color:var(--address-hover-color);
             border-color: var(--address-hover-color);
         }
