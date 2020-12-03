@@ -10,7 +10,7 @@ export default function ItemImage({ imgSrc, tags }) {
     return (
         <div className="item-card">
             {/* 200*250 for item images */}
-            <picture>
+            <picture className="image-wrapper">
                 <source className="item-image" width="200" height="250" type="image/webp" srcSet={webp_url} />
                 <source className="item-image" width="200" height="250" type="image/jpeg" srcSet={jpeg_url} />
                 <img className="item-image" loading="lazy" src={jpeg_url} alt={tags}
@@ -31,6 +31,5 @@ export default function ItemImage({ imgSrc, tags }) {
                 ))}
             </ul>
         </div>
-
     )
 }

@@ -14,7 +14,8 @@
   left: 50%;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
-  background: #5a1707;
+  background-color: #01454d;
+  z-index: 50;
 }
 
 .about-titles::after {
@@ -26,7 +27,7 @@
   left: 50%;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
-  background: #460202;
+  background: #005760;
   -webkit-box-shadow: 0px 2px 5px #181A21;
           box-shadow: 0px 2px 5px #181A21;
 }

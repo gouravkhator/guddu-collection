@@ -29,7 +29,7 @@ serviceWorkerRegistration.register({
     newContentNotification.classList.remove('hidden');
     setTimeout(() => {
       newContentNotification.classList.add('hidden');
-    }, 5000);
+    }, 15000);
 
     registration.waiting.postMessage({ type: 'SKIP_WAITING' });
   }

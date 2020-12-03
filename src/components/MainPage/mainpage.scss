@@ -94,7 +94,10 @@ article.banner{
         padding: 0px;
         display: grid;
         gap: 10px;
+        max-width: 800px;
+        margin: 0 auto;
         grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+        grid-auto-rows: 1fr;
     }
 
     .article-title{
@@ -103,7 +106,7 @@ article.banner{
 
     .featured-items li.featured-item-card, .categories-list li{
         width: 100%;
-        margin: auto;
+        margin: 0 auto;
         max-width: max-content;
     }
 
@@ -258,3 +261,20 @@ article.banner{
         height: 160px;
     }
 }
+
+@media screen and (max-width: 450px){
+    .featured-items{
+        li.featured-item-card{
+            max-width: 90vw;
+        }
+    }
+}
+
+@media screen and (max-width: 580px){
+    .featured-items{
+        li.featured-item-card{
+            grid-column: 1;
+        }
+    }
+}
+

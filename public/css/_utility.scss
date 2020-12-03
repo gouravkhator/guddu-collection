@@ -9,7 +9,9 @@
         bottom:-10px;
         left:50%;
         transform: translateX(-50%);
-        background: rgb(90, 23, 7);
+        // background: rgb(90, 23, 7);
+        background-color: #01454d;
+        z-index: 50;
     }
 
     &::after{
@@ -21,7 +23,8 @@
         bottom:-8px;
         left:50%;
         transform: translateX(-50%);
-        background: rgb(70, 2, 2);
+        // background: rgb(70, 2, 2);
+        background: #005760;
         box-shadow: 0px 2px 5px #181A21;
     }
 }

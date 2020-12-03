@@ -1,4 +1,4 @@
-$cardBGColor: #eee;
+$cardBGColor: rgb(221, 229, 231);
 
 .item-card{
     display: flex;
@@ -10,11 +10,17 @@ $cardBGColor: #eee;
     background-color: $cardBGColor;
     height: 100%;
 
-    .item-image{
-        transition: all 0.15s ease-in;
+    .image-wrapper{
+        transition: clip-path 0.5s ease;
+        clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 60% 100%, 50% 90%, 40% 100%, 0% 100%);
+        border-bottom: 2px solid rgb(80, 95, 99);
     }
 
     &:hover, &:focus, &:active{
+        .image-wrapper{
+            clip-path: none;
+        }
+
         .item-image{
             transform: scale(1.1,1.1);
             border-radius: 5%;
@@ -54,15 +60,52 @@ $cardBGColor: #eee;
         }
     }
 }
-
 @media screen and (max-height: 700px), screen and (max-width: 450px){
     .item-card .item-image{
         //aspect ratio : 200/250
-        width: 160px;
-        height: 200px;
+        width: 180px;
+        height: 225px;
     }
+}
 
+@media screen and (max-width: 500px){
+    .item-card{
+        max-width: 85vw;
+    }
+}
+
+@media screen and (max-width: 580px){
     .item-tags-list .tag{
         font-size: 1.17rem; //REM
+    }
+
+    .item-card{
+        display: grid;
+        gap: 10px;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 20% 1fr;
+        grid-template-areas: 'image head''image tags';
+
+        .image-wrapper{
+            border-bottom: none;
+            border-right: 2px solid rgb(80, 95, 99);
+
+            clip-path: polygon(0% 0%, 100% 0%, 100% 40%, 90% 50%, 100% 60%, 100% 100%, 0% 100%);
+            grid-area: image;
+            height: 100%; //to take whole height of item-card
+        }
+
+        .item-image{
+            height: 100%; //to take up parent's height
+        }
+
+        h4{
+            grid-area: head;
+        }
+
+        .item-tags-list{
+            grid-area: tags;
+            grid-auto-rows: 1fr;
+        }
     }
 }

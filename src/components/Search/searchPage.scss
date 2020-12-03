@@ -6,13 +6,39 @@
     justify-content: flex-start;
     align-items: center;
     width: 100%;
+    min-height: 80vh;
     font-size: 1.3rem;
 
     article {
         @include article-style();
+        height: 100%;
+        min-height: 300px;
+        background: linear-gradient(to right, #d6d6d6, #eee);
+    }
+
+    .search-input{
+        margin-top: 30px;
+        margin-bottom: 10px;
+        width: 100%;
+
+        input{
+            max-width: 800px;
+            border-radius: 5px;
+            border: 1px solid rgb(119, 119, 119);
+            width: 100%;
+            text-align: center;
+            font-size: 1.5rem;
+            color: #011113;
+        }
+
+        input:focus, input:active{
+            border: 2px solid #005760;
+        }
     }
     
     .searched-items {
+        max-width: 800px;
+        margin: 0 auto;
         padding: 0px;
         display: grid;
         gap: 10px;
@@ -23,12 +49,20 @@
         @include title-bottom-line(10%, 40%);
     }
 
-    li {
+    li.searched-item-card {
         width: 100%;
         
         /* to center list item's content we use flexbox */
         display: flex;
         justify-content: center;
         align-items: center;
+    }
+}
+
+@media screen and (max-width: 580px){
+    .searched-items{
+        li.searched-item-card{
+            grid-column: 1;
+        }
     }
 }

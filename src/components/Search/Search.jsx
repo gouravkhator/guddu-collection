@@ -1,14 +1,10 @@
-import React, { lazy, Suspense, useEffect, useState } from 'react';
+import React, { lazy, Suspense, useRef, useEffect, useState } from 'react';
 import { useParams } from 'react-router';
 import { db } from '../../firebase_api';
-import Container from 'react-bootstrap/Container';
 import Button from 'react-bootstrap/Button';
-
 import "./searchPage.css";
 
 const ItemImage = lazy(() => import('../Item/ItemImage'));
-
-let searchedParamLocal = null;
 
 const renderLoader = () => (
     <div className="text-center"><p className="spinner-grow text-muted"></p></div>
@@ -20,19 +16,30 @@ const removeTag = (tags, tagToRemove) => {
         tags.splice(index, 1);
 }
 
+const handleSearchInput = (e, searchInputRef, setMainSearched) => {
+    e.preventDefault();
+
+    const searchInput = searchInputRef.current.value;
+    if (searchInput && searchInput.trim() !== "") {
+        setMainSearched(searchInput.toLowerCase());
+    }
+}
+
 //just used for reusing the code part
-const filterFetch = (querySnapshot, searchedParamLocal, products) => {
-    if (searchedParamLocal) {
+const filterFetch = (querySnapshot, mainSearched, products) => {
+    if (mainSearched) {
         querySnapshot.forEach(function (doc) {
             // doc.data() is never undefined for query doc snapshots
             // console.log(doc.id, " => ", doc.data());
             const imageData = doc.data();
 
-            if (imageData.tags.includes(searchedParamLocal)) {
+            if (imageData.tags.includes(mainSearched.toLowerCase())) {
                 const tags = imageData.tags.split(',');
                 removeTag(tags, 'women');
                 removeTag(tags, 'men');
                 removeTag(tags, 'girls');
+                removeTag(tags, 'lady');
+                removeTag(tags, mainSearched);
 
                 products.push({
                     webp_url: imageData.webp_url,
@@ -44,8 +51,8 @@ const filterFetch = (querySnapshot, searchedParamLocal, products) => {
     }
 }
 
-const getSearchedItems = async () => {
-    if (searchedParamLocal) {
+const getSearchedItems = async (mainSearched) => {
+    if (mainSearched) {
         /*
             products is an array of objects each containing url and tags and other details for an image
             All urls are for images in firebase storage
@@ -58,10 +65,10 @@ const getSearchedItems = async () => {
                 .collection('items')
                 .get();
 
-            filterFetch(querySnapshot, searchedParamLocal, products);
+            filterFetch(querySnapshot, mainSearched, products);
             querySnapshot = await db.collection('products').get();
 
-            filterFetch(querySnapshot, searchedParamLocal, products);
+            filterFetch(querySnapshot, mainSearched, products);
 
         } catch (error) {
             console.log("Error getting products : ", error);
@@ -73,19 +80,23 @@ const getSearchedItems = async () => {
 
 export default function Search() {
     const { searchedParam } = useParams();
+    const searchInputRef = useRef();
 
-    const lowercaseSearched = searchedParam.toLowerCase();
-    const capitalizedSearchedParam = searchedParam.charAt(0).toUpperCase() + searchedParam.slice(1);
-
-    searchedParamLocal = lowercaseSearched;
     let [products, setProducts] = useState([]);
     let [loading, setLoading] = useState(true);
+    let [mainSearched, setMainSearched] = useState(searchedParam.toLowerCase());
 
+    //on change in searched param, update main searched
+    useEffect(() => {
+        setMainSearched(searchedParam.toLowerCase());
+    }, [searchedParam]);
+
+    //on change in main searched, fetch products
     useEffect(() => {
         setLoading(true);
 
         async function getProducts() {
-            const products = await getSearchedItems();
+            const products = await getSearchedItems(mainSearched);
             setProducts([...products]);
         }
 
@@ -93,26 +104,33 @@ export default function Search() {
             setLoading(false);
         });
 
-    }, [lowercaseSearched]);
+    }, [mainSearched]);
 
     return (
-        <Container className="searched-page">
+        <div className="searched-page">
             <article className="searched-article">
-                <h2 className="article-title">{capitalizedSearchedParam}</h2>
+                <h2 className="article-title">
+                    {mainSearched.charAt(0).toUpperCase() + mainSearched.slice(1)}
+                </h2>
 
+                <section className="search-input">
+                    <form onSubmit={e => handleSearchInput(e, searchInputRef, setMainSearched)}>
+                        <input type="text" ref={searchInputRef} placeholder="Search products" maxLength="25" />
+                    </form>
+                </section>
                 <div className="mt-4">
                     {loading ? renderLoader() :
                         (products.length === 0) ? (
                             <>
                                 <h4>
-                                    Oops! No Items found with tag {capitalizedSearchedParam}
+                                    Oops! No Items found with tag {mainSearched.charAt(0).toUpperCase() + mainSearched.slice(1)}
                                 </h4>
                                 <Button variant="dark" className="mt-2 mb-3" href="/">Go Back Home</Button>
                             </>
                         ) : (
                                 <ul className="searched-items">
                                     {products.map(({ webp_url, jpeg_url, tags }, index) => (
-                                        <li key={index}>
+                                        <li className="searched-item-card" key={index}>
                                             <Suspense fallback={renderLoader()}>
                                                 <ItemImage imgSrc={{ webp_url, jpeg_url }} tags={tags} />
                                             </Suspense>
@@ -122,6 +140,6 @@ export default function Search() {
                             )}
                 </div>
             </article>
-        </Container >
+        </div>
     )
 }

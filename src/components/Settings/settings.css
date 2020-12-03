@@ -2,8 +2,20 @@
   font-size: var(--article-text-font-size);
 }
 
+.settings-article .settings-dynamic-text {
+  padding-left: 1.5rem;
+}
+
 .settings-article button, .settings-article a {
   font-size: var(--article-text-font-size);
+  background-color: #01454D;
+  border: 1px solid #01454D;
+}
+
+.settings-article button:hover, .settings-article button:focus, .settings-article button:active, .settings-article a:hover, .settings-article a:focus, .settings-article a:active {
+  background-color: #012c31;
+  border: 1px solid #012c31;
+  outline-color: #012c31;
 }
 
 .settings-title {
@@ -22,7 +34,8 @@
   left: 50%;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
-  background: #5a1707;
+  background-color: #01454d;
+  z-index: 50;
 }
 
 .settings-title::after {
@@ -34,9 +47,15 @@
   left: 50%;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
-  background: #460202;
+  background: #005760;
   -webkit-box-shadow: 0px 2px 5px #181A21;
           box-shadow: 0px 2px 5px #181A21;
+}
+
+@media (max-width: 320px) {
+  .settings-article .settings-dynamic-text {
+    padding-left: 0px;
+  }
 }
 
 @media (max-width: 400px) {

@@ -75,11 +75,11 @@ export default function Settings() {
                         <div className="text-left mt-4 mb-3">
                             {/* display name is null here if signup happens via email*/}
                             <h4><b>Email</b></h4>
-                            <h4 className="pl-4 mb-3">{currentUser.email}</h4>
+                            <h4 className="settings-dynamic-text mb-3">{currentUser.email}</h4>
                             {currentUser.displayName &&
                                 <>
                                     <h4><b>Display Name</b></h4>
-                                    <h4 className="pl-4 mb-3">
+                                    <h4 className="settings-dynamic-text mb-3">
                                         {currentUser.displayName}
                                     </h4>
                                 </>
