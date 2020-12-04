@@ -11,12 +11,22 @@
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.0"
   },
+  "watch": {
+    "serve": {
+      "patterns": [
+        "src",
+        "public"
+      ],
+      "extensions": "js,jsx"
+    }
+  },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "serve": "npm run build && serve -s build/"
+    "serve": "npm run build && serve -s build/",
+    "watch": "npm-watch"
   },
   "eslintConfig": {
     "extends": [
@@ -37,6 +47,7 @@
     ]
   },
   "devDependencies": {
+    "npm-watch": "^0.7.0",
     "serve": "^11.3.2"
   }
 }

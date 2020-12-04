@@ -66,18 +66,6 @@ export default function Categories() {
                         </h4>
 
                         <h4>Come to our shop for bagging products</h4>
-
-                        <div className="text-right">
-                            <h3 className="mt-4"><b>Address</b></h3>
-                            <h5 id="address" className="mb-3">
-                                <b>89/173, Bangur Park, Near Mother Dairy</b><br />
-                                <b>Rishra, Hooghly</b>
-                            </h5>
-                            <h5>
-                                <b>Paul Complex, Mio Amore Market</b><br />
-                                <b>Rishra, Hooghly</b>
-                            </h5>
-                        </div>
                     </div>
                 ) : (
                         <div>
