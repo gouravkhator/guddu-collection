@@ -9,6 +9,8 @@ import Card from "react-bootstrap/Card";
 import Alert from "react-bootstrap/Alert";
 import Container from 'react-bootstrap/Container';
 
+import './signin.css';
+
 export default function ForgotPassword() {
     const emailRef = useRef();
     const { resetPassword, currentUser } = useAuth();
