@@ -2,6 +2,13 @@
 
 ### A webapp for Men and Women Fashion Wear
 
+
+Please visit our [Webapp](https://guddu-collection.netlify.app/) and our shops located at : 
+
+### Branches in Rishra, Hooghly:
+* 89/173, Bangur Park, Near Mother Dairy
+* Near Paul Complex, Mio Amore Market
+
 ## Available Scripts
 
 In the project directory, you can run:

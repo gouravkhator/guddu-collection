@@ -28,10 +28,13 @@ const getMostPopularItems = async () => {
             // console.log(doc.id, " => ", doc.data());
             const imageData = doc.data();
 
-            const tags = imageData.tags.split(',');
+            let tags = imageData.tags.split(',');
+            tags = tags.map(tag=>tag.trim());
+
             removeTag(tags, 'women');
             removeTag(tags, 'men');
             removeTag(tags, 'girls');
+            removeTag(tags, 'lady');
 
             products.push({
                 webp_url: imageData.webp_url,

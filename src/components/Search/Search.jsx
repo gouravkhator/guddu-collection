@@ -12,8 +12,9 @@ const renderLoader = () => (
 
 const removeTag = (tags, tagToRemove) => {
     let index = tags.indexOf(tagToRemove);
+    
     if (index !== -1)
-        tags.splice(index, 1);
+        tags.splice(index, 1);    
 }
 
 const handleSearchInput = (e, searchInputRef, setMainSearched) => {
@@ -34,7 +35,9 @@ const filterFetch = (querySnapshot, mainSearched, products) => {
             const imageData = doc.data();
 
             if (imageData.tags.includes(mainSearched.toLowerCase())) {
-                const tags = imageData.tags.split(',');
+                let tags = imageData.tags.split(',');
+
+                tags = tags.map(tag=>tag.trim());
                 removeTag(tags, 'women');
                 removeTag(tags, 'men');
                 removeTag(tags, 'girls');
@@ -69,7 +72,6 @@ const getSearchedItems = async (mainSearched) => {
             querySnapshot = await db.collection('products').get();
 
             filterFetch(querySnapshot, mainSearched, products);
-
         } catch (error) {
             console.log("Error getting products");
         }
