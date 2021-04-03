@@ -14,12 +14,11 @@
 * {
   margin: 0;
   padding: 0;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
-  font-family: 'Overlock', cursive;
+  font-family: "Overlock", cursive;
   font-size: 62.5%;
   color: black;
   overflow-x: hidden;
@@ -69,5 +68,4 @@ a {
   :root {
     --article-text-font-size: 1.2rem;
   }
-}
-/*# sourceMappingURL=main.css.map */
+}/*# sourceMappingURL=main.css.map */
