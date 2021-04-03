@@ -57,7 +57,7 @@ export const AuthProvider = ({ children }) => {
             await googleSignIn();
 
         } catch (error) {
-            console.log(error);
+            console.log('Google signin unsuccessful');
         }
     }
 

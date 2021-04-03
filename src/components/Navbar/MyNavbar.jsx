@@ -26,7 +26,7 @@ export default function MyNavbar() {
             await googleSignIn();
 
         } catch (error) {
-            console.log(error);
+            console.log('Google signin unsuccessful');
             // let email = error.email;
 
             // if (error.code === 'auth/account-exists-with-different-credential') {

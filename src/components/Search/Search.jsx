@@ -71,7 +71,7 @@ const getSearchedItems = async (mainSearched) => {
             filterFetch(querySnapshot, mainSearched, products);
 
         } catch (error) {
-            console.log("Error getting products : ", error);
+            console.log("Error getting products");
         }
 
         return products;

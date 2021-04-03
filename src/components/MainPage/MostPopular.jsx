@@ -41,7 +41,7 @@ const getMostPopularItems = async () => {
         });
 
     } catch (error) {
-        console.log("Error fetching products : ", error);
+        console.log("Error fetching products");
     }
 
     return products;

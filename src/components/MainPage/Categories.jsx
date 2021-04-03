@@ -28,7 +28,7 @@ const fetchCategories = async () => {
             });
         });
     } catch (error) {
-        console.log("Error getting categories : ", error);
+        console.log("Error getting categories");
     }
 
     return categories;
