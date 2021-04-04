@@ -259,7 +259,7 @@ article.banner .banner-actions a:hover, article.banner .banner-actions a:focus, 
 @media screen and (max-height: 700px), screen and (max-width: 450px) {
   .cover_image {
     width: 160px;
-    height: 160px;
+    height: 192px;
   }
 }
 @media screen and (max-width: 450px) {

@@ -75,12 +75,12 @@ export default function Categories() {
                                         <Link to={"/search/" + category_name}>
                                             <Suspense fallback={renderLoader()}>
                                                 <div className="cover_image_wrapper">
-                                                    {/* 200*200 for cover images */}
+                                                    {/* 200*240 for cover images */}
                                                     <picture>
-                                                        <source className="cover_image" width="200" height="200" type="image/webp" srcSet={webp_url} />
-                                                        <source className="cover_image" width="200" height="200" type="image/jpeg" srcSet={jpeg_url} />
+                                                        <source className="cover_image" width="200" height="240" type="image/webp" srcSet={webp_url} />
+                                                        <source className="cover_image" width="200" height="240" type="image/jpeg" srcSet={jpeg_url} />
                                                         <img loading="lazy" src={jpeg_url} alt={category_name}
-                                                            width="200" height="200" className="cover_image" />
+                                                            width="200" height="240" className="cover_image" />
                                                     </picture>
                                                 </div>
                                             </Suspense>
