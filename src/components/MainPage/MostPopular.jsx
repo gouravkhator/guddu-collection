@@ -28,8 +28,8 @@ const getMostPopularItems = async () => {
             // console.log(doc.id, " => ", doc.data());
             const imageData = doc.data();
 
-            let tags = imageData.tags.split(',');
-            tags = tags.map(tag => tag.toLowerCase().trim());
+            let tags = imageData.tags.toLowerCase().split(',');
+            tags = tags.map(tag => tag.trim());
 
             removeTag(tags, 'women');
             removeTag(tags, 'men');
