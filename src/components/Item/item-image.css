@@ -3,7 +3,7 @@
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
-  border-radius: 6px;
+  border-radius: 10px;
   border: 5px #eee solid;
   background-color: #dde5e7;
   height: 100%;
@@ -12,8 +12,8 @@
   transition: -webkit-clip-path 0.5s ease;
   transition: clip-path 0.5s ease;
   transition: clip-path 0.5s ease, -webkit-clip-path 0.5s ease;
-  -webkit-clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 60% 100%, 50% 90%, 40% 100%, 0% 100%);
-          clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 60% 100%, 50% 90%, 40% 100%, 0% 100%);
+  -webkit-clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 60% 100%, 50% 95%, 40% 100%, 0% 100%);
+          clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 60% 100%, 50% 95%, 40% 100%, 0% 100%);
   border-bottom: 2px solid #505f63;
 }
 .item-card:hover .image-wrapper, .item-card:focus .image-wrapper, .item-card:active .image-wrapper {
@@ -32,42 +32,30 @@
   width: 100%;
   display: grid;
   gap: 10px;
-  grid-template-columns: repeat(auto-fit, minmax(70px, 1fr));
-  grid-auto-rows: 1fr;
+  grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
 }
 .item-tags-list li {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
-  min-width: -webkit-fit-content;
-  min-width: -moz-fit-content;
-  min-width: fit-content;
 }
 .item-tags-list .tag {
   padding: 5px;
   width: 100%;
+  height: 100%;
+  word-break: break-all;
   color: #fff;
   font-size: 1.2rem;
   font-weight: 600;
   background-color: #5a5a5a;
+  text-align: center;
 }
 .item-tags-list .tag:hover {
   text-decoration: none;
   opacity: 0.9;
 }
 
-@media screen and (max-height: 700px), screen and (max-width: 450px) {
-  .item-card .item-image {
-    width: 180px;
-    height: 225px;
-  }
-}
-@media screen and (max-width: 500px) {
-  .item-card {
-    max-width: 85vw;
-  }
-}
 @media screen and (max-width: 580px) {
   .item-tags-list .tag {
     font-size: 1.17rem;
@@ -82,8 +70,8 @@
   .item-card .image-wrapper {
     border-bottom: none;
     border-right: 2px solid #505f63;
-    -webkit-clip-path: polygon(0% 0%, 100% 0%, 100% 40%, 90% 50%, 100% 60%, 100% 100%, 0% 100%);
-            clip-path: polygon(0% 0%, 100% 0%, 100% 40%, 90% 50%, 100% 60%, 100% 100%, 0% 100%);
+    -webkit-clip-path: polygon(0% 0%, 100% 0%, 100% 40%, 93% 50%, 100% 60%, 100% 100%, 0% 100%);
+            clip-path: polygon(0% 0%, 100% 0%, 100% 40%, 93% 50%, 100% 60%, 100% 100%, 0% 100%);
     height: 100%;
     grid-row: 1/3;
     grid-column: 1/2;
@@ -98,5 +86,35 @@
   .item-card .item-tags-list {
     grid-row: 2/3;
     grid-column: 2/3;
+  }
+}
+@media screen and (max-width: 500px) {
+  .item-card {
+    max-width: 85vw;
+  }
+}
+@media screen and (max-height: 700px), screen and (max-width: 450px) {
+  .image-wrapper .item-image {
+    width: 200px;
+    height: 250px;
+  }
+}
+@media screen and (max-width: 400px) {
+  .image-wrapper {
+    padding: 10% 0px;
+  }
+  .image-wrapper .item-image {
+    width: 180px;
+    height: 225px;
+  }
+}
+@media screen and (max-width: 350px) {
+  .image-wrapper {
+    padding: 25% 0px;
+    background-color: #e7eef0;
+  }
+  .image-wrapper .item-image {
+    width: 150px;
+    height: 187.5px;
   }
 }/*# sourceMappingURL=item-image.css.map */
