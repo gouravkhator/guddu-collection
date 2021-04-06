@@ -34,10 +34,25 @@ const filterFetch = (querySnapshot, mainSearched, products) => {
             // console.log(doc.id, " => ", doc.data());
             const imageData = doc.data();
 
-            if (imageData.tags.includes(mainSearched.toLowerCase())) {
-                let tags = imageData.tags.split(',');
+            const currentTagsList = imageData.tags;
+            
+            /*
+            If I search for men I should not get images with women or undergarments(those contain men as a substring) as tags,
+            so adding an exception
+            */
+            const tagsContainMen = currentTagsList.includes('women') || 
+                                    currentTagsList.includes('undergarments');
+            
+            // if tags (other than men) contains men as substring and mainSearched is men 
+            // then return and don't add this product
+            if(tagsContainMen && mainSearched.toLowerCase() === 'men') {
+                return;
+            }
 
-                tags = tags.map(tag=>tag.trim());
+            if (currentTagsList.includes(mainSearched.toLowerCase())) {
+                let tags = currentTagsList.split(',');
+
+                tags = tags.map(tag => tag.toLowerCase().trim());
                 removeTag(tags, 'women');
                 removeTag(tags, 'men');
                 removeTag(tags, 'girls');
