@@ -9,6 +9,17 @@ Please visit our [Webapp](https://guddu-collection.netlify.app/) and our shops l
 * 89/173, Bangur Park, Near Mother Dairy
 * Near Paul Complex, Mio Amore Market
 
+## Checklist To Revamp/Integrate in this webapp
+
+- [ ] Code revamp along with modularization of the utils and helper functions in their own folders, and keeping more comments to the code.
+- [ ] Have a runtime caching for images (which are fetched from firebase), with the images limit to 20 or some hardcoded value, and which has some expiration time.
+- [ ] Error handling to be revamped, with global error handling strategies.
+- [ ] Implement functionality for users' feed, of what they searched and/or clicked.
+- [ ] Import scss directly into React jsx components, rather than transpiling the scss to css and then importing css.
+- [ ] Don't lazy load critical components like the Navbar or Footer components for example. Just import them to be built in one main chunk itself.
+- [ ] Don't keep the env variables as REACT_APP_, instead keep them safely in some other storage. It is bcoz, these env variables gets bundled into the client-side bundle.
+- [ ] Use prettier to keep the same coding structure formatting.
+
 ## Available Scripts
 
 In the project directory, you can run:
