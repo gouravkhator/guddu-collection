@@ -55,7 +55,7 @@ export default function MyNavbar() {
                 <div id="navbar-logo">
                 </div>
                 {/* aspect ratio is 1.27 for logo so maintain that */}
-                {/* <img src="/gc-logo.png" width="40" height="31.5" alt="Guddu Collection Logo"
+                {/* <img src="/images/gc-logo.png" width="40" height="31.5" alt="Guddu Collection Logo"
                     id="navbar-logo" /> */}
             </Navbar.Brand>
 

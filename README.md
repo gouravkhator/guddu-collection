@@ -1,7 +1,6 @@
 # Guddu Collection 
 
-### A webapp for Men and Women Fashion Wear
-
+> **A Progressive WebApp for Men and Women Fashion Wear**
 
 Please visit our [Webapp](https://guddu-collection.netlify.app/) and our shops located at : 
 

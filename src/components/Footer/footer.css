@@ -9,27 +9,33 @@ footer {
   width: 100%;
   /*for strong text in button component*/
 }
+
 footer .call-btn {
   color: #333;
   background-color: var(--call-bg-color);
   border-color: var(--call-bg-color);
 }
+
 footer .call-btn:hover, footer .call-btn:focus, footer .call-btn:active {
   color: #fff;
   background-color: var(--call-hover-color);
   border-color: var(--call-hover-color);
 }
+
 footer .address-btn {
   background-color: var(--address-bg-color);
   border-color: var(--address-bg-color);
 }
+
 footer .address-btn:hover, footer .address-btn:focus, footer .address-btn:active {
   background-color: var(--address-hover-color);
   border-color: var(--address-hover-color);
 }
+
 footer strong {
   font-size: 1.3rem;
 }
+
 footer .address-display {
   display: inline;
   pointer-events: all;
@@ -51,9 +57,11 @@ footer .address-display {
     width: 1rem;
   }
 }
+
 @media (max-width: 640px) {
   footer .address-display {
     display: none;
     pointer-events: none;
   }
-}/*# sourceMappingURL=footer.css.map */
+}
+/*# sourceMappingURL=footer.css.map */

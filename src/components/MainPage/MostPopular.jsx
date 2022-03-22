@@ -74,7 +74,7 @@ export default function MostPopular() {
             {loading ? renderLoader() :
                 (products.length === 0) ? (
                     <h4>
-                        <strong>Oops! It's empty</strong>
+                        <strong>Oops! It's empty. <br/>We are developing a way to make some categories work offline</strong>
                     </h4>
                 ) : (
                         <ul className="featured-items">

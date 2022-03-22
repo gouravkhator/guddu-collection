@@ -28,8 +28,8 @@ export default function Logout() {
             history.push('/');
         } catch {
             setError('Failed to log out');
+            setLoading(false);
         }
-        setLoading(false);
     }
 
     return (

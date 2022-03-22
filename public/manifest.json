@@ -3,17 +3,17 @@
   "name": "Guddu Collection",
   "icons": [
     {
-      "src": "gc-logo-64x64.png",
+      "src": "/images/gc-logo-64x64.png",
       "sizes": "64x64",
       "type": "image/png"
     },
     {
-      "src": "gc-logo-192x192.png",
+      "src": "/images/gc-logo-192x192.png",
       "type": "image/png",
       "sizes": "192x192"
     },
     {
-      "src": "gc-logo-512x512.png",
+      "src": "/images/gc-logo-512x512.png",
       "type": "image/png",
       "sizes": "512x512"
     }

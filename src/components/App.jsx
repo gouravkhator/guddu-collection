@@ -2,10 +2,12 @@ import React, { lazy, Suspense } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { AuthProvider } from '../Auth';
 
-//lazy loading for code splitting in webpack bundles
-const MyNavbar = lazy(() => import('./Navbar/MyNavbar'));
+// importing critical components directly, to bundle them in the same bundle.
+import MyNavbar from './Navbar/MyNavbar';
+import Footer from './Footer/Footer';
+
+// lazy loading the non-critical components for achieving code splitting in webpack bundles
 const MainPage = lazy(() => import('./MainPage/MainPage'));
-const Footer = lazy(() => import('./Footer/Footer'));
 const Signup = lazy(() => import('./SignIn/Signup'));
 const Login = lazy(() => import('./SignIn/Login'));
 const Logout = lazy(() => import('./SignIn/Logout'));
@@ -21,7 +23,7 @@ const renderLoader = () => (
 
 function PageNotFound() {
   return (
-    <div className="text-center">
+    <div className="text-center" style={{'margin-top': '50px'}}>
       <h2>404 Page Not Found</h2>
     </div>
   );
