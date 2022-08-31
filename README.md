@@ -4,41 +4,35 @@
 
 > **A Progressive WebApp for Men and Women Fashion Wear**
 
-Please visit our [Webapp](https://guddu-collection.netlify.app/) and our shops located at :
+![Project Home Page](./project-images/project_home_page.png)
+
+![Featured products and categories in our Guddu Collection](./project-images/featured_products_and_categories.png)
+
+![About Guddu Collection](./project-images/about_us.png)
+
+Please visit our [Webapp](https://guddu-collection.netlify.app/) and our shops located at:
 
 ### Branches in Rishra, Hooghly:
 
 - 89/173, Bangur Park, Near Mother Dairy
 - Near Paul Complex, Mio Amore Market
 
-## Checklist To Revamp/Integrate in this webapp
+## Run/Build the Project
 
-- [ ] Code revamp along with modularization of the utils and helper functions in their own folders, and keeping more comments to the code.
-- [ ] Have a runtime caching for images (which are fetched from firebase), with the images limit to 20 or some hardcoded value, and which has some expiration time.
-- [ ] Error handling to be revamped, with global error handling strategies.
-- [ ] Implement functionality for users' feed, of what they searched and/or clicked.
+### Prerequisites
 
-## Available Scripts
+Create a `<project-root>/.env.local` file similar to the `.env.sample` file, and put all the required environment variables in there.
 
-In the project directory, you can run:
+Then, run the below command to install the dependencies:
 
-### `npm start`
+```sh
+npm i
+```
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### Commands
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- `npm start`: Runs a development server on port 3000.
+- `npm test`: Launches the test runner in the interactive watch mode.
+- `npm run build`: Builds the app for production to the `build` folder.
+- `npm run serve`: Serves the `build` folder locally.
+- `npm run build:serve`: Runs the `build` command and also serves the `build` folder on port 3000.
