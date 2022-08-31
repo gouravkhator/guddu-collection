@@ -1,6 +1,6 @@
 @import "../../../public/css/utility";
 
-.about-titles{
-    @include title-bottom-line(20%, 90%);
-    max-width: fit-content;
+.about-titles {
+  @include title-bottom-line(20%, 90%);
+  max-width: fit-content;
 }

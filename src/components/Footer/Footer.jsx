@@ -1,12 +1,12 @@
-import React from 'react';
+import React from "react";
 
-import './footer.css';
+import "./footer.scss";
 
 export default function Footer() {
-
-    return (
-        <footer>
-            {/* <Row>
+  // footer is not added for now, it may be added in future
+  return (
+    <footer>
+      {/* <Row>
                 <Col xs={8}>
                     <Button variant="success" className="call-btn w-100 p-3 font-weight-bold text-monospace" href={"tel:" + telephone_no}>
                         <strong>Call Now!! </strong>
@@ -31,10 +31,10 @@ export default function Footer() {
                 </Col>
             </Row>
          */}
-        </footer>
-    );
+    </footer>
+  );
 }
 
-//font awesome was removed and svg was used inline to improve performance
-//<i className=" fa fa-phone" aria-hidden="true"></i>
-//<i className="fa fa-lg fa-map-marker" aria-hidden="true"></i>
+// font awesome was removed and svg was used inline to improve performance
+// <i className="fa fa-phone" aria-hidden="true"></i>
+// <i className="fa fa-lg fa-map-marker" aria-hidden="true"></i>

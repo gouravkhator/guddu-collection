@@ -1,37 +1,40 @@
-import React, { lazy, Suspense } from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import { AuthProvider } from '../Auth';
+import React, { lazy, Suspense } from "react";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { AuthProvider } from "../Auth";
 
 // importing critical components directly, to bundle them in the same bundle.
-import MyNavbar from './Navbar/MyNavbar';
-import Footer from './Footer/Footer';
+import MyNavbar from "./Navbar/MyNavbar";
+import Footer from "./Footer/Footer";
 
 // lazy loading the non-critical components for achieving code splitting in webpack bundles
-const MainPage = lazy(() => import('./MainPage/MainPage'));
-const Signup = lazy(() => import('./SignIn/Signup'));
-const Login = lazy(() => import('./SignIn/Login'));
-const Logout = lazy(() => import('./SignIn/Logout'));
-const ForgotPassword = lazy(() => import('./SignIn/ForgotPassword'));
-const YourViewed = lazy(() => import('./UserFeed/YourViewed'));
-const Search = lazy(() => import('./Search/Search'));
-const About = lazy(() => import('./About/About'));
-const Settings = lazy(() => import('./Settings/Settings'));
+const MainPage = lazy(() => import("./MainPage/MainPage"));
+const Signup = lazy(() => import("./SignIn/Signup"));
+const Login = lazy(() => import("./SignIn/Login"));
+const Logout = lazy(() => import("./SignIn/Logout"));
+const ForgotPassword = lazy(() => import("./SignIn/ForgotPassword"));
+const YourViewed = lazy(() => import("./UserFeed/YourViewed"));
+const Search = lazy(() => import("./Search/Search"));
+const About = lazy(() => import("./About/About"));
+const Settings = lazy(() => import("./Settings/Settings"));
 
 const renderLoader = () => (
-  <div className="mt-3 text-center"><p className="spinner-grow text-muted"></p></div>
+  <div className="mt-3 text-center">
+    <p className="spinner-grow text-muted"></p>
+  </div>
 );
 
 function PageNotFound() {
   return (
-    <div className="text-center" style={{'margin-top': '50px'}}>
+    <div className="text-center" style={{ "margin-top": "50px" }}>
       <h2>404 Page Not Found</h2>
     </div>
   );
 }
 
 export default function App() {
-  //with Router we have to use history else with BrowserRouter we can skip history
-
+  // with Router, we have to setup `history` explicitly, but with BrowserRouter we can skip `history` setup
+  // here, we have used BrowserRouter, so `history` is not needed to be setup. It is already setup internally
+  
   return (
     <Router>
       <Suspense fallback={renderLoader()}>

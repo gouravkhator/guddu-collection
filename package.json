@@ -2,6 +2,14 @@
   "name": "guddu-collection",
   "version": "0.1.0",
   "private": true,
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "serve": "npm run build && serve -s build/",
+    "watch": "npm-watch"
+  },
   "dependencies": {
     "firebase": "^8.0.1",
     "react": "^17.0.1",
@@ -9,7 +17,12 @@
     "react-dom": "^17.0.1",
     "react-router": "^5.2.0",
     "react-router-dom": "^5.2.0",
-    "react-scripts": "4.0.0"
+    "react-scripts": "^4.0.0"
+  },
+  "devDependencies": {
+    "npm-watch": "^0.7.0",
+    "sass": "^1.54.7",
+    "serve": "^11.3.2"
   },
   "watch": {
     "serve": {
@@ -19,14 +32,6 @@
       ],
       "extensions": "js,jsx"
     }
-  },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "serve": "npm run build && serve -s build/",
-    "watch": "npm-watch"
   },
   "eslintConfig": {
     "extends": [
@@ -46,8 +51,7 @@
       "last 1 safari version"
     ]
   },
-  "devDependencies": {
-    "npm-watch": "^0.7.0",
-    "serve": "^11.3.2"
-  }
+  "author": "Gourav Khator",
+  "license": "Apache-2.0",
+  "readme": "https://github.com/gouravkhator/guddu-collection#readme"
 }

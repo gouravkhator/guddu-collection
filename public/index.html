@@ -1,104 +1,129 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta
+      name="description"
+      content="Guddu Collection Website for men and women fashion wear"
+    />
+    <meta
+      name="keywords"
+      content="guddu collection, website, men, women, children, fashion, wear, men fashion, clothing, girls fashion, guys fashion, trending items"
+    />
 
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="theme-color" content="#000000" />
-  <meta name="description" content="Guddu Collection Website for men and women fashion wear" />
-  <meta name="keywords"
-    content="guddu collection, website, men, women, children, fashion, wear, men fashion, clothing, girls fashion, guys fashion, trending items" />
-
-  <!-- 
+    <!-- 
     %PUBLIC_URL% is integrated in the html by React itself..
     The public url is the 'public' directory
   -->
-  <link rel="icon" href="%PUBLIC_URL%/images/gc-logo.png">
-  <link rel="apple-touch-icon" href="%PUBLIC_URL%/images/gc-logo.png" />
-  <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <link rel="icon" href="%PUBLIC_URL%/images/gc-logo.png" />
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/images/gc-logo.png" />
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
 
-  <!-- Fonts and bootstrap -->
-  <link rel="preconnect" href="https://fonts.gstatic.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Overlock&display=swap" rel="stylesheet">
+    <!-- Fonts and bootstrap -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Overlock&display=swap"
+      rel="stylesheet"
+    />
 
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
-    integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+      integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2"
+      crossorigin="anonymous"
+    />
 
-  <link rel="stylesheet" href="%PUBLIC_URL%/css/main.css" />
-  <link rel="stylesheet" href="%PUBLIC_URL%/css/svg-animation.css" />
+    <link rel="stylesheet" href="%PUBLIC_URL%/css/main.css" />
+    <link rel="stylesheet" href="%PUBLIC_URL%/css/svg-animation.css" />
 
-  <title>Guddu Collection</title>
-</head>
+    <title>Guddu Collection</title>
+  </head>
 
-<body>
-  <noscript>
-    <h1>Please Enable Javascript</h1>
-    <b>You need to enable JavaScript to run this web app.</b>
-  </noscript>
+  <body>
+    <noscript>
+      <h1>Please Enable Javascript</h1>
+      <b>You need to enable JavaScript to run this web app.</b>
+    </noscript>
 
-  <div class="hidden gc-svg-wrapper">
-    <svg id="gc-text-svg" width="184" height="112" viewBox="0 0 184 112" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path
-        d="M83.6987 94.4289L83.9688 94.0421V93.5703V56.0234V54.5234H82.4688H45.3438H43.8438V56.0234V66.9922V68.4922H45.3438H67.5391V89.3812C65.3178 91.6227 62.5479 93.2469 59.1911 94.2415C55.5647 95.3159 51.2843 95.8672 46.3281 95.8672C37.8133 95.8672 31.1592 92.6869 26.2087 86.3228C21.2217 79.8651 18.6484 71.0828 18.6484 59.8203V51.456C18.6951 39.5692 21.0124 30.7468 25.3885 24.7787C29.75 18.8475 36.1334 15.8281 44.7812 15.8281C51.3298 15.8281 56.3681 17.4563 60.0586 20.5567C63.7515 23.6592 66.2725 28.3852 67.4943 34.9239L67.7231 36.1484H68.9688H82.4688H84.2017L83.9533 34.4334C82.4582 24.1125 78.3307 16.0148 71.4794 10.2959C64.6303 4.53186 55.6581 1.71875 44.7109 1.71875C31.3226 1.71875 20.7468 6.09568 13.1935 14.9733L13.1904 14.977C5.71461 23.8208 2.07812 36.165 2.07812 51.8047V60.7344V60.7418L2.0782 60.7492C2.17374 70.4465 4.01411 79.0401 7.6436 86.4927L7.64707 86.4998C11.3273 93.957 16.5317 99.7566 23.2591 103.852L23.2659 103.856C29.9922 107.901 37.6712 109.906 46.2578 109.906C54.6523 109.906 62.0647 108.666 68.4639 106.146L68.4693 106.143C74.9456 103.563 80.0443 99.6635 83.6987 94.4289ZM181.834 74.6898L182.029 73.0156H180.344H166.773H165.489L165.291 74.2851C164.002 82.5721 161.419 88.0786 157.787 91.1611C154.171 94.2239 148.827 95.8672 141.531 95.8672C133.652 95.8672 127.626 92.8047 123.279 86.6574C118.875 80.4284 116.594 71.9302 116.594 61.0156V51.1016C116.594 39.5194 118.996 30.8207 123.596 24.8044C128.211 18.8284 134.53 15.8281 142.727 15.8281C149.5 15.8281 154.549 17.585 158.082 20.9056L158.089 20.9117C161.671 24.2385 164.141 29.7557 165.289 37.7446L165.474 39.0312H166.773H180.344H182.002L181.836 37.3813C180.73 26.3631 176.787 17.6037 169.902 11.2587C163.005 4.85546 153.894 1.71875 142.727 1.71875C134.278 1.71875 126.778 3.72529 120.28 7.77994C113.778 11.7895 108.764 17.5513 105.23 25.0059L105.227 25.0131C101.743 32.4656 100.023 41.0569 100.023 50.75V60.5938C100.023 75.3751 103.722 87.3507 111.272 96.3618L111.275 96.3654C118.893 105.4 129.029 109.906 141.531 109.906C152.956 109.906 162.267 106.901 169.308 100.747L169.308 100.746C176.396 94.5445 180.535 85.8038 181.834 74.6898Z"
-        stroke="white" stroke-width="3" />
-    </svg>
+    <div class="hidden gc-svg-wrapper">
+      <svg
+        id="gc-text-svg"
+        width="184"
+        height="112"
+        viewBox="0 0 184 112"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M83.6987 94.4289L83.9688 94.0421V93.5703V56.0234V54.5234H82.4688H45.3438H43.8438V56.0234V66.9922V68.4922H45.3438H67.5391V89.3812C65.3178 91.6227 62.5479 93.2469 59.1911 94.2415C55.5647 95.3159 51.2843 95.8672 46.3281 95.8672C37.8133 95.8672 31.1592 92.6869 26.2087 86.3228C21.2217 79.8651 18.6484 71.0828 18.6484 59.8203V51.456C18.6951 39.5692 21.0124 30.7468 25.3885 24.7787C29.75 18.8475 36.1334 15.8281 44.7812 15.8281C51.3298 15.8281 56.3681 17.4563 60.0586 20.5567C63.7515 23.6592 66.2725 28.3852 67.4943 34.9239L67.7231 36.1484H68.9688H82.4688H84.2017L83.9533 34.4334C82.4582 24.1125 78.3307 16.0148 71.4794 10.2959C64.6303 4.53186 55.6581 1.71875 44.7109 1.71875C31.3226 1.71875 20.7468 6.09568 13.1935 14.9733L13.1904 14.977C5.71461 23.8208 2.07812 36.165 2.07812 51.8047V60.7344V60.7418L2.0782 60.7492C2.17374 70.4465 4.01411 79.0401 7.6436 86.4927L7.64707 86.4998C11.3273 93.957 16.5317 99.7566 23.2591 103.852L23.2659 103.856C29.9922 107.901 37.6712 109.906 46.2578 109.906C54.6523 109.906 62.0647 108.666 68.4639 106.146L68.4693 106.143C74.9456 103.563 80.0443 99.6635 83.6987 94.4289ZM181.834 74.6898L182.029 73.0156H180.344H166.773H165.489L165.291 74.2851C164.002 82.5721 161.419 88.0786 157.787 91.1611C154.171 94.2239 148.827 95.8672 141.531 95.8672C133.652 95.8672 127.626 92.8047 123.279 86.6574C118.875 80.4284 116.594 71.9302 116.594 61.0156V51.1016C116.594 39.5194 118.996 30.8207 123.596 24.8044C128.211 18.8284 134.53 15.8281 142.727 15.8281C149.5 15.8281 154.549 17.585 158.082 20.9056L158.089 20.9117C161.671 24.2385 164.141 29.7557 165.289 37.7446L165.474 39.0312H166.773H180.344H182.002L181.836 37.3813C180.73 26.3631 176.787 17.6037 169.902 11.2587C163.005 4.85546 153.894 1.71875 142.727 1.71875C134.278 1.71875 126.778 3.72529 120.28 7.77994C113.778 11.7895 108.764 17.5513 105.23 25.0059L105.227 25.0131C101.743 32.4656 100.023 41.0569 100.023 50.75V60.5938C100.023 75.3751 103.722 87.3507 111.272 96.3618L111.275 96.3654C118.893 105.4 129.029 109.906 141.531 109.906C152.956 109.906 162.267 106.901 169.308 100.747L169.308 100.746C176.396 94.5445 180.535 85.8038 181.834 74.6898Z"
+          stroke="white"
+          stroke-width="3"
+        />
+      </svg>
 
-    <h2>Transform with Trendz</h2>
-  </div>
+      <h2>Transform with Trendz</h2>
+    </div>
 
-  <div id="root"></div>
+    <div id="root"></div>
 
-  <script>
-    function controlSvgAnimation() {
-      let svgWrapper = document.querySelector('.gc-svg-wrapper');
-      let root = document.querySelector('#root');
+    <script>
+      function controlSvgAnimation() {
+        let svgWrapper = document.querySelector(".gc-svg-wrapper");
+        let root = document.querySelector("#root");
 
-      const storage = window.sessionStorage;
-      let animationDone = JSON.parse(storage.getItem('animationDone') || 'false');
+        const storage = window.sessionStorage;
+        let animationDone = JSON.parse(
+          storage.getItem("animationDone") || "false"
+        );
 
-      if (!animationDone) {
-        // if animation was done in different session before then only do animation by not hiding svg wrapper
-        // and displaying root with delay
-        svgWrapper.classList.remove('hidden');
-        root.classList.add('root-display-delay');
-        animationDone = true;
+        if (!animationDone) {
+          // if animation was done in different session before, then do animation by not hiding svg wrapper
+          // and displaying root with delay
+          svgWrapper.classList.remove("hidden");
+          root.classList.add("root-display-delay");
+          animationDone = true;
+        }
+
+        storage.setItem("animationDone", animationDone);
       }
 
-      storage.setItem('animationDone', animationDone);
-    }
+      controlSvgAnimation(); //animation of svg with controlled session
 
-    controlSvgAnimation(); //animation of svg with controlled session
+      // Bootstrap fallback if CDN doesn't work
+      let test = document.createElement("div");
+      test.className = "d-none";
 
-    // Bootstrap fallback if CDN doesn't work
-    let test = document.createElement("div");
-    test.className = "d-none";
+      document.head.appendChild(test);
+      let cssLoaded = window.getComputedStyle(test).display === "none";
+      document.head.removeChild(test);
 
-    document.head.appendChild(test);
-    let cssLoaded = window.getComputedStyle(test).display === "none";
-    document.head.removeChild(test);
+      if (!cssLoaded) {
+        let link = document.createElement("link");
 
-    if (!cssLoaded) {
-      let link = document.createElement("link");
+        link.rel = "stylesheet";
+        link.href = "%PUBLIC_URL%/css/bootstrap.min.css";
 
-      link.rel = "stylesheet";
-      link.href = "%PUBLIC_URL%/css/bootstrap.min.css";
-
-      document.head.appendChild(link);
-    }
-
-    document.addEventListener('click', (e) => {
-      const navbarOpened = document.querySelector('.navbar-collapse')
-
-      //when navbar is opened and if user clicks in other areas 
-      //excluding navbar and navbar-collapse and any element is not inside navbarOpened
-      //then toggle that
-      if (navbarOpened.classList.contains('show') && !e.target.classList.contains("navbar-collapse")
-        && !e.target.classList.contains("navbar")
-        && !navbarOpened.contains(e.target)) {
-        document.querySelector('.navbar-toggler').click();
+        document.head.appendChild(link);
       }
-    });
-  </script>
-</body>
 
+      document.addEventListener("click", (e) => {
+        const navbarOpened = document.querySelector(".navbar-collapse");
+
+        /*
+        when navbar is opened and if user clicks in other areas excluding navbar and navbar-collapse, 
+        and any element is not inside navbarOpened, then toggle that
+        */
+        if (
+          navbarOpened.classList.contains("show") &&
+          !e.target.classList.contains("navbar-collapse") &&
+          !e.target.classList.contains("navbar") &&
+          !navbarOpened.contains(e.target)
+        ) {
+          document.querySelector(".navbar-toggler").click();
+        }
+      });
+    </script>
+  </body>
 </html>

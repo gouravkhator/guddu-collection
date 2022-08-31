@@ -1,78 +1,75 @@
-:root{
-    //OLD : before making consistent
-    // --call-bg-color: rgb(59, 133, 10);
-    // --call-hover-color: rgb(14, 68, 7);
-    // --address-bg-color: darkcyan;
-    // --address-hover-color: rgb(2, 66, 66);
-    --call-bg-color: #83fff3;
-    --call-hover-color: #076e64;
-    --address-bg-color: rgb(1, 49, 49);
-    --address-hover-color: rgb(1, 22, 22);
+:root {
+  --call-bg-color: #83fff3;
+  --call-hover-color: #076e64;
+  --address-bg-color: rgb(1, 49, 49);
+  --address-hover-color: rgb(1, 22, 22);
 }
 
-footer{
-    width: 100%;
-    
-    .call-btn{
-        color: #333;
-        background-color: var(--call-bg-color);
-        border-color: var(--call-bg-color);
+footer {
+  width: 100%;
 
-        &:hover, &:focus, &:active{
-            color: #fff;
-            background-color: var(--call-hover-color);
-            border-color: var(--call-hover-color);
-        }
-    }
+  .call-btn {
+    color: #333;
+    background-color: var(--call-bg-color);
+    border-color: var(--call-bg-color);
 
-    .address-btn{
-        background-color:var(--address-bg-color);
-        border-color: var(--address-bg-color);
+    &:hover,
+    &:focus,
+    &:active {
+      color: #fff;
+      background-color: var(--call-hover-color);
+      border-color: var(--call-hover-color);
+    }
+  }
 
-        &:hover, &:focus, &:active{
-            background-color:var(--address-hover-color);
-            border-color: var(--address-hover-color);
-        }
-    }
+  .address-btn {
+    background-color: var(--address-bg-color);
+    border-color: var(--address-bg-color);
 
-    /*for strong text in button component*/
-    strong{
-        font-size: 1.3rem; //REM
+    &:hover,
+    &:focus,
+    &:active {
+      background-color: var(--address-hover-color);
+      border-color: var(--address-hover-color);
     }
-    
-    .address-display{
-        display: inline;
-        pointer-events: all;
-    }
+  }
+
+  /*for strong text in button component*/
+  strong {
+    font-size: 1.3rem;
+  }
+
+  .address-display {
+    display: inline;
+    pointer-events: all;
+  }
 }
 
 /* for maximum height of 700px or max-width of 450px */
-@media screen and (max-height: 700px), screen and (max-width: 450px){
-    footer{
-        height: 3.5rem; //REM
+@media screen and (max-height: 700px), screen and (max-width: 450px) {
+  footer {
+    height: 3.5rem;
 
-        .row, .col-8, .col-4 {
-            height: 100%;
-        }
-    
-        strong{
-            // font-size: 16px;
-            font-size: 1.05rem; //REM
-        }
-    
-        svg{
-            // height: 20px;
-            // width: 17px;
-            height: 1.5rem; //REM
-            width: 1rem; //REM
-        }
+    .row,
+    .col-8,
+    .col-4 {
+      height: 100%;
     }
 
+    strong {
+      font-size: 1.05rem;
+    }
+
+    svg {
+      height: 1.5rem;
+      width: 1rem;
+    }
+  }
 }
 
-@media(max-width: 640px){
-    footer .address-display{
-        display: none;
-        pointer-events: none;
-    }
+@media (max-width: 640px) {
+  footer .address-display {
+    display: none;
+    pointer-events: none;
+  }
 }

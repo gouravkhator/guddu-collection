@@ -1,41 +1,44 @@
 @import "../../../public/css/utility";
 
-.settings-article{
+.settings-article {
+  font-size: var(--article-text-font-size);
+
+  .settings-dynamic-text {
+    padding-left: 1.5rem;
+  }
+  button,
+  a {
     font-size: var(--article-text-font-size);
+    background-color: #01454d;
+    border: 1px solid #01454d;
 
-    .settings-dynamic-text{
-        padding-left: 1.5rem;
+    &:hover,
+    &:focus,
+    &:active {
+      background-color: #012c31;
+      border: 1px solid #012c31;
+      outline-color: #012c31;
     }
-    button, a{
-        font-size: var(--article-text-font-size);
-        background-color: #01454D;
-        border: 1px solid #01454D;
-
-        &:hover, &:focus, &:active{
-            background-color: #012c31;
-            border: 1px solid #012c31;
-            outline-color: #012c31;
-        }
-    }
+  }
 }
 
-.settings-title{
-    @include title-bottom-line(20%, 90%);
-    max-width: fit-content;
+.settings-title {
+  @include title-bottom-line(20%, 90%);
+  max-width: fit-content;
 }
 
-@media(max-width: 320px){
-    .settings-article{
-        .settings-dynamic-text{
-            padding-left: 0px;
-        }
+@media (max-width: 320px) {
+  .settings-article {
+    .settings-dynamic-text {
+      padding-left: 0px;
     }
+  }
 }
 
-@media(max-width: 400px){
-    .settings-article{
-        h4{
-            font-size: 1.35rem;
-        }
+@media (max-width: 400px) {
+  .settings-article {
+    h4 {
+      font-size: 1.35rem;
     }
+  }
 }
