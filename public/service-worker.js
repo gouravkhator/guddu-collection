@@ -94,19 +94,24 @@ self.addEventListener("fetch", (event) => {
      * It helps work offline..
      */
     event.respondWith(
-      caches.open(expectedCaches[cache_index]).then(function (cache) {
-        return cache.match(event.request).then(function (response) {
-          const fetchPromise = fetch(event.request).then(function (
-            networkResponse
-          ) {
-            cache.put(event.request, networkResponse.clone());
+      caches.open(expectedCaches[cache_index]).then(async function (cache) {
+        const response = await cache.match(event.request);
 
-            // if the cache.put fails, then it will not delay the response and will fail
-            return networkResponse;
-          });
+        /*
+        we don't await for fetch response, 
+        as it may fail if we are offline, 
+        but we want to return the cached response if we are offline, and if cache contains the content requested
+        */
+        const fetchPromise = fetch(event.request).then(function (
+          networkResponse
+        ) {
+          cache.put(event.request, networkResponse.clone());
 
-          return response || fetchPromise;
+          // if the cache.put fails, then it will not delay the response and will fail
+          return networkResponse;
         });
+
+        return response || fetchPromise;
       })
     );
   }

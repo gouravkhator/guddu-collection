@@ -9,7 +9,6 @@ import Container from "react-bootstrap/Container";
 import "./feed.scss";
 
 export default function YourViewed() {
-  const telephone_no = "9748044991";
   const { currentUser } = useAuth();
 
   return (
@@ -25,12 +24,6 @@ export default function YourViewed() {
             <hr />
             <h5>
               The Feed Section is under development.
-              <br />
-              <br />
-              Please <b>call</b> at{" "}
-              <Button variant="success" href={"tel:" + telephone_no}>
-                {telephone_no}
-              </Button>{" "}
               <br />
               <br />
               <Button variant="primary" href="/">
